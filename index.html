@@ -100,16 +100,24 @@
   </section>
 
   <section class="card p16">
-    <div class="pill">🕒 Horarios de atención</div>
-    <p class="muted" style="margin:10px 0 0">
-      <b>Lunes a viernes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
-      <b>Sábados:</b> 8:00 a.m. – 12:00 m
-    </p>
-    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-      <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, ¿qué disponibilidad tienen esta semana?')">Preguntar disponibilidad</button>
-      <a class="btn" href="contacto.html">Contacto</a>
-    </div>
-  </section>
+  <div class="pill">🕒 Horarios de atención</div>
+  <p class="muted" style="margin:12px 0 0">
+    <b>Lunes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+    <b>Martes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+    <b>Miércoles:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+    <b>Jueves:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+    <b>Viernes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+    <b>Sábados:</b> 8:00 a.m. – 12:00 m
+  </p>
+
+  <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+    <button class="btn primary"
+      onclick="openWhatsApp('Hola Dra. Tatiana, ¿qué disponibilidad tienen esta semana?')">
+      Consultar disponibilidad
+    </button>
+    <a class="btn" href="agendar.html">Agendar cita</a>
+  </div>
+</section>
 
 </main>
 
@@ -127,3 +135,4 @@
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
