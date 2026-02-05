@@ -4,79 +4,236 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dra. Tatiana Mendoza | Medicina Estética y Regenerativa</title>
-  <meta name="description" content="Medicina estética y regenerativa en Lorica y Tierralta, Córdoba. Agenda tu cita por WhatsApp." />
-  <link rel="stylesheet" href="styles.css?v=300">
+  <meta name="description" content="Medicina estética y regenerativa en Lorica y Tierralta, Córdoba. Agenda por WhatsApp." />
+  <link rel="stylesheet" href="styles.css?v=900">
 </head>
+
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <a class="brand" href="index.html">
-        <img src="assets/logo.png" alt="Dra. Tatiana Mendoza">
-      </a>
+<header class="header">
+  <div class="container navwrap">
+    <a class="brand" href="index.html" aria-label="Inicio">
+      <img src="assets/logo.png" alt="Dra. Tatiana Mendoza">
+    </a>
 
-      <div class="menu">
-        <a class="active" href="index.html">Inicio</a>
-        <a href="sedes.html">Sedes</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="agendar.html">Agendar</a>
-        <a href="testimonios.html">Testimonios</a>
-        <a href="evidencias.html">Evidencias</a>
-        <a href="preguntas.html">Preguntas</a>
-        <a href="contacto.html">Contacto</a>
-        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
-      </div>
+    <nav class="nav">
+      <a class="active" href="index.html">Inicio</a>
+      <a href="sedes.html">Sedes</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="agendar.html">Agendar</a>
+      <a href="testimonios.html">Testimonios</a>
+      <a href="evidencias.html">Evidencias</a>
+      <a href="preguntas.html">Preguntas</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
+
+    <div class="navcta">
+      <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+    </div>
   </div>
 </header>
 
-<main class="container">
+<main>
 
-  <!-- HERO -->
-  <section>
-    <h1>Medicina Estética y Regenerativa</h1>
-    <p class="lead">
-      Atención en <b>Lorica</b> y <b>Tierralta, Córdoba</b>.<br>
-      Valoración: <b>Lorica GRATIS</b> • <b>Tierralta con costo</b>.
-    </p>
+  <!-- HERO PREMIUM -->
+  <section class="hero">
+    <div class="container hero-grid">
 
-    <div class="actions">
-      <a class="btn primary" href="agendar.html">Agendar ahora</a>
-      <a class="btn" href="servicios.html">Ver servicios</a>
+      <div class="hero-left">
+        <div class="badge">✨ Naturalidad • Seguridad • Resultados progresivos</div>
+
+        <h1 class="hero-title">
+          Estética y regeneración <span class="accent">con enfoque médico</span> y humano.
+        </h1>
+
+        <p class="hero-sub">
+          Atención en <b>Lorica, Córdoba</b> y <b>Tierralta, Córdoba</b>. Agenda por WhatsApp y te confirmamos disponibilidad.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="agendar.html">Agendar ahora</a>
+          <a class="btn ghost" href="servicios.html">Ver servicios</a>
+          <a class="btn ghost" href="preguntas.html">Preguntas frecuentes</a>
+        </div>
+
+        <div class="note">
+          <b>Valoración:</b> Lorica <b>GRATIS</b> • Tierralta <b>con costo</b> (se informa por WhatsApp).
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="panel">
+          <div class="panel-title">🕒 Horarios de atención</div>
+          <div class="panel-text">
+            <b>Lunes a viernes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+            <b>Sábados:</b> 8:00 a.m. – 12:00 m
+          </div>
+
+          <div class="panel-row">
+            <div class="mini">
+              <div class="mini-label">WhatsApp</div>
+              <div class="mini-value">+57 300 987 2255</div>
+              <div class="mini-sub">Atención y citas</div>
+            </div>
+            <div class="mini">
+              <div class="mini-label">Instagram</div>
+              <div class="mini-value">@dra.tatiana.mendoza</div>
+              <div class="mini-sub">Novedades y casos</div>
+            </div>
+          </div>
+
+          <div class="panel-foot">
+            <span><b>Importante:</b> Esta información no reemplaza una consulta médica.</span>
+          </div>
+        </div>
+      </aside>
+
     </div>
   </section>
 
-  <!-- COLLAGE 3x3 -->
-  <section>
-    <div class="section-title">
-      <div>
-        <h2>Resultados reales</h2>
-        <p class="muted">Imágenes sin rostro, publicadas con autorización.</p>
+  <!-- CATEGORÍAS / TARJETAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="h2">Servicios</h2>
+          <p class="muted">Explora nuestras áreas principales. La recomendación final depende de valoración.</p>
+        </div>
+        <a class="btn primary" href="servicios.html">Ver todos</a>
       </div>
-      <a class="btn primary" href="evidencias.html">Ver evidencias</a>
-    </div>
 
-    <div class="tm-collage" id="galeria-inicio">
-      <a href="assets/pacientes/p1.jpeg"><img src="assets/pacientes/p1.jpeg" alt="Resultado 1"></a>
-      <a href="assets/pacientes/p2.jpeg"><img src="assets/pacientes/p2.jpeg" alt="Resultado 2"></a>
-      <a href="assets/pacientes/p3.jpeg"><img src="assets/pacientes/p3.jpeg" alt="Resultado 3"></a>
-      <a href="assets/pacientes/p4.jpeg"><img src="assets/pacientes/p4.jpeg" alt="Resultado 4"></a>
-      <a href="assets/pacientes/p5.jpeg"><img src="assets/pacientes/p5.jpeg" alt="Resultado 5"></a>
-      <a href="assets/pacientes/p6.jpeg"><img src="assets/pacientes/p6.jpeg" alt="Resultado 6"></a>
+      <div class="cards">
+        <a class="cardlink" href="servicios.html">
+          <div class="card">
+            <div class="card-ico">✨</div>
+            <div class="card-title">Facial</div>
+            <div class="card-desc">Rejuvenecimiento, armonización y cuidado de la piel.</div>
+          </div>
+        </a>
+
+        <a class="cardlink" href="servicios.html">
+          <div class="card">
+            <div class="card-ico">🌸</div>
+            <div class="card-title">Corporal</div>
+            <div class="card-desc">Protocolos y procedimientos enfocados a tu objetivo.</div>
+          </div>
+        </a>
+
+        <a class="cardlink" href="servicios.html">
+          <div class="card">
+            <div class="card-ico">🧬</div>
+            <div class="card-title">Regenerativa</div>
+            <div class="card-desc">Opciones según valoración y diagnóstico médico.</div>
+          </div>
+        </a>
+
+        <a class="cardlink" href="servicios.html">
+          <div class="card">
+            <div class="card-ico">💗</div>
+            <div class="card-title">Bienestar</div>
+            <div class="card-desc">Acompañamiento integral y hábitos de cuidado.</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEDES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="h2">Sedes</h2>
+          <p class="muted">La dirección exacta se comparte por WhatsApp.</p>
+        </div>
+        <a class="btn ghost" href="sedes.html">Ver sedes</a>
+      </div>
+
+      <div class="grid2">
+        <div class="softcard">
+          <div class="softbadge">📍 Lorica, Córdoba</div>
+          <h3 class="h3">Valoración GRATIS</h3>
+          <p class="muted">Agenda tu valoración y te confirmamos la hora disponible.</p>
+          <div class="row">
+            <a class="btn primary" href="agendar.html">Agendar</a>
+            <button class="btn ghost" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar en Lorica (valoración GRATIS).')">Escribir</button>
+          </div>
+        </div>
+
+        <div class="softcard">
+          <div class="softbadge">📍 Tierralta, Córdoba</div>
+          <h3 class="h3">Valoración con costo</h3>
+          <p class="muted">El valor se informa por WhatsApp.</p>
+          <div class="row">
+            <a class="btn primary" href="agendar.html">Agendar</a>
+            <button class="btn ghost" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar en Tierralta. ¿Cuál es el costo de la valoración?')">Escribir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS (COLLAGE 3x3) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="h2">Resultados reales</h2>
+          <p class="muted">Imágenes sin rostro, publicadas con autorización.</p>
+        </div>
+        <a class="btn primary" href="evidencias.html">Ver evidencias</a>
+      </div>
+
+      <div class="tm-collage" id="galeria-inicio">
+        <a href="assets/pacientes/p1.jpeg"><img loading="lazy" src="assets/pacientes/p1.jpeg" alt="Resultado 1"></a>
+        <a href="assets/pacientes/p2.jpeg"><img loading="lazy" src="assets/pacientes/p2.jpeg" alt="Resultado 2"></a>
+        <a href="assets/pacientes/p3.jpeg"><img loading="lazy" src="assets/pacientes/p3.jpeg" alt="Resultado 3"></a>
+        <a href="assets/pacientes/p4.jpeg"><img loading="lazy" src="assets/pacientes/p4.jpeg" alt="Resultado 4"></a>
+        <a href="assets/pacientes/p5.jpeg"><img loading="lazy" src="assets/pacientes/p5.jpeg" alt="Resultado 5"></a>
+        <a href="assets/pacientes/p6.jpeg"><img loading="lazy" src="assets/pacientes/p6.jpeg" alt="Resultado 6"></a>
+      </div>
+
+      <div class="cta-strip">
+        <div>
+          <div class="cta-title">¿Lista para empezar?</div>
+          <div class="muted">Agendamos tu valoración y te guiamos según tu caso.</div>
+        </div>
+        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
   <button class="close" onclick="closeLB()">✕</button>
-  <img id="lbImg">
+  <img id="lbImg" alt="Vista ampliada">
 </div>
 
+<!-- WhatsApp flotante -->
+<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, deseo información y agendar una cita, por favor.')">
+  <span class="wa-dot"></span> WhatsApp
+</button>
+
+<footer class="footer">
+  <div class="container small">
+    © <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
+  </div>
+</footer>
+
 <script>
-  document.querySelectorAll('.tm-collage a').forEach(link=>{
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // WhatsApp
+  function openWhatsApp(message){
+    const phone = "573009872255";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+
+  // Lightbox para collage
+  document.querySelectorAll('#galeria-inicio a').forEach(link=>{
     link.addEventListener('click', e=>{
       e.preventDefault();
       document.getElementById('lbImg').src = link.href;
