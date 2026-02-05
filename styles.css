@@ -748,3 +748,108 @@ a.btn{
   font-size: 12px;
   color: rgba(0,0,0,.55);
 }
+/* ======================================
+   FORMULARIOS MODERNOS (GLOBAL)
+   Arregla inputs, selects y textarea
+====================================== */
+
+form, .form-modern {
+  max-width: 560px;
+}
+
+.field { margin: 10px 0; }
+
+label {
+  display: block;
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: rgba(0,0,0,.70);
+}
+
+/* Inputs / Selects / Textarea */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.92);
+
+  font-size: 14px;
+  outline: none;
+
+  box-shadow: 0 14px 40px rgba(0,0,0,.06);
+  transition: border-color .12s ease, box-shadow .12s ease, transform .12s ease;
+}
+
+/* Quita el look “antiguo” de algunos navegadores */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 44px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(0,0,0,.55) 50%),
+    linear-gradient(135deg, rgba(0,0,0,.55) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* Textarea */
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Focus bonito rosado */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(227,154,168,.75);
+  box-shadow: 0 18px 60px rgba(227,154,168,.22);
+  transform: translateY(-1px);
+}
+
+/* Placeholder más suave */
+::placeholder {
+  color: rgba(0,0,0,.40);
+}
+
+/* Si tienes dos columnas (fecha/hora) */
+.two-cols{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media(max-width:560px){
+  .two-cols{ grid-template-columns: 1fr; }
+}
+
+/* Botones full width si los usas */
+.btn.full{
+  width: 100%;
+  justify-content: center;
+}
+
+/* Tarjeta contenedora (si tu agendar tiene card) */
+.agendar-card, .info-card{
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,.06);
+  background: rgba(255,255,255,.88);
+  box-shadow: 0 18px 60px rgba(0,0,0,.08);
+  padding: 18px;
+}
