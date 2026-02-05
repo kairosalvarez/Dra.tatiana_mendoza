@@ -1,11 +1,12 @@
 :root{
   --bg:#ffffff;
-  --text:#121212;
-  --muted:#5b5b5b;
+  --text:#1a1a1a;
+  --muted:#6a5a5f;
 
-  /* Dorado institucional (ajústalo si quieres más claro/oscuro) */
-  --gold:#d4a017;
-  --gold2:#b8860b;
+  /* Rosados institucionales (premium) */
+  --pink:#e8a7b6;   /* rosado suave */
+  --pink2:#d97a93;  /* rosado más fuerte */
+  --pink3:#f6d7df;  /* rosado pastel */
 
   --card:#ffffff;
   --line:rgba(0,0,0,.10);
