@@ -4,345 +4,109 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Servicios | Dra. Tatiana Mendoza</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Servicios de medicina estética y regenerativa. Agenda tu valoración por WhatsApp." />
+  <link rel="stylesheet" href="styles.css?v=1200">
 </head>
+
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <a class="brand" href="index.html">
-        <img src="assets/logo.png" alt="Logo Dra. Tatiana Mendoza">
-      </a>
+<header class="header">
+  <div class="container navwrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Dra. Tatiana Mendoza">
+    </a>
 
-      <div class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="sedes.html">Sedes</a>
-        <a class="active" href="servicios.html">Servicios</a>
-        <a href="agendar.html">Agendar</a>
-        <a href="testimonios.html">Testimonios</a>
-        <a href="evidencias.html">Evidencias</a>
-        <a href="preguntas.html">Preguntas</a>
-        <a href="contacto.html">Contacto</a>
-        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
-      </div>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="sedes.html">Sedes</a>
+      <a class="active" href="servicios.html">Servicios</a>
+      <a href="agendar.html">Agendar</a>
+      <a href="testimonios.html">Testimonios</a>
+      <a href="evidencias.html">Evidencias</a>
+      <a href="preguntas.html">Preguntas</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
+
+    <div class="navcta">
+      <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+    </div>
   </div>
 </header>
 
-<main class="container">
-  <section>
-    <div class="section-title">
-      <div>
-        <h1>Servicios</h1>
-        <p class="lead">Organizados por categorías. Los precios se informan por WhatsApp (actualizados).</p>
+<main>
+
+  <!-- ENCABEZADO -->
+  <section class="section" style="padding-top:36px">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h1 class="hero-title" style="font-size:40px;margin:0">Servicios</h1>
+          <p class="muted" style="margin-top:10px">
+            Enfoque personalizado en medicina estética y regenerativa.
+            La recomendación final depende de tu valoración.
+          </p>
+        </div>
+        <button class="btn"
+          onclick="openWhatsApp('Hola Dra. Tatiana, deseo conocer los servicios y agendar una valoración, por favor.')">
+          Consultar por WhatsApp
+        </button>
       </div>
 
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="btn" href="#facial">Facial</a>
-        <a class="btn" href="#corporal">Corporal</a>
-        <a class="btn" href="#regenerativa">Regenerativa</a>
-        <a class="btn" href="#bienestar">Bienestar</a>
+      <div class="note">
+        <b>Valoración:</b> Lorica <b>GRATIS</b> • Tierralta <b>con costo</b> (se informa por WhatsApp).
       </div>
     </div>
-
-    <!-- FACIAL -->
-    <section id="facial">
-      <div class="section-title">
-        <div>
-          <h2>Facial</h2>
-          <p class="muted">Armonización y procedimientos faciales (según valoración médica).</p>
-        </div>
-      </div>
-
-      <div class="grid3">
-        <!-- Tarjetas -->
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Rinomodelación</h3>
-          <p class="muted">Evaluación y plan según armonía facial.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Rinomodelación. ¿Me orientas, por favor?')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Labios: volumen + perfilamiento</h3>
-          <p class="muted">Armonía y proporción según tu rostro.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Labios (volumen + perfilamiento).')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Labios: perfilamiento + hidratación</h3>
-          <p class="muted">Definición e hidratación según valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Labios (perfilamiento + hidratación).')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Mentón</h3>
-          <p class="muted">Proyección y equilibrio facial.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Mentón.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Pómulos</h3>
-          <p class="muted">Soporte y armonización del tercio medio.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Pómulos.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Ojeras</h3>
-          <p class="muted">Manejo según tipo de ojera y valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Ojeras.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Reborde mandibular</h3>
-          <p class="muted">Definición del contorno mandibular.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Reborde mandibular.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Full Face</h3>
-          <p class="muted">Armonización integral (por etapas, según valoración).</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Full Face.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Rejuvenecimiento facial no quirúrgico</h3>
-          <p class="muted">Plan según valoración y objetivos.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Rejuvenecimiento facial no quirúrgico.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Bótox: tercio superior</h3>
-          <p class="muted">Manejo de líneas de expresión.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Bótox (tercio superior).')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Bótox: tercio inferior</h3>
-          <p class="muted">Según indicación y valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Bótox (tercio inferior).')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Bruxismo</h3>
-          <p class="muted">Manejo según evaluación clínica.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Bruxismo.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Sonrisa gingival</h3>
-          <p class="muted">Corrección según valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Sonrisa gingival.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Facial</div>
-          <h3 style="margin:10px 0 6px">Hiperhidrosis axilar y palmar</h3>
-          <p class="muted">Manejo según evaluación.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Hiperhidrosis.')">Agendar</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- CORPORAL -->
-    <section id="corporal">
-      <div class="section-title">
-        <div>
-          <h2>Corporal</h2>
-          <p class="muted">Tratamientos corporales según valoración médica.</p>
-        </div>
-      </div>
-
-      <div class="grid3">
-        <div class="card p16">
-          <div class="pill">Corporal</div>
-          <h3 style="margin:10px 0 6px">Adiposidad localizada y celulitis</h3>
-          <p class="muted">Manejo corporal según valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Adiposidad localizada y celulitis.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Corporal</div>
-          <h3 style="margin:10px 0 6px">Lipopapada</h3>
-          <p class="muted">Manejo del contorno submentoniano.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Lipopapada.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Corporal</div>
-          <h3 style="margin:10px 0 6px">Terapias para tensado de la piel</h3>
-          <p class="muted">Plan corporal por zonas.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Tensado de piel.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Corporal</div>
-          <h3 style="margin:10px 0 6px">Endolifthing</h3>
-          <p class="muted">Procedimiento corporal según valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Endolifthing.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Corporal</div>
-          <h3 style="margin:10px 0 6px">Radiofrecuencia + masajes reductores</h3>
-          <p class="muted">Sesiones por zonas según valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Radiofrecuencia + masajes reductores.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Corporal</div>
-          <h3 style="margin:10px 0 6px">Radiofrecuencia + vitamina C</h3>
-          <p class="muted">Tonificación y plan por zonas.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar Radiofrecuencia + vitamina C.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Corporal</div>
-          <h3 style="margin:10px 0 6px">Programas post parto (peso saludable)</h3>
-          <p class="muted">Acompañamiento por etapas según valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información del programa post parto (peso saludable).')">Agendar</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- REGENERATIVA -->
-    <section id="regenerativa">
-      <div class="section-title">
-        <div>
-          <h2>Regenerativa</h2>
-          <p class="muted">Medicina regenerativa y planes de soporte (según valoración).</p>
-        </div>
-      </div>
-
-      <div class="grid3">
-        <div class="card p16">
-          <div class="pill">Regenerativa</div>
-          <h3 style="margin:10px 0 6px">Valoración medicina estética y regenerativa</h3>
-          <p class="muted">Lorica: gratis • Tierralta: con costo (se informa por WhatsApp).</p>
-          <a class="btn primary" href="agendar.html">Agendar</a>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Regenerativa</div>
-          <h3 style="margin:10px 0 6px">Consulta por médico especialista</h3>
-          <p class="muted">Evaluación médica personalizada para definir el plan.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar consulta por médico especialista.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Regenerativa</div>
-          <h3 style="margin:10px 0 6px">Megadosis de vitamina C</h3>
-          <p class="muted">Según indicación y valoración médica.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información de Megadosis de vitamina C.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Regenerativa</div>
-          <h3 style="margin:10px 0 6px">Sueros (varios)</h3>
-          <p class="muted">Desintoxicante, reparador, energizante, revitalizador, etc. (según valoración).</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información de sueros (según valoración). ¿Cuál me recomiendas para mi caso?')">Consultar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Regenerativa</div>
-          <h3 style="margin:10px 0 6px">Bioestimuladores / Poliláctico / Hidroxiapatita</h3>
-          <p class="muted">Planes para calidad de piel y soporte (según valoración y objetivos).</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información de bioestimuladores (poliláctico/hidroxiapatita).')">Agendar</button>
-        </div>
-      </div>
-
-      <div class="card p16" style="margin-top:14px">
-        <div class="pill">Nota</div>
-        <p class="muted" style="margin:10px 0 0">
-          El plan ideal depende de tu valoración. Si deseas, envía: <b>edad</b>, <b>objetivo</b> y <b>sede</b> para orientarte.
-        </p>
-        <div style="margin-top:12px">
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, mi edad es __, mi objetivo es __, y deseo atenderme en (Lorica/Tierralta). ¿Me orientas?')">Enviar datos guía</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- BIENESTAR -->
-    <section id="bienestar">
-      <div class="section-title">
-        <div>
-          <h2>Bienestar</h2>
-          <p class="muted">Masajes y terapias de bienestar (según valoración).</p>
-        </div>
-      </div>
-
-      <div class="grid3">
-        <div class="card p16">
-          <div class="pill">Bienestar</div>
-          <h3 style="margin:10px 0 6px">Masaje purificante</h3>
-          <p class="muted">Bienestar y cuidado corporal.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar Masaje purificante.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Bienestar</div>
-          <h3 style="margin:10px 0 6px">Masaje balinés</h3>
-          <p class="muted">Terapia de bienestar.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar Masaje balinés.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Bienestar</div>
-          <h3 style="margin:10px 0 6px">Express masaje espalda</h3>
-          <p class="muted">Bienestar y alivio muscular.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar Express masaje espalda.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Bienestar</div>
-          <h3 style="margin:10px 0 6px">Reflexología podal + desintoxicación iónica</h3>
-          <p class="muted">Plan según valoración.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar Reflexología podal + desintoxicación iónica.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Bienestar</div>
-          <h3 style="margin:10px 0 6px">Masaje facial + higiene facial</h3>
-          <p class="muted">Cuidado de piel y limpieza facial.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar Masaje facial + higiene facial.')">Agendar</button>
-        </div>
-
-        <div class="card p16">
-          <div class="pill">Bienestar</div>
-          <h3 style="margin:10px 0 6px">Bambuterapia</h3>
-          <p class="muted">Bienestar corporal.</p>
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar Bambuterapia.')">Agendar</button>
-        </div>
-      </div>
-    </section>
-
   </section>
-</main>
 
-<footer>
-  <div class="container small">
-    © <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
-  </div>
-</footer>
+  <!-- CARRUSEL TIPO LUXE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="h2">Servicios destacados</h2>
+          <p class="muted">Explora por categoría.</p>
+        </div>
+        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+      </div>
 
-<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información sobre un servicio, por favor.')">
-  <span class="wa-dot"></span> WhatsApp
-</button>
+      <div class="luxe-wrap">
+        <button class="luxe-arrow luxe-prev" onclick="luxeScroll(-1)">‹</button>
+        <button class="luxe-arrow luxe-next" onclick="luxeScroll(1)">›</button>
 
-<script src="app.js"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-</html>
+        <div class="luxe-track" id="luxeTrack">
+
+          <a class="luxe-card" href="#facial">
+            <div class="bg" style="background-image:url('assets/servicios/Facial.jpg')"></div>
+            <div class="luxe-content">
+              <div class="luxe-title">Facial</div>
+              <span class="luxe-btn">Ver más</span>
+            </div>
+          </a>
+
+          <a class="luxe-card" href="#facial">
+            <div class="bg" style="background-image:url('assets/servicios/Rino.jpg')"></div>
+            <div class="luxe-content">
+              <div class="luxe-title">Rinomodelación</div>
+              <span class="luxe-btn">Ver más</span>
+            </div>
+          </a>
+
+          <a class="luxe-card" href="#bienestar">
+            <div class="bg" style="background-image:url('assets/servicios/Masaje.jpg')"></div>
+            <div class="luxe-content">
+              <div class="luxe-title">Masajes</div>
+              <span class="luxe-btn">Ver más</span>
+            </div>
+          </a>
+
+          <a class="luxe-card" href="#corporal">
+            <div class="bg" style="background-image:url('assets/servicios/Endolifting.jpg')"></div>
+            <div class="luxe-content">
+              <div class="luxe-title">Endolifting</div>
+              <span class="luxe-btn">Ver más</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </d
