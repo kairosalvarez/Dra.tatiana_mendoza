@@ -145,3 +145,30 @@ section{
 
 .lead{
   margin-top:10px
+
+   /* ===== FORZAR COLLAGE 3x3 (override final) ===== */
+.gallery{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.gallery img{
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+@media (max-width: 900px){
+  .gallery{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 520px){
+  .gallery{
+    grid-template-columns: 1fr !important;
+  }
+}
+
