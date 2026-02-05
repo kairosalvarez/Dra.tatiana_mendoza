@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto | Dra. Tatiana Mendoza</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="evidencias.html">Evidencias</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a class="active" href="contacto.html">Contacto</a>
+        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <div class="section-title">
+      <div>
+        <h1>Contacto</h1>
+        <p class="lead">Escríbenos por WhatsApp y te respondemos para confirmar disponibilidad.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card p16">
+        <div class="pill">💬 Mensaje desde la web</div>
+        <form onsubmit="return sendWhatsAppMessage(event)">
+          <input id="c_name" type="text" placeholder="Tu nombre" required />
+          <input id="c_phone" type="tel" placeholder="Tu WhatsApp" required />
+
+          <select id="c_reason" required>
+            <option value="" disabled selected>¿En qué te ayudamos?</option>
+            <option>Quiero información de un servicio</option>
+            <option>Quiero agendar una cita</option>
+            <option>Quiero reprogramar</option>
+            <option>Otro</option>
+          </select>
+
+          <textarea id="c_msg" placeholder="Escribe tu mensaje" required></textarea>
+
+          <button class="btn primary" type="submit">Enviar por WhatsApp</button>
+          <div class="small">Atendemos: L–V 8–12 / 2–6 · Sáb 8–12</div>
+        </form>
+      </div>
+
+      <div class="card p16">
+        <div class="pill">📌 Datos</div>
+        <p class="muted" style="margin-top:10px">
+          <b style="color:var(--text)">Dra. Tatiana Mendoza</b><br>
+          Medicina Estética y Regenerativa
+        </p>
+
+        <ul class="muted" style="margin:10px 0 0; padding-left:18px">
+          <li><b>WhatsApp:</b> +57 300 987 2255</li>
+          <li><b>Instagram:</b> @dra.tatiana.mendoza</li>
+          <li><b>Sedes:</b> Lorica y Tierralta (Córdoba)</li>
+          <li><b>Dirección exacta:</b> se comparte por WhatsApp</li>
+        </ul>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">Escribir ahora</button>
+          <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, ¿me compartes la ubicación exacta de la sede, por favor?')">Pedir ubicación</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container small">© <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.</div>
+</footer>
+
+<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">
+  <span class="wa-dot"></span> WhatsApp
+</button>
+
+<script src="app.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
