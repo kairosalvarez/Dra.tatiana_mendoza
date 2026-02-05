@@ -4,14 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Evidencias | Dra. Tatiana Mendoza</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Evidencias de procedimientos (sin rostro) con autorización del paciente. Dra. Tatiana Mendoza." />
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
 <header>
   <div class="container">
     <nav>
-      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo Dra. Tatiana Mendoza"></a>
 
       <div class="menu">
         <a href="index.html">Inicio</a>
@@ -29,81 +30,90 @@
 </header>
 
 <main class="container">
+
   <section>
     <div class="section-title">
       <div>
         <h1>Evidencias</h1>
-        <p class="lead">Antes / después y evolución. Solo se publica con autorización del paciente.</p>
+        <p class="lead">Galería de resultados <b>sin rostro</b>, publicada con autorización del paciente.</p>
       </div>
-      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero conocer evidencias de procedimientos (según autorización).')">
-        Pedir información
+      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información sobre evidencias y procedimientos, por favor.')">
+        Consultar por WhatsApp
       </button>
     </div>
 
-    <div class="card p16">
-      <div class="pill">📌 Importante</div>
-      <p class="muted" style="margin:10px 0 0">
-        Esta sección se puede llenar con fotos reales cuando quieran. Por ahora dejamos “espacios” (placeholders).
-        Si deseas, me envías 6–12 imágenes autorizadas y te dejo la galería lista con antes/después.
+    <div class="card p16" style="margin-bottom:14px">
+      <div class="pill">📌 Nota</div>
+      <p class="muted" style="margin-top:10px">
+        Las imágenes se presentan sin datos personales ni rostros, y con autorización del paciente.
       </p>
     </div>
 
-    <div class="grid3" style="margin-top:14px">
-      <div class="card p16">
-        <div class="pill">Caso 1</div>
-        <h3 style="margin:10px 0 6px">Antes / Después</h3>
-        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
-      </div>
-      <div class="card p16">
-        <div class="pill">Caso 2</div>
-        <h3 style="margin:10px 0 6px">Evolución</h3>
-        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
-      </div>
-      <div class="card p16">
-        <div class="pill">Caso 3</div>
-        <h3 style="margin:10px 0 6px">Resultado</h3>
-        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
-      </div>
-      <div class="card p16">
-        <div class="pill">Caso 4</div>
-        <h3 style="margin:10px 0 6px">Antes / Después</h3>
-        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
-      </div>
-      <div class="card p16">
-        <div class="pill">Caso 5</div>
-        <h3 style="margin:10px 0 6px">Evolución</h3>
-        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
-      </div>
-      <div class="card p16">
-        <div class="pill">Caso 6</div>
-        <h3 style="margin:10px 0 6px">Resultado</h3>
-        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
-      </div>
+    <div class="gallery" id="galeria-evidencias">
+      <a href="assets/evidencias/e1.jpg"><img loading="lazy" src="assets/evidencias/e1.jpg" alt="Evidencia 1"></a>
+      <a href="assets/evidencias/e2.jpg"><img loading="lazy" src="assets/evidencias/e2.jpg" alt="Evidencia 2"></a>
+      <a href="assets/evidencias/e3.jpg"><img loading="lazy" src="assets/evidencias/e3.jpg" alt="Evidencia 3"></a>
+      <a href="assets/evidencias/e4.jpg"><img loading="lazy" src="assets/evidencias/e4.jpg" alt="Evidencia 4"></a>
+      <a href="assets/evidencias/e5.jpg"><img loading="lazy" src="assets/evidencias/e5.jpg" alt="Evidencia 5"></a>
+      <a href="assets/evidencias/e6.jpg"><img loading="lazy" src="assets/evidencias/e6.jpg" alt="Evidencia 6"></a>
+      <a href="assets/evidencias/e7.jpg"><img loading="lazy" src="assets/evidencias/e7.jpg" alt="Evidencia 7"></a>
+      <a href="assets/evidencias/e8.jpg"><img loading="lazy" src="assets/evidencias/e8.jpg" alt="Evidencia 8"></a>
+      <a href="assets/evidencias/e9.jpg"><img loading="lazy" src="assets/evidencias/e9.jpg" alt="Evidencia 9"></a>
     </div>
 
     <div class="card p16" style="margin-top:14px">
-      <div class="pill">✅ ¿Quieres activar evidencias reales?</div>
-      <p class="muted" style="margin:10px 0 0">
-        Cuando estén listos, solo subimos archivos a una carpeta (por ejemplo: <b>evidencias/</b>) y enlazamos.
+      <div class="pill">🗓️ ¿Deseas agendar?</div>
+      <p class="muted" style="margin-top:10px">
+        Si quieres un plan personalizado, agenda tu valoración por WhatsApp.
       </p>
-      <div style="margin-top:12px">
-        <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero activar evidencias reales en la web. ¿Qué formato necesitas y cómo las subimos?')">
-          Activar evidencias
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn primary" href="agendar.html">Agendar ahora</a>
+        <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar una valoración. Mi sede es: Lorica/Tierralta.')">
+          Escribir por WhatsApp
         </button>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
-  <div class="container small">© <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.</div>
+  <div class="container small">
+    © <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
+  </div>
 </footer>
 
 <button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">
   <span class="wa-dot"></span> WhatsApp
 </button>
 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="close" id="lbClose">Cerrar ✕</button>
+  <img id="lbImg" alt="Vista ampliada">
+</div>
+
 <script src="app.js"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const close = document.getElementById('lbClose');
+
+    function open(src){ lbImg.src = src; lb.classList.add('open'); }
+    function hide(){ lb.classList.remove('open'); lbImg.src = ''; }
+
+    document.querySelectorAll('#galeria-evidencias a').forEach(a=>{
+      a.addEventListener('click', (e)=>{ e.preventDefault(); open(a.getAttribute('href')); });
+    });
+
+    close.addEventListener('click', hide);
+    lb.addEventListener('click', (e)=>{ if(e.target === lb) hide(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') hide(); });
+  })();
+</script>
+
 </body>
 </html>
