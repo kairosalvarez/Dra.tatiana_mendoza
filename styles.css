@@ -187,15 +187,13 @@ input, textarea, select{
   border-radius:14px;
   border:1px solid rgba(0,0,0,.12);
   
-/* GALERÍAS (Inicio + Evidencias) */
+/* Collage 3x3 (Inicio/Evidencias) */
 .gallery{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:16px;
+  gap:12px;
 }
-@media (max-width: 980px){
-  .gallery{grid-template-columns:repeat(2, 1fr);}
-}
+
 .gallery a{
   display:block;
   border-radius:18px;
@@ -204,16 +202,26 @@ input, textarea, select{
   background:#fff;
   box-shadow: 0 12px 28px rgba(0,0,0,.08);
 }
+
 .gallery img{
   width:100%;
-  height:220px;
+  aspect-ratio: 1 / 1;   /* cuadradas (collage real) */
   object-fit:cover;
   display:block;
   transition:transform .25s ease;
 }
+
 .gallery a:hover img{transform:scale(1.03)}
 
-/* Lightbox (visor) */
+/* Responsivo */
+@media (max-width: 980px){
+  .gallery{grid-template-columns:repeat(2, 1fr);}
+}
+@media (max-width: 520px){
+  .gallery{grid-template-columns:1fr;}
+}
+
+/* Lightbox */
 .lightbox{
   position:fixed;
   inset:0;
@@ -242,3 +250,4 @@ input, textarea, select{
   background:#fff;
   font-weight:800;
 }
+
