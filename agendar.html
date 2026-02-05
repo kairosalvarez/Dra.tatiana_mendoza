@@ -1,0 +1,94 @@
+<!-- Agendar -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agendar | Dra. Tatiana Mendoza</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="servicios.html">Servicios</a>
+        <a class="active" href="agendar.html">Agendar</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="evidencias.html">Evidencias</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="contacto.html">Contacto</a>
+        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="section-title">
+    <div>
+      <h1>Agenda tu cita</h1>
+      <p class="lead">Completa tus datos y te enviamos el mensaje listo por WhatsApp.</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card p16">
+      <div class="pill">🗓️ Solicitud de cita</div>
+      <form onsubmit="return sendWhatsAppAppointment(event)">
+        <div class="two">
+          <input id="a_name" type="text" placeholder="Nombre y apellido" required />
+          <input id="a_phone" type="tel" placeholder="Tu WhatsApp" required />
+        </div>
+
+        <div class="two">
+          <select id="a_sede" required>
+            <option value="" disabled selected>Sede</option>
+            <option>Lorica (Valoración GRATIS)</option>
+            <option>Tierralta (Valoración con costo)</option>
+          </select>
+          <select id="a_service" required>
+            <option value="" disabled selected>Servicio</option>
+            <option>Valoración medicina estética y regenerativa</option>
+            <option>Rinomodelación</option>
+            <option>Labios: volumen + perfilamiento</option>
+            <option>Bótox: tercio superior</option>
+          </select>
+        </div>
+
+        <div class="two">
+          <input id="a_date" type="date" required />
+          <input id="a_time" type="time" required />
+        </div>
+
+        <select id="a_type" required>
+          <option value="" disabled selected>Tipo de cita</option>
+          <option>Valoración inicial</option>
+          <option>Control / seguimiento</option>
+          <option>Procedimiento</option>
+        </select>
+
+        <textarea id="a_note" placeholder="Cuéntanos tu objetivo o duda (opcional)"></textarea>
+        <button class="btn primary" type="submit">Enviar por WhatsApp</button>
+        <div class="small">La cita se confirma cuando el equipo responde con disponibilidad.</div>
+      </form>
+    </div>
+
+    <div class="card p16">
+      <div class="pill">✅ Horarios</div>
+      <p class="muted"><b>L–V:</b> 8–12 / 2–6 · <b>Sáb:</b> 8–12</p>
+      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, ¿qué disponibilidad tienen esta semana?')">Preguntar disponibilidad</button>
+    </div>
+  </div>
+</main>
+
+<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar una cita, por favor.')">
+  <span class="wa-dot"></span> WhatsApp
+</button>
+
+<script src="app.js"></script>
+</body>
+</html>
