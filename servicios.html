@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
   <title>Servicios | Dra. Tatiana Mendoza</title>
-  <meta name="description" content="Servicios de medicina estética y regenerativa. Agenda tu valoración por WhatsApp." />
-  <link rel="stylesheet" href="styles.css?v=1200">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles.css?v=9999">
 </head>
 
 <body>
@@ -27,86 +27,70 @@
       <a href="contacto.html">Contacto</a>
     </nav>
 
-    <div class="navcta">
-      <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
-    </div>
+    <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main class="section">
+  <div class="container">
 
-  <!-- ENCABEZADO -->
-  <section class="section" style="padding-top:36px">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h1 class="hero-title" style="font-size:40px;margin:0">Servicios</h1>
-          <p class="muted" style="margin-top:10px">
-            Enfoque personalizado en medicina estética y regenerativa.
-            La recomendación final depende de tu valoración.
-          </p>
+    <h1 class="title">Servicios destacados</h1>
+    <p class="subtitle">Explora por categoría.</p>
+
+    <div class="luxe-wrap">
+      <button class="luxe-arrow luxe-prev" onclick="scrollLuxe(-1)">‹</button>
+      <button class="luxe-arrow luxe-next" onclick="scrollLuxe(1)">›</button>
+
+      <div class="luxe-track" id="luxeTrack">
+
+        <div class="luxe-card">
+          <div class="bg" style="background-image:url('assets/servicios/Facial.jpg')"></div>
+          <div class="luxe-content">
+            <div class="luxe-title">Facial</div>
+            <span class="luxe-btn">Ver más</span>
+          </div>
         </div>
-        <button class="btn"
-          onclick="openWhatsApp('Hola Dra. Tatiana, deseo conocer los servicios y agendar una valoración, por favor.')">
-          Consultar por WhatsApp
-        </button>
-      </div>
 
-      <div class="note">
-        <b>Valoración:</b> Lorica <b>GRATIS</b> • Tierralta <b>con costo</b> (se informa por WhatsApp).
+        <div class="luxe-card">
+          <div class="bg" style="background-image:url('assets/servicios/Rino.jpg')"></div>
+          <div class="luxe-content">
+            <div class="luxe-title">Rinomodelación</div>
+            <span class="luxe-btn">Ver más</span>
+          </div>
+        </div>
+
+        <div class="luxe-card">
+          <div class="bg" style="background-image:url('assets/servicios/Masaje.jpg')"></div>
+          <div class="luxe-content">
+            <div class="luxe-title">Masajes</div>
+            <span class="luxe-btn">Ver más</span>
+          </div>
+        </div>
+
+        <div class="luxe-card">
+          <div class="bg" style="background-image:url('assets/servicios/Endolifting.jpg')"></div>
+          <div class="luxe-content">
+            <div class="luxe-title">Endolifting</div>
+            <span class="luxe-btn">Ver más</span>
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
 
-  <!-- CARRUSEL TIPO LUXE -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2 class="h2">Servicios destacados</h2>
-          <p class="muted">Explora por categoría.</p>
-        </div>
-        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
-      </div>
+  </div>
+</main>
 
-      <div class="luxe-wrap">
-        <button class="luxe-arrow luxe-prev" onclick="luxeScroll(-1)">‹</button>
-        <button class="luxe-arrow luxe-next" onclick="luxeScroll(1)">›</button>
+<footer class="footer">
+  © 2026 Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
+</footer>
 
-        <div class="luxe-track" id="luxeTrack">
+<script>
+  function scrollLuxe(dir){
+    const track = document.getElementById("luxeTrack");
+    track.scrollBy({ left: dir * 320, behavior: "smooth" });
+  }
+</script>
 
-          <a class="luxe-card" href="#facial">
-            <div class="bg" style="background-image:url('assets/servicios/Facial.jpg')"></div>
-            <div class="luxe-content">
-              <div class="luxe-title">Facial</div>
-              <span class="luxe-btn">Ver más</span>
-            </div>
-          </a>
-
-          <a class="luxe-card" href="#facial">
-            <div class="bg" style="background-image:url('assets/servicios/Rino.jpg')"></div>
-            <div class="luxe-content">
-              <div class="luxe-title">Rinomodelación</div>
-              <span class="luxe-btn">Ver más</span>
-            </div>
-          </a>
-
-          <a class="luxe-card" href="#bienestar">
-            <div class="bg" style="background-image:url('assets/servicios/Masaje.jpg')"></div>
-            <div class="luxe-content">
-              <div class="luxe-title">Masajes</div>
-              <span class="luxe-btn">Ver más</span>
-            </div>
-          </a>
-
-          <a class="luxe-card" href="#corporal">
-            <div class="bg" style="background-image:url('assets/servicios/Endolifting.jpg')"></div>
-            <div class="luxe-content">
-              <div class="luxe-title">Endolifting</div>
-              <span class="luxe-btn">Ver más</span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </d
+</body>
+</html>
