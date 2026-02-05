@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dra. Tatiana Mendoza | Medicina Estética y Regenerativa</title>
-  <meta name="description" content="Medicina estética y regenerativa. Lorica y Tierralta (Córdoba). Agenda tu cita por WhatsApp." />
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Medicina estética y regenerativa. Atención en Lorica y Tierralta (Córdoba). Agenda tu cita por WhatsApp." />
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -33,6 +33,7 @@
 
 <main class="container">
 
+  <!-- HERO -->
   <section>
     <div class="section-title">
       <div>
@@ -42,6 +43,7 @@
           Valoración: <b>Lorica GRATIS</b> • <b>Tierralta con costo</b> (se informa por WhatsApp).
         </p>
       </div>
+
       <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, deseo información y agendar una cita, por favor.')">
         Escribir por WhatsApp
       </button>
@@ -54,6 +56,7 @@
     </div>
   </section>
 
+  <!-- SEDES DESTACADAS -->
   <section class="grid2">
     <div class="card p16">
       <div class="pill">📍 Lorica, Córdoba</div>
@@ -76,6 +79,7 @@
     </div>
   </section>
 
+  <!-- BLOQUES RÁPIDOS -->
   <section class="grid3">
     <div class="card p16">
       <div class="pill">✨ Servicios</div>
@@ -93,31 +97,50 @@
 
     <div class="card p16">
       <div class="pill">❓ Dudas</div>
-      <h3 style="margin:10px 0 6px">FAQ</h3>
+      <h3 style="margin:10px 0 6px">Preguntas frecuentes</h3>
       <p class="muted">Respuestas rápidas para pacientes.</p>
       <a class="btn primary" href="preguntas.html">Ver preguntas</a>
     </div>
   </section>
 
-  <section class="card p16">
-  <div class="pill">🕒 Horarios de atención</div>
-  <p class="muted" style="margin:12px 0 0">
-    <b>Lunes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
-    <b>Martes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
-    <b>Miércoles:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
-    <b>Jueves:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
-    <b>Viernes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
-    <b>Sábados:</b> 8:00 a.m. – 12:00 m
-  </p>
+  <!-- GALERÍA (6 FOTOS) -->
+  <section>
+    <div class="section-title">
+      <div>
+        <h2>Resultados reales</h2>
+        <p class="muted">Imágenes sin rostro, publicadas con autorización.</p>
+      </div>
+      <a class="btn primary" href="evidencias.html">Ver evidencias</a>
+    </div>
 
-  <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
-    <button class="btn primary"
-      onclick="openWhatsApp('Hola Dra. Tatiana, ¿qué disponibilidad tienen esta semana?')">
-      Consultar disponibilidad
-    </button>
-    <a class="btn" href="agendar.html">Agendar cita</a>
-  </div>
-</section>
+    <div class="gallery" id="galeria-inicio">
+      <a href="assets/pacientes/p1.jpg"><img loading="lazy" src="assets/pacientes/p1.jpg" alt="Resultado 1"></a>
+      <a href="assets/pacientes/p2.jpg"><img loading="lazy" src="assets/pacientes/p2.jpg" alt="Resultado 2"></a>
+      <a href="assets/pacientes/p3.jpg"><img loading="lazy" src="assets/pacientes/p3.jpg" alt="Resultado 3"></a>
+      <a href="assets/pacientes/p4.jpg"><img loading="lazy" src="assets/pacientes/p4.jpg" alt="Resultado 4"></a>
+      <a href="assets/pacientes/p5.jpg"><img loading="lazy" src="assets/pacientes/p5.jpg" alt="Resultado 5"></a>
+      <a href="assets/pacientes/p6.jpg"><img loading="lazy" src="assets/pacientes/p6.jpg" alt="Resultado 6"></a>
+    </div>
+  </section>
+
+  <!-- HORARIOS POR DÍA -->
+  <section class="card p16">
+    <div class="pill">🕒 Horarios de atención</div>
+    <p class="muted" style="margin:12px 0 0">
+      <b>Lunes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+      <b>Martes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+      <b>Miércoles:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+      <b>Jueves:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+      <b>Viernes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+      <b>Sábados:</b> 8:00 a.m. – 12:00 m
+    </p>
+    <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+      <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, ¿qué disponibilidad tienen esta semana?')">
+        Consultar disponibilidad
+      </button>
+      <a class="btn" href="agendar.html">Agendar cita</a>
+    </div>
+  </section>
 
 </main>
 
@@ -127,12 +150,41 @@
   </div>
 </footer>
 
-<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, deseo información y agendar una cita, por favor.')">
   <span class="wa-dot"></span> WhatsApp
 </button>
 
+<!-- LIGHTBOX (visor de imágenes) -->
+<div class="lightbox" id="lightbox">
+  <button class="close" id="lbClose">Cerrar ✕</button>
+  <img id="lbImg" alt="Vista ampliada">
+</div>
+
 <script src="app.js"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const close = document.getElementById('lbClose');
+
+    function open(src){ lbImg.src = src; lb.classList.add('open'); }
+    function hide(){ lb.classList.remove('open'); lbImg.src = ''; }
+
+    document.querySelectorAll('#galeria-inicio a').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        open(a.getAttribute('href'));
+      });
+    });
+
+    close.addEventListener('click', hide);
+    lb.addEventListener('click', (e)=>{ if(e.target === lb) hide(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') hide(); });
+  })();
+</script>
+
 </body>
 </html>
-
