@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dra. Tatiana Mendoza | Medicina Estética y Regenerativa</title>
+  <meta name="description" content="Medicina estética y regenerativa. Lorica y Tierralta (Córdoba). Agenda tu cita por WhatsApp. Servicios, testimonios y evidencias." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2e;
+      --text:#eaf0ff;
+      --muted:#b9c6e6;
+      --brand:#f59e0b;  /* dorado */
+      --brand2:#22c55e; /* verde */
+      --line:rgba(255,255,255,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 650px at 15% 10%, rgba(245,158,11,.22), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(900px 500px at 50% 110%, rgba(255,255,255,.06), transparent 60%),
+        var(--bg);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1150px, 92vw); margin:0 auto}
+
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.60);
+      border-bottom:1px solid var(--line);
+    }
+    nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:12px}
+    .brand{display:flex; gap:10px; align-items:center}
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 30px rgba(245,158,11,.16);
+    }
+    .brand b{letter-spacing:.2px}
+    .menu{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .menu a{padding:8px 10px; border-radius:12px; color:var(--muted)}
+    .menu a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:12px 14px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      cursor:pointer;
+      transition:.15s transform ease, .15s background ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#06101a;
+      font-weight:800;
+    }
+
+    .hero{padding:64px 0 30px}
+    .hero-grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:22px; align-items:stretch}
+    .tag{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius:999px;
+      color:var(--muted);
+      width:fit-content;
+    }
+    h1{font-size: clamp(32px, 4.6vw, 54px); line-height:1.05; margin:16px 0 14px}
+    .lead{color:var(--muted); font-size: clamp(15px, 1.6vw, 18px); max-width: 62ch}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+    .card{
+      background: rgba(17,26,46,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .p16{padding:16px}
+    .p18{padding:18px}
+
+    .pill{
+      display:inline-flex; padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 12px;
+      width:fit-content;
+    }
+    .muted{color:var(--muted)}
+    section{padding:34px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:14px}
+    .section-title h2{margin:0; font-size:28px}
+    .section-title p{margin:0; color:var(--muted)}
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .list li{margin:6px 0}
+    .kpi{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px}
+    .kpi .stat{
+      padding:14px; border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    .kpi .stat b{font-size:18px}
+    .notice{
+      border:1px dashed rgba(255,255,255,.20);
+      background: rgba(255,255,255,.05);
+      padding:12px; border-radius:16px;
+      color:var(--muted);
+    }
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    form{display:grid; gap:10px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:110px; resize:vertical}
+    .small{font-size:13px}
+
+    /* Galería placeholders */
+    .gallery{display:grid; grid-template-columns: repeat(4, 1fr); gap:10px}
+    .thumb{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding:10px;
+      cursor:pointer;
+      transition:.15s transform ease, .15s background ease;
+    }
+    .thumb:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .thumb .ph{
+      height:120px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(245,158,11,.18), rgba(34,197,94,.14));
+      border:1px solid rgba(255,255,255,.10);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(255,255,255,.75);
+      font-size:12px; text-align:center; padding:10px;
+    }
+    dialog{
+      width:min(760px, 94vw);
+      border:none;
+      border-radius: 18px;
+      padding:0;
+      background: rgba(17,26,46,.96);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+    dialog::backdrop{background: rgba(0,0,0,.55)}
+    .modal-head{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 14px 10px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .modal-body{padding:14px}
+    .close{border:none; background:transparent; color:var(--text); font-size:22px; cursor:pointer}
+    .media{
+      height:360px; border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:center;
+      padding:12px; text-align:center; color:var(--muted);
+    }
+
+    /* FAQ */
+    .faq{display:grid; gap:10px}
+    details{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:700;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:var(--muted)}
+
+    footer{
+      padding:24px 0 34px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+    .footer-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:14px; align-items:start}
+
+    .hide-mobile{display:block}
+    .show-mobile{display:none}
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr;}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .gallery{grid-template-columns: repeat(2, 1fr)}
+      .hide-mobile{display:none}
+      .show-mobile{display:inline-flex}
+      .two{grid-template-columns:1fr}
+      .media{height:260px}
+    }
+
+    /* Botón flotante WhatsApp */
+    .wa-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:50;
+      border:none;
+      border-radius:999px;
+      padding:12px 14px;
+      background: #25D366;
+      color:#06101a;
+      font-weight:800;
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      cursor:pointer;
+    }
+    .wa-float:hover{filter:brightness(1.03)}
+    .wa-dot{
+      width:10px; height:10px; border-radius:999px;
+      background:#fff;
+      box-shadow:0 0 0 6px rgba(255,255,255,.14);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#inicio" aria-label="Inicio">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <b>Dra. Tatiana Mendoza</b><br/>
+            <span class="small" style="color:var(--muted)">Medicina Estética y Regenerativa</span>
+          </div>
+        </a>
+
+        <div class="menu hide-mobile">
+          <a href="#sedes">Sedes</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#agenda">Agendar</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#evidencias">Evidencias</a>
+          <a href="#faq">Preguntas</a>
+          <a href="#contacto">Contacto</a>
+          <a class="btn primary" href="#agenda">Agendar por WhatsApp</a>
+        </div>
+
+        <a class="btn show-mobile" href="#agenda">Agendar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="tag">✨ Naturalidad • Seguridad • Resultados progresivos</div>
+          <h1>Estética y regeneración con enfoque médico y humano.</h1>
+          <p class="lead">
+            Atención en <b>Lorica, Córdoba</b> y <b>Tierralta, Córdoba</b>.
+            Agenda tu cita por WhatsApp y te confirmamos disponibilidad.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#agenda">Agendar ahora</a>
+            <a class="btn" href="#servicios">Ver servicios</a>
+            <a class="btn" href="#faq">Preguntas frecuentes</a>
+          </div>
+
+          <div class="notice small" style="margin-top:14px">
+            <b>Valoración:</b> Lorica <b>GRATIS</b> • Tierralta <b>con costo</b>.<br/>
+            <span class="muted">Todo procedimiento requiere valoración previa.</span>
+          </div>
+        </div>
+
+        <div class="card p18">
+          <div class="pill">📌 Horarios de atención</div>
+          <ul class="list">
+            <li><b style="color:var(--text)">Lunes a viernes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.</li>
+            <li><b style="color:var(--text)">Sábados:</b> 8:00 a.m. – 12:00 m</li>
+          </ul>
+
+          <div class="kpi">
+            <div class="stat">
+              <div class="small muted">WhatsApp</div>
+              <b>+57 300 987 2255</b>
+              <div class="small muted">Atención y citas</div>
+            </div>
+            <div class="stat">
+              <div class="small muted">Instagram</div>
+              <b>@dra.tatiana.mendoza</b>
+              <div class="small muted">Novedades y casos</div>
+            </div>
+          </div>
+
+          <div class="notice small" style="margin-top:12px">
+            <b>Importante:</b> La información de esta web no reemplaza una consulta médica.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEDES -->
+    <section id="sedes">
+      <div class="section-title">
+        <div>
+          <h2>Sedes</h2>
+          <p>Elige dónde deseas ser atendido(a).</p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card p16">
+          <div class="pill">📍 Lorica, Córdoba</div>
+          <h3 style="margin:10px 0 6px">Valoración GRATIS</h3>
+          <p class="muted">Citas y procedimientos en Lorica. Confirmamos disponibilidad por WhatsApp.</p>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn primary" href="#agenda" onclick="setSede('Lorica (Valoración GRATIS)')">Agendar en Lorica</a>
+            <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información para agendar en Lorica.')">Escribir</button>
+          </div>
+          <p class="small muted" style="margin-top:12px">*Puedes agregar dirección y Google Maps después.</p>
+        </div>
+
+        <div class="card p16">
+          <div class="pill">📍 Tierralta, Córdoba</div>
+          <h3 style="margin:10px 0 6px">Valoración CON COSTO</h3>
+          <p class="muted">Atención en Tierralta. El valor de la valoración se informa por WhatsApp.</p>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn primary" href="#agenda" onclick="setSede('Tierralta (Valoración con costo)')">Agendar en Tierralta</a>
+            <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, ¿cuál es el costo de la valoración en Tierralta y cómo agendo?')">Escribir</button>
+          </div>
+          <p class="small muted" style="margin-top:12px">*Puedes agregar dirección y Google Maps después.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+      <div class="section-title">
+        <div>
+          <h2>Servicios</h2>
+          <p>Portafolio sin precios (precios sujetos a valoración).</p>
+        </div>
+        <a class="btn" href="#agenda">Quiero agendar</a>
+      </div>
+
+      <div class="grid3" id="servicesGrid"></div>
+
+      <div class="notice small" style="margin-top:14px">
+        <b>Nota:</b> Los servicios fueron organizados tomando como base su portafolio, sin incluir precios. :contentReference[oaicite:1]{index=1}
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section id="agenda">
+      <div class="section-title">
+        <div>
+          <h2>Agenda tu cita por WhatsApp</h2>
+          <p>Completa tus datos y te enviamos el mensaje listo para confirmar disponibilidad.</p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card p16">
+          <div class="pill">🗓️ Solicitud de cita</div>
+
+          <form onsubmit="return sendWhatsAppAppointment(event)">
+            <div class="two">
+              <input id="a_name" type="text" placeholder="Nombre y apellido" required />
+              <input id="a_phone" type="tel" placeholder="Tu WhatsApp" required />
+            </div>
+
+            <div class="two">
+              <select id="a_sede" required>
+                <option value="" disabled selected>Selecciona sede</option>
+                <option>Lorica (Valoración GRATIS)</option>
+                <option>Tierralta (Valoración con costo)</option>
+              </select>
+              <select id="a_service" required></select>
+            </div>
+
+            <div class="two">
+              <input id="a_date" type="date" required />
+              <input id="a_time" type="time" required />
+            </div>
+
+            <select id="a_type" required>
+              <option value="" disabled selected>Tipo de cita</option>
+              <option>Valoración inicial</option>
+              <option>Control / seguimiento</option>
+              <option>Procedimiento</option>
+            </select>
+
+            <textarea id="a_note" placeholder="Cuéntanos tu objetivo o duda (opcional)"></textarea>
+
+            <button class="btn primary" type="submit">Enviar por WhatsApp</button>
+
+            <p class="small muted" style="margin:0">
+              *La cita queda confirmada cuando el equipo responda con disponibilidad.
+            </p>
+          </form>
+        </div>
+
+        <div class="card p16">
+          <div class="pill">✅ Recomendaciones</div>
+          <ul class="list">
+            <li>Ten a mano tu disponibilidad de horarios.</li>
+            <li>Si es Tierralta, pide el valor de la valoración por WhatsApp.</li>
+            <li>Si tienes condiciones médicas o estás en embarazo/lactancia, cuéntalo en el mensaje.</li>
+          </ul>
+          <div class="notice small" style="margin-top:12px">
+            <b>Privacidad:</b> evita enviar documentos o datos sensibles por chat si no te lo han solicitado.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios">
+      <div class="section-title">
+        <div>
+          <h2>Testimonios</h2>
+          <p>Agrega testimonios reales con autorización.</p>
+        </div>
+      </div>
+
+      <div class="grid3" id="testimonialsGrid"></div>
+
+      <div class="notice small" style="margin-top:14px">
+        <b>Importante:</b> Publica testimonios con autorización del paciente. Evita datos personales.
+      </div>
+    </section>
+
+    <!-- EVIDENCIAS -->
+    <section id="evidencias">
+      <div class="section-title">
+        <div>
+          <h2>Evidencias</h2>
+          <p>Antes / después y evolución (según permisos).</p>
+        </div>
+      </div>
+
+      <div class="gallery" id="galleryGrid"></div>
+
+      <dialog id="modal">
+        <div class="modal-head">
+          <div>
+            <b id="mTitle">Evidencia</b><br/>
+            <span class="small muted" id="mDesc">Detalle</span>
+          </div>
+          <button class="close" onclick="closeModal()" aria-label="Cerrar">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="media" id="mMedia">
+            Aquí podrás mostrar imagen o video real cuando lo subas al hosting.
+          </div>
+          <div class="small muted" style="margin-top:10px">
+            *Esta versión usa “placeholders”. Cuando tengas hosting, se reemplaza por archivos reales.
+          </div>
+        </div>
+      </dialog>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-title">
+        <div>
+          <h2>Preguntas frecuentes</h2>
+          <p>Respuestas claras para ayudar al paciente a decidir.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>¿La valoración tiene costo?</summary>
+          <p>
+            En <b>Lorica</b> la valoración es <b>GRATIS</b>. En <b>Tierralta</b> la valoración tiene <b>costo</b>.
+            Escríbenos por WhatsApp y te informamos el valor actualizado y la disponibilidad.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Cómo agendo mi cita?</summary>
+          <p>
+            Puedes agendar desde la sección <b>“Agenda tu cita”</b> o desde el <b>botón flotante de WhatsApp</b>.
+            Envías tus datos, sede, servicio y horario preferido, y te confirmamos.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Atienden en Lorica y en Tierralta?</summary>
+          <p>
+            Sí. Tenemos atención en <b>Lorica, Córdoba</b> y también en <b>Tierralta, Córdoba</b>.
+            Al agendar, elige la sede para darte el horario disponible.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Los resultados son inmediatos?</summary>
+          <p>
+            Depende del procedimiento. Algunos cambios se notan pronto y otros son progresivos (por ejemplo,
+            tratamientos que estimulan colágeno). En valoración te explicamos qué esperar en tu caso.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Duele? ¿Necesito incapacidad?</summary>
+          <p>
+            La molestia varía según el procedimiento. Muchos pacientes retoman su rutina el mismo día o al día siguiente,
+            pero siempre se dan recomendaciones de cuidado. En valoración se explica el nivel de sensibilidad y cuidados.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Qué debo tener en cuenta antes de un procedimiento?</summary>
+          <p>
+            Lo principal es la <b>valoración médica</b>. Si tienes antecedentes, alergias, medicamentos, embarazo o lactancia,
+            es importante informarlo. También te indicaremos cuidados previos específicos según el caso.
+          </p>
+        </details>
+
+        <details>
+          <summary>¿Publican fotos de antes y después?</summary>
+          <p>
+            Solo si el paciente autoriza. Cuidamos la privacidad y evitamos información sensible. Las evidencias son para
+            mostrar evolución real de forma responsable.
+          </p>
+        </details>
+      </div>
+
+      <div class="notice small" style="margin-top:14px">
+        Si quieres, también agrego una sección “Cuidados post procedimiento” por tipo de servicio (sin información sensible ni promesas).
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="section-title">
+        <div>
+          <h2>Contacto</h2>
+          <p>Escríbenos directo por WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card p16">
+          <div class="pill">💬 Mensaje desde la web</div>
+
+          <form onsubmit="return sendWhatsAppMessage(event)">
+            <input id="c_name" type="text" placeholder="Tu nombre" required />
+            <input id="c_phone" type="tel" placeholder="Tu WhatsApp" required />
+            <select id="c_reason" required>
+              <option value="" disabled selected>¿En qué te ayudamos?</option>
+              <option>Quiero información de un servicio</option>
+              <option>Quiero agendar una cita</option>
+              <option>Quiero reprogramar</option>
+              <option>Otro</option>
+            </select>
+            <textarea id="c_msg" placeholder="Escribe tu mensaje" required></textarea>
+            <button class="btn primary" type="submit">Enviar por WhatsApp</button>
+            <p class="small muted" style="margin:0">*Abre WhatsApp con tu mensaje listo.</p>
+          </form>
+        </div>
+
+        <div class="card p16">
+          <div class="pill">📍 Datos</div>
+          <p class="muted" style="margin-top:10px">
+            <b style="color:var(--text)">Dra. Tatiana Mendoza</b><br/>
+            <span class="muted">Medicina Estética y Regenerativa</span>
+          </p>
+          <ul class="list">
+            <li>Sede: <b style="color:var(--text)">Lorica, Córdoba</b> (valoración GRATIS)</li>
+            <li>Sede: <b style="color:var(--text)">Tierralta, Córdoba</b> (valoración con costo)</li>
+            <li>WhatsApp: <b style="color:var(--text)">+57 300 987 2255</b></li>
+            <li>Instagram: <b style="color:var(--text)">@dra.tatiana.mendoza</b></li>
+            <li>Horario: <b style="color:var(--text)">L–V 8–12 / 2–6 · Sáb 8–12</b></li>
+          </ul>
+          <div class="notice small" style="margin-top:12px">
+            <b>Editar después:</b> dirección exacta + enlace de Google Maps por sede.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="gap:10px">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <b>Dra. Tatiana Mendoza</b><br/>
+            <span class="small">Medicina Estética y Regenerativa</span>
+          </div>
+        </div>
+        <p class="small" style="max-width:78ch">
+          © <span id="year"></span> Dra. Tatiana Mendoza. Todos los derechos reservados.
+          La información de esta web no reemplaza una consulta médica.
+        </p>
+      </div>
+      <div class="small">
+        <div class="muted">Secciones</div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:10px">
+          <a href="#sedes">Sedes</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#agenda">Agendar</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#evidencias">Evidencias</a>
+          <a href="#faq">Preguntas</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')"
+    aria-label="Escribir por WhatsApp">
+    <span class="wa-dot" aria-hidden="true"></span>
+    WhatsApp
+  </button>
+
+  <script>
+    // =========================
+    // CONFIGURACIÓN
+    // =========================
+    // WhatsApp oficial (formato internacional sin +, sin espacios)
+    const WHATSAPP_NUMBER = "573009872255";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // =========================
+    // SERVICIOS (del portafolio, SIN precios)
+    // Base: PORTAFOLIO TM (sin precios) :contentReference[oaicite:2]{index=2}
+    // =========================
+    const services = [
+      // Procedimientos especializados
+      { title:"Rinomodelación", badge:"Especializado", desc:"Evaluación y plan según armonía facial.", bullets:["Valoración previa","Enfoque natural","Seguimiento"] },
+      { title:"Rinomodelación mixta", badge:"Especializado", desc:"Plan personalizado según valoración.", bullets:["Protocolo médico","Resultados progresivos","Control"] },
+      { title:"Rinomodelación mixta + alectomía", badge:"Especializado", desc:"Según indicación y valoración.", bullets:["Valoración previa","Plan por caso","Seguimiento"] },
+      { title:"Labios: volumen + perfilamiento", badge:"Especializado", desc:"Armonía y proporción según tu rostro.", bullets:["Enfoque natural","Plan por objetivos","Control"] },
+      { title:"Labios: perfilamiento + hidratación", badge:"Especializado", desc:"Definición e hidratación según valoración.", bullets:["Naturalidad","Técnica médica","Seguimiento"] },
+      { title:"Reborde mandibular", badge:"Especializado", desc:"Definición del contorno mandibular según valoración.", bullets:["Armonización","Plan por zonas","Control"] },
+      { title:"Mentón", badge:"Especializado", desc:"Proyección y equilibrio facial según proporciones.", bullets:["Evaluación médica","Plan personalizado","Seguimiento"] },
+      { title:"Ojeras", badge:"Especializado", desc:"Manejo según tipo de ojera y valoración.", bullets:["Valoración previa","Enfoque seguro","Control"] },
+      { title:"Pómulos", badge:"Especializado", desc:"Soporte y armonización del tercio medio.", bullets:["Proporción","Naturalidad","Seguimiento"] },
+      { title:"Full Face", badge:"Especializado", desc:"Armonización integral (según valoración).", bullets:["Plan completo","Por etapas","Seguimiento"] },
+      { title:"Tercio medio (Hidroxiapatita de calcio)", badge:"Especializado", desc:"Plan para soporte y firmeza según valoración.", bullets:["Progresivo","Calidad de piel","Control"] },
+      { title:"Cuello (Hidroxiapatita de calcio)", badge:"Especializado", desc:"Mejora de firmeza y textura según indicación.", bullets:["Plan por caso","Progresivo","Seguimiento"] },
+      { title:"Ácido poliláctico (cara tercio medio)", badge:"Especializado", desc:"Estimulación según valoración.", bullets:["Progresivo","Seguimiento","Plan por etapas"] },
+      { title:"Ácido poliláctico Cosmilan", badge:"Especializado", desc:"Plan según valoración y objetivos.", bullets:["Valoración previa","Protocolo médico","Control"] },
+      { title:"Endolifthing", badge:"Especializado", desc:"Procedimiento corporal según valoración.", bullets:["Plan por zonas","Seguimiento","Indicaciones"] },
+      { title:"Adiposidad localizada y celulitis", badge:"Especializado", desc:"Manejo corporal según valoración.", bullets:["Evaluación","Plan personalizado","Control"] },
+      { title:"Lipopapada", badge:"Especializado", desc:"Manejo del contorno submentoniano según valoración.", bullets:["Plan por caso","Control","Seguimiento"] },
+      { title:"Programas post parto (plan peso saludable)", badge:"Especializado", desc:"Acompañamiento según valoración.", bullets:["Plan por etapas","Seguimiento","Objetivos"] },
+      { title:"Terapias para tensado de la piel", badge:"Especializado", desc:"Plan corporal según valoración.", bullets:["Progresivo","Por zonas","Control"] },
+
+      // Procedimientos menores / bienestar
+      { title:"Suero desintoxicante", badge:"Menor", desc:"Soporte según indicación y valoración.", bullets:["Valoración previa","Protocolo seguro","Seguimiento"] },
+      { title:"Suero reparador", badge:"Menor", desc:"Según objetivo clínico y valoración.", bullets:["Plan individual","Control","Seguimiento"] },
+      { title:"Suero estimulante", badge:"Menor", desc:"Según indicación y valoración.", bullets:["Evaluación","Protocolos","Control"] },
+      { title:"Suero energizante", badge:"Menor", desc:"Según valoración y necesidades.", bullets:["Valoración previa","Seguimiento","Control"] },
+      { title:"Suero estimulante para la memoria", badge:"Menor", desc:"Según indicación médica.", bullets:["Evaluación","Protocolo","Control"] },
+      { title:"Suero anti estrés", badge:"Menor", desc:"Según valoración.", bullets:["Evaluación","Plan","Control"] },
+      { title:"Suero revitalizador", badge:"Menor", desc:"Según valoración.", bullets:["Evaluación","Plan","Control"] },
+      { title:"Suero postquirúrgico", badge:"Menor", desc:"Apoyo según indicación.", bullets:["Valoración","Plan","Control"] },
+      { title:"Suero antiobesidad", badge:"Menor", desc:"Según valoración y objetivos.", bullets:["Evaluación","Plan","Seguimiento"] },
+      { title:"Suero inmunológico", badge:"Menor", desc:"Según indicación.", bullets:["Valoración","Protocolo","Control"] },
+      { title:"Suero detox", badge:"Menor", desc:"Según indicación.", bullets:["Evaluación","Plan","Control"] },
+      { title:"Suero post guayabo", badge:"Menor", desc:"Según valoración.", bullets:["Evaluación","Plan","Control"] },
+      { title:"Ácido poliláctico manos", badge:"Menor", desc:"Según valoración.", bullets:["Progresivo","Plan","Control"] },
+      { title:"Suero poliláctico rostro", badge:"Menor", desc:"Según valoración.", bullets:["Plan","Seguimiento","Control"] },
+      { title:"Suero poliláctico estético", badge:"Menor", desc:"Según valoración.", bullets:["Plan","Seguimiento","Control"] },
+      { title:"Radiofrecuencia continua con masajes reductores", badge:"Menor", desc:"Plan según valoración.", bullets:["Por zonas","Progresivo","Control"] },
+      { title:"Radiofrecuencia continua con vitamina C para tonificar", badge:"Menor", desc:"Plan según valoración.", bullets:["Progresivo","Por zonas","Control"] },
+      { title:"Consulta por médico especialista", badge:"Salud", desc:"Evaluación médica personalizada.", bullets:["Historia clínica","Orientación","Plan"] },
+      { title:"Valoración medicina estética y regenerativa", badge:"Salud", desc:"Valoración integral para definir el mejor plan.", bullets:["Lorica GRATIS","Tierralta con costo","Agendamiento por WhatsApp"] },
+      { title:"Megadosis de vitamina C", badge:"Menor", desc:"Según indicación y valoración.", bullets:["Evaluación","Protocolo","Control"] },
+      { title:"Masaje purificante", badge:"Bienestar", desc:"Bienestar y cuidado corporal.", bullets:["Plan","Sesiones","Seguimiento"] },
+      { title:"Masaje balinés", badge:"Bienestar", desc:"Terapia de bienestar.", bullets:["Sesiones","Plan","Control"] },
+      { title:"Express masaje espalda", badge:"Bienestar", desc:"Bienestar y alivio muscular.", bullets:["Sesiones","Plan","Control"] },
+      { title:"Reflexología podal + desintoxicación iónica", badge:"Bienestar", desc:"Plan según valoración.", bullets:["Sesiones","Plan","Seguimiento"] },
+      { title:"Masaje facial + higiene facial", badge:"Bienestar", desc:"Cuidado de piel y limpieza facial.", bullets:["Sesión","Plan","Seguimiento"] },
+      { title:"Bambuterapia", badge:"Bienestar", desc:"Bienestar corporal según valoración.", bullets:["Plan","Sesiones","Control"] },
+      { title:"Rejuvenecimiento facial no quirúrgico", badge:"Menor", desc:"Plan según valoración y objetivos.", bullets:["Progresivo","Por etapas","Control"] },
+      { title:"Bótox: tercio superior", badge:"Menor", desc:"Manejo de líneas de expresión según valoración.", bullets:["Evaluación","Plan","Control"] },
+      { title:"Bótox: tercio inferior", badge:"Menor", desc:"Según indicación y valoración.", bullets:["Evaluación","Plan","Control"] },
+      { title:"Bruxismo", badge:"Menor", desc:"Manejo según evaluación clínica.", bullets:["Valoración","Plan","Control"] },
+      { title:"Sonrisa gingival", badge:"Menor", desc:"Corrección según valoración.", bullets:["Evaluación","Plan","Control"] },
+      { title:"Hiperhidrosis axilar y palmar", badge:"Menor", desc:"Manejo según evaluación.", bullets:["Valoración","Plan","Control"] },
+    ];
+
+    // =========================
+    // TESTIMONIOS (EDITA AQUÍ)
+    // =========================
+    const testimonials = [
+      { name:"Paciente", tag:"Valoración", text:"Me explicó todo con claridad y salí con un plan ajustado a mí." },
+      { name:"Paciente", tag:"Estética", text:"Resultados naturales y un trato excelente durante todo el proceso." },
+      { name:"Paciente", tag:"Seguimiento", text:"Me sentí acompañada(o) y segura(o) en cada etapa." },
+    ];
+
+    // =========================
+    // GALERÍA (placeholders)
+    // =========================
+    const gallery = [
+      { title:"Caso 1 – Antes / Después", desc:"(Placeholder) Reemplazar por evidencia real autorizada.", media:"placeholder" },
+      { title:"Caso 2 – Evolución", desc:"(Placeholder) Reemplazar por evidencia real autorizada.", media:"placeholder" },
+      { title:"Caso 3 – Antes / Después", desc:"(Placeholder) Reemplazar por evidencia real autorizada.", media:"placeholder" },
+      { title:"Caso 4 – Video", desc:"(Placeholder) Reemplazar por evidencia real autorizada.", media:"placeholder" },
+      { title:"Caso 5 – Antes / Después", desc:"(Placeholder) Reemplazar por evidencia real autorizada.", media:"placeholder" },
+      { title:"Caso 6 – Evolución", desc:"(Placeholder) Reemplazar por evidencia real autorizada.", media:"placeholder" },
+      { title:"Caso 7 – Procedimiento", desc:"(Placeholder) Reemplazar por evidencia real autorizada.", media:"placeholder" },
+      { title:"Caso 8 – Resultado", desc:"(Placeholder) Reemplazar por evidencia real autorizada.", media:"placeholder" },
+    ];
+
+    // =========================
+    // RENDER
+    // =========================
+    const servicesGrid = document.getElementById("servicesGrid");
+    servicesGrid.innerHTML = services.map(s => `
+      <div class="card p16">
+        <div class="pill">${s.badge}</div>
+        <h3 style="margin:10px 0 6px">${s.title}</h3>
+        <p class="muted">${s.desc}</p>
+        <ul class="list">${s.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn" onclick="prefillService('${escapeQuotes(s.title)}')">Quiero este servicio</button>
+          <a class="btn primary" href="#agenda">Agendar</a>
+        </div>
+      </div>
+    `).join("");
+
+    const a_service = document.getElementById("a_service");
+    a_service.innerHTML = `<option value="" disabled selected>Servicio</option>` + services.map(s =>
+      `<option value="${escapeQuotes(s.title)}">${s.title}</option>`
+    ).join("");
+
+    const testimonialsGrid = document.getElementById("testimonialsGrid");
+    testimonialsGrid.innerHTML = testimonials.map(t => `
+      <div class="card p16">
+        <div class="pill">⭐ ${t.tag}</div>
+        <p style="margin:10px 0 10px" class="muted">“${t.text}”</p>
+        <div class="small muted"><b style="color:var(--text)">${t.name}</b></div>
+      </div>
+    `).join("");
+
+    const galleryGrid = document.getElementById("galleryGrid");
+    galleryGrid.innerHTML = gallery.map((g, idx) => `
+      <div class="thumb" onclick="openModal(${idx})">
+        <div class="ph">Sube aquí la evidencia real<br/><span class="small muted">${g.title}</span></div>
+        <div class="small" style="margin-top:10px"><b>${g.title}</b></div>
+        <div class="small muted">${g.desc}</div>
+      </div>
+    `).join("");
+
+    // =========================
+    // WHATSAPP UTIL
+    // =========================
+    function escapeQuotes(str){ return String(str).replaceAll("'", "\\'"); }
+
+    function openWhatsApp(message){
+      const text = encodeURIComponent(message);
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+    }
+
+    function setSede(value){
+      const sedeSel = document.getElementById("a_sede");
+      sedeSel.value = value;
+    }
+
+    function prefillService(serviceName){
+      a_service.value = serviceName;
+      location.hash = "#agenda";
+    }
+
+    function sendWhatsAppAppointment(e){
+      e.preventDefault();
+      const name = document.getElementById("a_name").value.trim();
+      const phone = document.getElementById("a_phone").value.trim();
+      const sede = document.getElementById("a_sede").value;
+      const service = document.getElementById("a_service").value;
+      const date = document.getElementById("a_date").value;
+      const time = document.getElementById("a_time").value;
+      const type = document.getElementById("a_type").value;
+      const note = document.getElementById("a_note").value.trim();
+
+      const msg =
+        `Hola Dra. Tatiana, soy ${name}.\n` +
+        `Mi WhatsApp: ${phone}\n` +
+        `Sede: ${sede}\n` +
+        `Tipo de cita: ${type}\n` +
+        `Servicio: ${service}\n` +
+        `Fecha: ${date}\n` +
+        `Hora: ${time}\n` +
+        (note ? `Nota: ${note}\n` : "") +
+        `¿Me confirmas disponibilidad, por favor?`;
+
+      openWhatsApp(msg);
+      return false;
+    }
+
+    function sendWhatsAppMessage(e){
+      e.preventDefault();
+      const name = document.getElementById("c_name").value.trim();
+      const phone = document.getElementById("c_phone").value.trim();
+      const reason = document.getElementById("c_reason").value;
+      const msg = document.getElementById("c_msg").value.trim();
+
+      const text =
+        `Hola Dra. Tatiana, soy ${name}.\n` +
+        `Mi WhatsApp: ${phone}\n` +
+        `Motivo: ${reason}\n` +
+        `Mensaje: ${msg}`;
+
+      openWhatsApp(text);
+      return false;
+    }
+
+    // =========================
+    // MODAL GALERÍA
+    // =========================
+    const modal = document.getElementById("modal");
+    const mTitle = document.getElementById("mTitle");
+    const mDesc = document.getElementById("mDesc");
+    const mMedia = document.getElementById("mMedia");
+
+    function openModal(idx){
+      const g = gallery[idx];
+      mTitle.textContent = g.title;
+      mDesc.textContent = g.desc;
+
+      mMedia.innerHTML = `
+        <div_>
+          <div style="text-align:center">
+            <div style="margin-bottom:10px"><b>${g.title}</b></div>
+            <div class="muted">Reemplaza este bloque por una imagen o video real cuando tengas hosting.</div>
+            <div class="small muted" style="margin-top:10px">
+              Ejemplo: &lt;img src="evidencias/caso1.jpg" style="width:100%; border-radius:16px"&gt;
+            </div>
+          </div>
+        </div>
+      `.replace("R_", "di").replace("</R_>", "v>");
+
+      modal.showModal();
+    }
+    function closeModal(){ modal.close(); }
+  </script>
+</body>
+</html>
