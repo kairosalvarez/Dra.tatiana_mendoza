@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Servicios | Dra. Tatiana Mendoza</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="styles.css?v=9999">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css?v=14001" />
 </head>
 
 <body>
@@ -31,64 +30,238 @@
   </div>
 </header>
 
-<main class="section">
+<main class="section services-page">
   <div class="container">
 
-    <h1 class="title">Servicios destacados</h1>
-    <p class="subtitle">Explora por categoría.</p>
+    <div class="services-hero">
+      <h1 class="title">Servicios</h1>
+      <p class="subtitle">
+        Selecciona un servicio para ver una descripción breve. <br>
+        <strong>Lorica:</strong> valoración GRATIS · <strong>Tierralta:</strong> valoración con costo (se informa por WhatsApp).
+      </p>
 
-    <div class="luxe-wrap">
-      <button class="luxe-arrow luxe-prev" onclick="scrollLuxe(-1)">‹</button>
-      <button class="luxe-arrow luxe-next" onclick="scrollLuxe(1)">›</button>
-
-      <div class="luxe-track" id="luxeTrack">
-
-        <div class="luxe-card">
-          <div class="bg" style="background-image:url('assets/servicios/Facial.jpg')"></div>
-          <div class="luxe-content">
-            <div class="luxe-title">Facial</div>
-            <span class="luxe-btn">Ver más</span>
-          </div>
+      <div class="services-tools">
+        <div class="searchbox">
+          <span class="search-ico">🔎</span>
+          <input id="svcSearch" type="search" placeholder="Buscar servicio (ej: labios, suero, bótox, radiofrecuencia)..." autocomplete="off">
         </div>
-
-        <div class="luxe-card">
-          <div class="bg" style="background-image:url('assets/servicios/Rino.jpg')"></div>
-          <div class="luxe-content">
-            <div class="luxe-title">Rinomodelación</div>
-            <span class="luxe-btn">Ver más</span>
-          </div>
-        </div>
-
-        <div class="luxe-card">
-          <div class="bg" style="background-image:url('assets/servicios/Masaje.jpg')"></div>
-          <div class="luxe-content">
-            <div class="luxe-title">Masajes</div>
-            <span class="luxe-btn">Ver más</span>
-          </div>
-        </div>
-
-        <div class="luxe-card">
-          <div class="bg" style="background-image:url('assets/servicios/Endolifting.jpg')"></div>
-          <div class="luxe-content">
-            <div class="luxe-title">Endolifting</div>
-            <span class="luxe-btn">Ver más</span>
-          </div>
-        </div>
-
+        <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, deseo información general sobre servicios y valoración. Mi sede es: Lorica/Tierralta.')">
+          Consultar por WhatsApp
+        </button>
       </div>
     </div>
+
+    <!-- LISTA / GRID DE SERVICIOS -->
+    <section>
+      <div class="svc-grid" id="svcGrid"></div>
+
+      <div class="svc-bottom-note">
+        <p><strong>Nota:</strong> La recomendación final depende de valoración médica. La dirección exacta se comparte por WhatsApp.</p>
+      </div>
+    </section>
 
   </div>
 </main>
 
+<!-- PANEL DESLIZABLE -->
+<div class="svc-drawer" id="svcDrawer" aria-hidden="true">
+  <div class="svc-backdrop" onclick="closeDrawer()"></div>
+
+  <div class="svc-panel" role="dialog" aria-modal="true">
+    <button class="svc-close" onclick="closeDrawer()" aria-label="Cerrar">✕</button>
+
+    <div class="svc-panel-head">
+      <div class="svc-chip">Medicina estética y regenerativa</div>
+      <h2 id="drawerTitle" class="svc-panel-title"></h2>
+      <p id="drawerDesc" class="svc-panel-desc"></p>
+    </div>
+
+    <div class="svc-panel-actions">
+      <button class="btn primary" id="drawerWaBtn">Consultar por WhatsApp</button>
+      <a class="btn" href="agendar.html">Agendar</a>
+    </div>
+
+    <div class="svc-panel-foot">
+      <div class="svc-mini">
+        <div class="svc-mini-title">Horarios</div>
+        <div class="svc-mini-text">
+          Lunes a viernes: 8:00 a.m.–12:00 m / 2:00 p.m.–6:00 p.m.<br>
+          Sábados: 8:00 a.m.–12:00 m
+        </div>
+      </div>
+
+      <div class="svc-mini">
+        <div class="svc-mini-title">Sedes</div>
+        <div class="svc-mini-text">
+          Lorica, Córdoba · Tierralta, Córdoba<br>
+          (La ubicación exacta se comparte por WhatsApp)
+        </div>
+      </div>
+
+      <p class="svc-disclaimer">
+        La información de esta web no reemplaza una consulta médica.
+      </p>
+    </div>
+  </div>
+</div>
+
 <footer class="footer">
-  © 2026 Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
+  © <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
 </footer>
 
 <script>
-  function scrollLuxe(dir){
-    const track = document.getElementById("luxeTrack");
-    track.scrollBy({ left: dir * 320, behavior: "smooth" });
+  // Año footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // WhatsApp
+  function openWhatsApp(message){
+    const phone = "573009872255";
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+
+  // ====== Servicios (extraídos del portafolio, SIN precios) ======
+  const SERVICES = [
+    { id:"s1",  name:"Rinomodelación Mixta", desc:"Procedimiento no quirúrgico para armonizar el perfil nasal en casos seleccionados, según valoración médica." },
+    { id:"s2",  name:"Rinomodelación Mixta y Alectomía", desc:"Procedimiento no quirúrgico para armonizar el perfil nasal en casos seleccionados, según valoración médica." },
+    { id:"s3",  name:"Labios Volumen + Perfilamiento", desc:"Procedimiento para definir y armonizar labios con enfoque natural. Técnica y plan según valoración." },
+    { id:"s4",  name:"Labios Perfilamiento + Hidratación", desc:"Procedimiento para definir y armonizar labios con enfoque natural. Técnica y plan según valoración." },
+    { id:"s5",  name:"Rinomodelación", desc:"Procedimiento no quirúrgico para armonizar el perfil nasal en casos seleccionados, según valoración médica." },
+
+    { id:"s6",  name:"Mentón", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    { id:"s7",  name:"Ojeras", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    { id:"s8",  name:"Pómulos", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    { id:"s9",  name:"Full Face", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    { id:"s10", name:"Reborde Mandibular", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    { id:"s11", name:"Cuello", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    { id:"s12", name:"Ácido Poliláctico + Hidroxiapatita de Calcio (Tercio medio)", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    { id:"s13", name:"Ácido Poliláctico Cosmilan", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    { id:"s14", name:"Tercio Medio (bioestimulación)", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+
+    { id:"s15", name:"Adiposidad Localizada y Celulitis", desc:"Manejo de grasa localizada y celulitis con enfoque integral. Protocolo según valoración." },
+    { id:"s16", name:"Lipopapada", desc:"Opciones para tratar papada según diagnóstico. Plan y número de sesiones se confirman en valoración." },
+    { id:"s17", name:"Programas post parto / Plan peso saludable", desc:"Acompañamiento y protocolos de cuidado postparto y bienestar, ajustado a tu caso." },
+    { id:"s18", name:"Terapias para tensado de la piel", desc:"Terapias enfocadas en mejorar firmeza y apariencia de la piel. Protocolo según valoración." },
+    { id:"s19", name:"Endolifting (abdomen, zona posterior y espalda)", desc:"Procedimiento corporal para mejorar apariencia de zonas específicas. Requiere valoración previa." },
+
+    // Sueroterapia (sin precios)
+    { id:"s20", name:"Suero Reparador", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s21", name:"Suero Estimulante", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s22", name:"Suero Energizante", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s23", name:"Suero Estimulante para la Memoria", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s24", name:"Suero Desintoxicante", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s25", name:"Suero Anti-estrés", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s26", name:"Suero Revitalizador", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s27", name:"Suero Post-quirúrgico", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s28", name:"Suero Antiobesidad", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s29", name:"Suero Inmunológico", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s30", name:"Suero Post-Guayabo", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s31", name:"Suero Poliláctico (rostro)", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s32", name:"Suero Poliláctico (extrac.)", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+    { id:"s33", name:"Suero Detox", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+
+    { id:"s34", name:"Ácido Poliláctico (manos)", desc:"Armonización y bioestimulación según diagnóstico. Material y plan se definen tras valoración." },
+
+    // Tecnologías / bienestar
+    { id:"s35", name:"Radiofrecuencia continua con Vitamina C (tonificación)", desc:"Terapia de radiofrecuencia según protocolo. Se indica duración y sesiones tras valoración." },
+    { id:"s36", name:"Radiofrecuencia continua + masajes reductores", desc:"Terapia de radiofrecuencia según protocolo. Se indica duración y sesiones tras valoración." },
+    { id:"s37", name:"Megadosis de Vitamina C", desc:"Apoyo con vitamina C según indicación y valoración. Se revisan antecedentes antes de aplicar." },
+    { id:"s38", name:"Tratamientos Corporales", desc:"Protocolos corporales según objetivo (bienestar, tonificación o cuidado). Se definen en valoración." },
+
+    // Valoraciones/consultas
+    { id:"s39", name:"Consulta por Médico Especialista", desc:"Espacio de evaluación para definir el plan ideal, resolver dudas y orientar el procedimiento adecuado." },
+    { id:"s40", name:"Valoración Medicina Estética y Regenerativa", desc:"Espacio de evaluación para definir el plan ideal, resolver dudas y orientar el procedimiento adecuado." },
+    { id:"s41", name:"Valoración por Nutrición", desc:"Espacio de evaluación nutricional para orientar hábitos, plan y seguimiento según tu caso." },
+
+    // Masajes y bienestar
+    { id:"s42", name:"Masaje Purificante", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
+    { id:"s43", name:"Masaje Balinés / Express Masaje Espalda", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
+    { id:"s44", name:"Reflexología Podal + Desintoxicación Iónica", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
+    { id:"s45", name:"Masaje Facial + Higiene Facial", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
+    { id:"s46", name:"Bambuterapia", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
+
+    // Bótox / indicaciones
+    { id:"s47", name:"Rejuvenecimiento Facial No Quirúrgico", desc:"Opciones de rejuvenecimiento según diagnóstico. Se define protocolo y cuidados tras valoración." },
+    { id:"s48", name:"Bótox: Tercio Superior", desc:"Aplicación de toxina botulínica con enfoque médico y natural. Se define dosis y zonas tras valoración." },
+    { id:"s49", name:"Bótox para Bruxismo", desc:"Aplicación de toxina botulínica en casos seleccionados. Evaluación previa obligatoria." },
+    { id:"s50", name:"Sonrisa Gingival", desc:"Evaluación y manejo estético de sonrisa gingival en casos seleccionados, según valoración." },
+    { id:"s51", name:"Bótox: Tercio Inferior", desc:"Aplicación de toxina botulínica con enfoque médico y natural. Se define dosis y zonas tras valoración." },
+    { id:"s52", name:"Hiperhidrosis Axilar y Palmar", desc:"Manejo de sudoración excesiva en zonas específicas, según valoración médica." }
+  ];
+
+  // Render grid
+  const grid = document.getElementById("svcGrid");
+
+  function renderServices(list){
+    grid.innerHTML = "";
+    list.forEach(item => {
+      const btn = document.createElement("button");
+      btn.className = "svc-item";
+      btn.type = "button";
+      btn.setAttribute("data-id", item.id);
+      btn.innerHTML = `
+        <div class="svc-item-top">
+          <div class="svc-badge">Servicio</div>
+          <div class="svc-open">Ver</div>
+        </div>
+        <div class="svc-item-name">${escapeHtml(item.name)}</div>
+        <div class="svc-item-hint">Clic para ver descripción</div>
+      `;
+      btn.addEventListener("click", () => openDrawer(item));
+      grid.appendChild(btn);
+    });
+  }
+
+  // Drawer
+  const drawer = document.getElementById("svcDrawer");
+  const drawerTitle = document.getElementById("drawerTitle");
+  const drawerDesc  = document.getElementById("drawerDesc");
+  const drawerWaBtn = document.getElementById("drawerWaBtn");
+
+  function openDrawer(item){
+    drawerTitle.textContent = item.name;
+    drawerDesc.textContent  = item.desc;
+
+    drawerWaBtn.onclick = () => openWhatsApp(
+      `Hola Dra. Tatiana, deseo información sobre: ${item.name}. Mi sede es: Lorica/Tierralta.`
+    );
+
+    drawer.classList.add("open");
+    drawer.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeDrawer(){
+    drawer.classList.remove("open");
+    drawer.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // ESC to close
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape") closeDrawer();
+  });
+
+  // Search
+  const search = document.getElementById("svcSearch");
+  search.addEventListener("input", () => {
+    const q = search.value.trim().toLowerCase();
+    if(!q){ renderServices(SERVICES); return; }
+    const filtered = SERVICES.filter(s => s.name.toLowerCase().includes(q));
+    renderServices(filtered);
+  });
+
+  // Initial render
+  renderServices(SERVICES);
+
+  // Helpers
+  function escapeHtml(str){
+    return String(str)
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
   }
 </script>
 
