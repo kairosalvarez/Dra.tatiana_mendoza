@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Testimonios | Dra. Tatiana Mendoza</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="agendar.html">Agendar</a>
+        <a class="active" href="testimonios.html">Testimonios</a>
+        <a href="evidencias.html">Evidencias</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="contacto.html">Contacto</a>
+        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <div class="section-title">
+      <div>
+        <h1>Testimonios</h1>
+        <p class="lead">Experiencias reales. Publicar solo con autorización del paciente.</p>
+      </div>
+      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero dejar un testimonio con autorización. ¿Cómo lo envío?')">
+        Enviar testimonio
+      </button>
+    </div>
+
+    <div class="grid3">
+      <div class="card p16">
+        <div class="pill">⭐ Valoración</div>
+        <p class="muted" style="margin-top:10px">“Me explicó todo con calma y claridad. Salí con un plan que sí se ajusta a mí.”</p>
+        <p class="small" style="margin:10px 0 0"><b>Paciente</b></p>
+      </div>
+
+      <div class="card p16">
+        <div class="pill">⭐ Estética</div>
+        <p class="muted" style="margin-top:10px">“Me encantó el resultado, se ve natural. Me sentí acompañada durante todo el proceso.”</p>
+        <p class="small" style="margin:10px 0 0"><b>Paciente</b></p>
+      </div>
+
+      <div class="card p16">
+        <div class="pill">⭐ Seguimiento</div>
+        <p class="muted" style="margin-top:10px">“Excelente atención y seguimiento. Me sentí segura y confiada.”</p>
+        <p class="small" style="margin:10px 0 0"><b>Paciente</b></p>
+      </div>
+    </div>
+
+    <div class="card p16" style="margin-top:14px">
+      <div class="pill">✅ Nota</div>
+      <p class="muted" style="margin:10px 0 0">
+        Si deseas incluir tu testimonio, puedes enviarlo por WhatsApp junto con tu autorización para publicar (sin datos sensibles).
+      </p>
+      <div style="margin-top:12px">
+        <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, autorizo publicar mi testimonio. Mi testimonio es: _____. (Sin datos personales)')">
+          Enviar por WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container small">© <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.</div>
+</footer>
+
+<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">
+  <span class="wa-dot"></span> WhatsApp
+</button>
+
+<script src="app.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
