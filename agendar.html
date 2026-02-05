@@ -1,17 +1,21 @@
-<!-- Agendar -->
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agendar | Dra. Tatiana Mendoza</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Agendar cita | Dra. Tatiana Mendoza</title>
+  <meta name="description" content="Agenda tu cita por WhatsApp con la Dra. Tatiana Mendoza. Medicina estética y regenerativa en Lorica y Tierralta, Córdoba." />
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
+
 <header>
   <div class="container">
     <nav>
-      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Logo Dra. Tatiana Mendoza">
+      </a>
+
       <div class="menu">
         <a href="index.html">Inicio</a>
         <a href="sedes.html">Sedes</a>
@@ -28,67 +32,163 @@
 </header>
 
 <main class="container">
-  <div class="section-title">
-    <div>
-      <h1>Agenda tu cita</h1>
-      <p class="lead">Completa tus datos y te enviamos el mensaje listo por WhatsApp.</p>
-    </div>
-  </div>
 
-  <div class="grid2">
+  <!-- TÍTULO -->
+  <section>
+    <div class="section-title">
+      <div>
+        <h1>Agenda tu cita</h1>
+        <p class="lead">
+          Completa tus datos y enviaremos el mensaje listo por WhatsApp para confirmar disponibilidad.
+          <br><b>Lorica:</b> valoración GRATIS • <b>Tierralta:</b> valoración con costo (se informa por WhatsApp).
+        </p>
+      </div>
+      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar una cita. ¿Me confirmas disponibilidad, por favor?')">
+        Escribir directo
+      </button>
+    </div>
+  </section>
+
+  <section class="grid2">
+
+    <!-- FORMULARIO -->
     <div class="card p16">
       <div class="pill">🗓️ Solicitud de cita</div>
-      <form onsubmit="return sendWhatsAppAppointment(event)">
+
+      <form onsubmit="return sendWhatsAppAppointment(event)" style="margin-top:12px">
+
         <div class="two">
           <input id="a_name" type="text" placeholder="Nombre y apellido" required />
-          <input id="a_phone" type="tel" placeholder="Tu WhatsApp" required />
+          <input id="a_phone" type="tel" placeholder="Tu número de WhatsApp" required />
         </div>
 
         <div class="two">
           <select id="a_sede" required>
-            <option value="" disabled selected>Sede</option>
+            <option value="" disabled selected>Selecciona sede</option>
             <option>Lorica (Valoración GRATIS)</option>
             <option>Tierralta (Valoración con costo)</option>
           </select>
-          <select id="a_service" required>
-            <option value="" disabled selected>Servicio</option>
-            <option>Valoración medicina estética y regenerativa</option>
-            <option>Rinomodelación</option>
-            <option>Labios: volumen + perfilamiento</option>
-            <option>Bótox: tercio superior</option>
+
+          <select id="a_type" required>
+            <option value="" disabled selected>Tipo de cita</option>
+            <option>Valoración inicial</option>
+            <option>Procedimiento</option>
+            <option>Control / seguimiento</option>
           </select>
         </div>
+
+        <select id="a_service" required>
+          <option value="" disabled selected>Servicio de interés</option>
+          <option>Valoración medicina estética y regenerativa</option>
+          <option>Rinomodelación</option>
+          <option>Labios: volumen + perfilamiento</option>
+          <option>Labios: perfilamiento + hidratación</option>
+          <option>Bótox: tercio superior</option>
+          <option>Bótox: tercio inferior</option>
+          <option>Rejuvenecimiento facial no quirúrgico</option>
+          <option>Full Face (armonización integral)</option>
+          <option>Ojeras</option>
+          <option>Mentón</option>
+          <option>Pómulos</option>
+          <option>Reborde mandibular</option>
+          <option>Bruxismo</option>
+          <option>Sonrisa gingival</option>
+          <option>Hiperhidrosis (axilar/palmar)</option>
+          <option>Adiposidad localizada y celulitis</option>
+          <option>Lipopapada</option>
+          <option>Tensado de piel (terapias)</option>
+          <option>Endolifthing</option>
+          <option>Radiofrecuencia + masajes reductores</option>
+          <option>Radiofrecuencia + vitamina C</option>
+          <option>Programa post parto (peso saludable)</option>
+          <option>Megadosis de vitamina C</option>
+          <option>Sueros (según valoración)</option>
+          <option>Bioestimuladores (poliláctico / hidroxiapatita)</option>
+          <option>Masaje purificante</option>
+          <option>Masaje balinés</option>
+          <option>Express masaje espalda</option>
+          <option>Reflexología podal + desintoxicación iónica</option>
+          <option>Masaje facial + higiene facial</option>
+          <option>Bambuterapia</option>
+        </select>
 
         <div class="two">
           <input id="a_date" type="date" required />
           <input id="a_time" type="time" required />
         </div>
 
-        <select id="a_type" required>
-          <option value="" disabled selected>Tipo de cita</option>
-          <option>Valoración inicial</option>
-          <option>Control / seguimiento</option>
-          <option>Procedimiento</option>
-        </select>
-
         <textarea id="a_note" placeholder="Cuéntanos tu objetivo o duda (opcional)"></textarea>
-        <button class="btn primary" type="submit">Enviar por WhatsApp</button>
-        <div class="small">La cita se confirma cuando el equipo responde con disponibilidad.</div>
+
+        <button class="btn primary" type="submit">Enviar solicitud por WhatsApp</button>
+
+        <p class="small" style="margin-top:8px">
+          La cita queda confirmada cuando el equipo responde con la hora disponible.
+        </p>
       </form>
     </div>
 
-    <div class="card p16">
-      <div class="pill">✅ Horarios</div>
-      <p class="muted"><b>L–V:</b> 8–12 / 2–6 · <b>Sáb:</b> 8–12</p>
-      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, ¿qué disponibilidad tienen esta semana?')">Preguntar disponibilidad</button>
+    <!-- INFO + HORARIOS -->
+    <div>
+      <div class="card p16">
+        <div class="pill">✅ Recomendación</div>
+        <p class="muted" style="margin-top:12px">
+          Para agilizar tu atención, indícanos: <b>sede</b>, <b>servicio</b>, <b>fecha</b> y <b>hora</b>.
+          La dirección exacta se comparte por WhatsApp.
+        </p>
+
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn primary"
+            onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar. Mi sede es: _____. Servicio: _____. Fecha: _____. Hora: _____.')">
+            Enviar mensaje guía
+          </button>
+          <a class="btn" href="servicios.html">Ver servicios</a>
+        </div>
+      </div>
+
+      <div class="card p16" style="margin-top:14px">
+        <div class="pill">🕒 Horarios de atención</div>
+
+        <p class="muted" style="margin:12px 0 0">
+          <b>Lunes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+          <b>Martes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+          <b>Miércoles:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+          <b>Jueves:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+          <b>Viernes:</b> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.<br>
+          <b>Sábados:</b> 8:00 a.m. – 12:00 m
+        </p>
+
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn primary"
+            onclick="openWhatsApp('Hola Dra. Tatiana, ¿qué disponibilidad tienen para esta semana?')">
+            Consultar disponibilidad
+          </button>
+          <button class="btn"
+            onclick="openWhatsApp('Hola Dra. Tatiana, ¿me compartes la ubicación exacta de la sede, por favor?')">
+            Pedir ubicación
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
+
+  </section>
+
 </main>
 
-<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar una cita, por favor.')">
+<footer>
+  <div class="container small">
+    © <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
+  </div>
+</footer>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<button class="wa-float"
+  onclick="openWhatsApp('Hola Dra. Tatiana, deseo información y agendar una cita, por favor.')">
   <span class="wa-dot"></span> WhatsApp
 </button>
 
 <script src="app.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
