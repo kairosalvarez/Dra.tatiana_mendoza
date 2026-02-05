@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evidencias | Dra. Tatiana Mendoza</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a class="active" href="evidencias.html">Evidencias</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="contacto.html">Contacto</a>
+        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <div class="section-title">
+      <div>
+        <h1>Evidencias</h1>
+        <p class="lead">Antes / después y evolución. Solo se publica con autorización del paciente.</p>
+      </div>
+      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero conocer evidencias de procedimientos (según autorización).')">
+        Pedir información
+      </button>
+    </div>
+
+    <div class="card p16">
+      <div class="pill">📌 Importante</div>
+      <p class="muted" style="margin:10px 0 0">
+        Esta sección se puede llenar con fotos reales cuando quieran. Por ahora dejamos “espacios” (placeholders).
+        Si deseas, me envías 6–12 imágenes autorizadas y te dejo la galería lista con antes/después.
+      </p>
+    </div>
+
+    <div class="grid3" style="margin-top:14px">
+      <div class="card p16">
+        <div class="pill">Caso 1</div>
+        <h3 style="margin:10px 0 6px">Antes / Después</h3>
+        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
+      </div>
+      <div class="card p16">
+        <div class="pill">Caso 2</div>
+        <h3 style="margin:10px 0 6px">Evolución</h3>
+        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
+      </div>
+      <div class="card p16">
+        <div class="pill">Caso 3</div>
+        <h3 style="margin:10px 0 6px">Resultado</h3>
+        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
+      </div>
+      <div class="card p16">
+        <div class="pill">Caso 4</div>
+        <h3 style="margin:10px 0 6px">Antes / Después</h3>
+        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
+      </div>
+      <div class="card p16">
+        <div class="pill">Caso 5</div>
+        <h3 style="margin:10px 0 6px">Evolución</h3>
+        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
+      </div>
+      <div class="card p16">
+        <div class="pill">Caso 6</div>
+        <h3 style="margin:10px 0 6px">Resultado</h3>
+        <p class="muted">Placeholder (reemplazar por evidencia autorizada).</p>
+      </div>
+    </div>
+
+    <div class="card p16" style="margin-top:14px">
+      <div class="pill">✅ ¿Quieres activar evidencias reales?</div>
+      <p class="muted" style="margin:10px 0 0">
+        Cuando estén listos, solo subimos archivos a una carpeta (por ejemplo: <b>evidencias/</b>) y enlazamos.
+      </p>
+      <div style="margin-top:12px">
+        <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero activar evidencias reales en la web. ¿Qué formato necesitas y cómo las subimos?')">
+          Activar evidencias
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container small">© <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.</div>
+</footer>
+
+<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">
+  <span class="wa-dot"></span> WhatsApp
+</button>
+
+<script src="app.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
