@@ -4,15 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Evidencias | Dra. Tatiana Mendoza</title>
-  <meta name="description" content="Evidencias de procedimientos (sin rostro) con autorización del paciente. Dra. Tatiana Mendoza." />
-  <link rel="stylesheet" href="styles.css?v=4">
+  <meta name="description" content="Evidencias de procedimientos sin rostro, con autorización del paciente." />
+  <link rel="stylesheet" href="styles.css?v=400">
 </head>
 <body>
 
 <header>
   <div class="container">
     <nav>
-      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo Dra. Tatiana Mendoza"></a>
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Dra. Tatiana Mendoza">
+      </a>
 
       <div class="menu">
         <a href="index.html">Inicio</a>
@@ -37,31 +39,33 @@
         <h1>Evidencias</h1>
         <p class="lead">Galería de resultados <b>sin rostro</b>, publicada con autorización del paciente.</p>
       </div>
+
       <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información sobre evidencias y procedimientos, por favor.')">
         Consultar por WhatsApp
       </button>
     </div>
 
-    <div class="card p16" style="margin-bottom:14px">
+    <div class="card p16" style="margin-bottom:16px">
       <div class="pill">📌 Nota</div>
       <p class="muted" style="margin-top:10px">
         Las imágenes se presentan sin datos personales ni rostros, y con autorización del paciente.
       </p>
     </div>
 
-    <div class="gallery" id="galeria-evidencias">
-      <a href="assets/evidencias/e1.jpg"><img loading="lazy" src="assets/evidencias/e1.jpg" alt="Evidencia 1"></a>
-      <a href="assets/evidencias/e2.jpg"><img loading="lazy" src="assets/evidencias/e2.jpg" alt="Evidencia 2"></a>
-      <a href="assets/evidencias/e3.jpg"><img loading="lazy" src="assets/evidencias/e3.jpg" alt="Evidencia 3"></a>
-      <a href="assets/evidencias/e4.jpg"><img loading="lazy" src="assets/evidencias/e4.jpg" alt="Evidencia 4"></a>
-      <a href="assets/evidencias/e5.jpg"><img loading="lazy" src="assets/evidencias/e5.jpg" alt="Evidencia 5"></a>
-      <a href="assets/evidencias/e6.jpg"><img loading="lazy" src="assets/evidencias/e6.jpg" alt="Evidencia 6"></a>
-      <a href="assets/evidencias/e7.jpg"><img loading="lazy" src="assets/evidencias/e7.jpg" alt="Evidencia 7"></a>
-      <a href="assets/evidencias/e8.jpg"><img loading="lazy" src="assets/evidencias/e8.jpg" alt="Evidencia 8"></a>
-      <a href="assets/evidencias/e9.jpg"><img loading="lazy" src="assets/evidencias/e9.jpg" alt="Evidencia 9"></a>
+    <!-- COLLAGE 3x3 -->
+    <div class="tm-collage" id="galeria-evidencias">
+      <a href="assets/evidencias/e1.jpeg"><img loading="lazy" src="assets/evidencias/e1.jpeg" alt="Evidencia 1"></a>
+      <a href="assets/evidencias/e2.jpeg"><img loading="lazy" src="assets/evidencias/e2.jpeg" alt="Evidencia 2"></a>
+      <a href="assets/evidencias/e3.jpeg"><img loading="lazy" src="assets/evidencias/e3.jpeg" alt="Evidencia 3"></a>
+      <a href="assets/evidencias/e4.jpeg"><img loading="lazy" src="assets/evidencias/e4.jpeg" alt="Evidencia 4"></a>
+      <a href="assets/evidencias/e5.jpeg"><img loading="lazy" src="assets/evidencias/e5.jpeg" alt="Evidencia 5"></a>
+      <a href="assets/evidencias/e6.jpeg"><img loading="lazy" src="assets/evidencias/e6.jpeg" alt="Evidencia 6"></a>
+      <a href="assets/evidencias/e7.jpeg"><img loading="lazy" src="assets/evidencias/e7.jpeg" alt="Evidencia 7"></a>
+      <a href="assets/evidencias/e8.jpeg"><img loading="lazy" src="assets/evidencias/e8.jpeg" alt="Evidencia 8"></a>
+      <a href="assets/evidencias/e9.jpeg"><img loading="lazy" src="assets/evidencias/e9.jpeg" alt="Evidencia 9"></a>
     </div>
 
-    <div class="card p16" style="margin-top:14px">
+    <div class="card p16" style="margin-top:18px">
       <div class="pill">🗓️ ¿Deseas agendar?</div>
       <p class="muted" style="margin-top:10px">
         Si quieres un plan personalizado, agenda tu valoración por WhatsApp.
@@ -77,42 +81,39 @@
 
 </main>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="close" onclick="closeLB()">✕</button>
+  <img id="lbImg" alt="Vista ampliada">
+</div>
+
 <footer>
   <div class="container small">
     © <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
   </div>
 </footer>
 
-<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">
+<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, deseo información y agendar una cita, por favor.')">
   <span class="wa-dot"></span> WhatsApp
 </button>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <button class="close" id="lbClose">Cerrar ✕</button>
-  <img id="lbImg" alt="Vista ampliada">
-</div>
 
 <script src="app.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  (function(){
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    const close = document.getElementById('lbClose');
-
-    function open(src){ lbImg.src = src; lb.classList.add('open'); }
-    function hide(){ lb.classList.remove('open'); lbImg.src = ''; }
-
-    document.querySelectorAll('#galeria-evidencias a').forEach(a=>{
-      a.addEventListener('click', (e)=>{ e.preventDefault(); open(a.getAttribute('href')); });
+  // Lightbox para collage
+  document.querySelectorAll('#galeria-evidencias a').forEach(link=>{
+    link.addEventListener('click', e=>{
+      e.preventDefault();
+      document.getElementById('lbImg').src = link.href;
+      document.getElementById('lightbox').classList.add('open');
     });
+  });
 
-    close.addEventListener('click', hide);
-    lb.addEventListener('click', (e)=>{ if(e.target === lb) hide(); });
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') hide(); });
-  })();
+  function closeLB(){
+    document.getElementById('lightbox').classList.remove('open');
+    document.getElementById('lbImg').src = '';
+  }
 </script>
 
 </body>
