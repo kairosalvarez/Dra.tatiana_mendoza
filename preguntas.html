@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preguntas frecuentes | Dra. Tatiana Mendoza</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+
+      <div class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="evidencias.html">Evidencias</a>
+        <a class="active" href="preguntas.html">Preguntas</a>
+        <a href="contacto.html">Contacto</a>
+        <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <div class="section-title">
+      <div>
+        <h1>Preguntas frecuentes</h1>
+        <p class="lead">Respuestas claras para ayudarte a decidir con tranquilidad.</p>
+      </div>
+      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, tengo una pregunta sobre un procedimiento. ¿Me ayudas, por favor?')">
+        Hacer una pregunta
+      </button>
+    </div>
+
+    <div class="card p16">
+      <div class="pill">📌 Valoración</div>
+      <p class="muted" style="margin:10px 0 0">
+        Lorica: <b>valoración GRATIS</b>. Tierralta: <b>valoración con costo</b> (se informa por WhatsApp).
+      </p>
+    </div>
+
+    <div class="card p16" style="margin-top:14px">
+      <h2 style="margin:0 0 10px">FAQ</h2>
+      <div class="muted">
+        <p><b>1) ¿Cómo agendo mi cita?</b><br>Por WhatsApp. Puedes usar el botón “Agendar” o el botón flotante para enviar tus datos.</p>
+        <p><b>2) ¿Qué sede debo elegir?</b><br>Lorica o Tierralta. Te recomendamos elegir según cercanía y disponibilidad.</p>
+        <p><b>3) ¿Los resultados son inmediatos?</b><br>Depende del procedimiento. Algunos son inmediatos y otros progresivos (por ejemplo, estimulación de colágeno).</p>
+        <p><b>4) ¿Duele? ¿Necesito incapacidad?</b><br>La molestia varía. Muchos pacientes retoman rutina pronto, pero se entregan cuidados específicos.</p>
+        <p><b>5) ¿Qué debo informar antes de un procedimiento?</b><br>Antecedentes, alergias, medicamentos, embarazo/lactancia y tu objetivo principal.</p>
+        <p><b>6) ¿Publican fotos de antes y después?</b><br>Solo con autorización del paciente y cuidando la privacidad.</p>
+      </div>
+
+      <div style="margin-top:12px">
+        <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, tengo esta pregunta: _____. Mi sede es: Lorica/Tierralta.')">Preguntar por WhatsApp</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container small">© <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.</div>
+</footer>
+
+<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">
+  <span class="wa-dot"></span> WhatsApp
+</button>
+
+<script src="app.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
