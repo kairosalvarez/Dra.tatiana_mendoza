@@ -1055,3 +1055,157 @@ label {
   }
   .main-nav::-webkit-scrollbar{ display:none; }
 }
+/* ===== HERO / PORTADA ===== */
+.hero-cover{
+  position: relative;
+  min-height: calc(100vh - 90px); /* ajusta si tu header es más alto */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Imagen de fondo */
+.hero-bg{
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(233, 163, 175, .22), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(233, 163, 175, .18), transparent 45%),
+    url("assets/hero.jpg"); /* <- CAMBIA ESTA RUTA */
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  filter: saturate(1.02);
+}
+
+/* Capa para mejorar legibilidad del texto */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,.65) 0%,
+    rgba(255,255,255,.76) 40%,
+    rgba(255,255,255,.92) 100%
+  );
+}
+
+.hero-content{
+  position: relative;
+  width: min(980px, 92%);
+  padding: clamp(18px, 3vw, 32px);
+  border-radius: 26px;
+  background: rgba(255,255,255,.68);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.10);
+}
+
+.hero-badge{
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(233, 163, 175, .16);
+  border: 1px solid rgba(233, 163, 175, .35);
+  font-weight: 600;
+  font-size: 13px;
+  color: #6b3b46;
+}
+
+.hero-title{
+  margin: 14px 0 8px;
+  font-size: clamp(34px, 4.6vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #1f1f1f;
+}
+
+.hero-title span{
+  color: #c46a79;
+}
+
+.hero-subtitle{
+  margin: 0 0 18px;
+  max-width: 62ch;
+  font-size: clamp(14px, 1.4vw, 18px);
+  color: #3c3c3c;
+}
+
+.hero-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Botones (si ya tienes .btn, respeta lo tuyo; si no, esto los crea) */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn:hover{ transform: translateY(-1px); box-shadow: 0 18px 34px rgba(0,0,0,.10); }
+
+.btn-primary{
+  background: #e9a3af;
+  color: #fff;
+}
+.btn-primary:hover{ background: #e48f9e; }
+
+.btn-outline{
+  background: rgba(255,255,255,.85);
+  color: #7a3f4b;
+  border-color: rgba(233, 163, 175, .55);
+}
+.btn-outline:hover{ background: #fff; }
+
+.hero-note{
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(0,0,0,.06);
+  color: #4b4b4b;
+  font-size: 13px;
+}
+
+/* Flechita para bajar */
+.hero-scroll{
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(0,0,0,.07);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+.hero-scroll span{
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #7a3f4b;
+  border-bottom: 2px solid #7a3f4b;
+  transform: rotate(45deg);
+  margin-top: -4px;
+}
+
+/* Responsive */
+@media (max-width: 720px){
+  .hero-content{ border-radius: 20px; }
+  .hero-actions{ flex-direction: column; align-items: stretch; }
+  .btn{ width: 100%; }
+}
