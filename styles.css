@@ -546,3 +546,80 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(231,139,159,0.45);
 }
+/* ===== Layout de páginas internas ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.page{padding:40px 0 70px;}
+.page-title{padding:18px 0 26px;}
+.page-title h1{font-size:44px;line-height:1.05;margin:0 0 10px;}
+.page-title p{margin:0 0 14px;color:#666;max-width:720px}
+
+/* Botones */
+.btn-primary,.btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 18px;border-radius:999px;
+  text-decoration:none;font-weight:700;cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-primary{
+  background:#e78b9f;color:#fff;
+  box-shadow:0 10px 25px rgba(231,139,159,.35);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 35px rgba(231,139,159,.45);}
+.btn-outline{
+  background:#fff;color:#8b3f52;border:1px solid rgba(231,139,159,.35);
+}
+.btn-outline:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.06);}
+
+/* Tarjetas */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+@media(max-width: 900px){.cards-grid{grid-template-columns:1fr;}}
+
+.card{
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(231,139,159,.18);
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 16px 50px rgba(0,0,0,.06);
+}
+.card-badge{
+  display:inline-flex;gap:8px;align-items:center;
+  padding:8px 12px;border-radius:999px;
+  background:rgba(231,139,159,.14);
+  color:#8b3f52;font-weight:700;font-size:13px;
+  margin-bottom:12px;
+}
+.card-title{margin:0 0 10px;font-size:28px;}
+.highlight{color:#c0566f;}
+.card-text{margin:0 0 14px;color:#666;max-width:560px;}
+
+.card-list{margin:0 0 18px;padding-left:18px;color:#444;}
+.card-list li{margin:6px 0;}
+
+.card-actions{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* Nota */
+.note{
+  margin-top:22px;
+  display:flex;gap:12px;align-items:flex-start;
+  background:rgba(231,139,159,.10);
+  border:1px solid rgba(231,139,159,.18);
+  padding:16px 18px;border-radius:18px;
+}
+.note-icon{font-size:18px;line-height:1;}
+.note-body{color:#5a2a36}
+
+/* Footer */
+.footer{margin-top:30px;padding-top:18px;border-top:1px solid rgba(0,0,0,.06);color:#777;font-size:14px}
+
+/* WhatsApp flotante (por si no estaba) */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;
+  background:#25D366;color:#fff;
+  padding:14px 18px;border-radius:999px;
+  text-decoration:none;font-weight:800;
+  box-shadow:0 16px 40px rgba(0,0,0,.18);
+}
