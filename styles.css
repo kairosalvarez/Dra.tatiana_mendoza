@@ -711,3 +711,30 @@ body {
   .nav::-webkit-scrollbar{ display: none; }
   .cta-wa{ padding: 10px 14px; font-size: 14px; }
 }
+/* --- FIX barra superior (Servicios) --- */
+.nav,
+.menu,
+.navbar,
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: nowrap;      /* ⬅️ evita que "Contacto" baje */
+  white-space: nowrap;   /* ⬅️ fuerza una sola línea */
+}
+
+/* Contenedor general del header */
+header,
+.header,
+.top-bar {
+  display: flex;
+  align-items: center;
+}
+
+/* Botón WhatsApp no se mueve */
+header .btn-whatsapp,
+header .cta,
+header .agendar-btn {
+  white-space: nowrap;
+}
