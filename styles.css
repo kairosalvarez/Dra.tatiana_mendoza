@@ -974,3 +974,84 @@ label {
   .brand-logo{ height: 40px; }
   .main-nav{ justify-content: flex-start; }
 }
+/* ===== FIX HEADER (escritorio: todo en una sola línea) ===== */
+.site-header{
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.header-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Logo más visible */
+.brand-logo{
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+/* Menú centrado, SIEMPRE en una línea (PC) */
+.main-nav{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: nowrap !important;   /* <-- clave: no baja a otra fila */
+  overflow: hidden;               /* sin barra */
+  white-space: nowrap;
+
+  gap: clamp(10px, 1.2vw, 18px);  /* se ajusta al ancho */
+  min-width: 0;                   /* permite que el flex recorte correctamente */
+}
+
+.main-nav a{
+  white-space: nowrap;
+  font-size: clamp(13px, 1.05vw, 15px); /* reduce un poco si falta espacio */
+  padding: 10px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #222;
+}
+
+/* Botón WhatsApp a la derecha */
+.header-cta{
+  flex: 0 0 auto;
+}
+
+.header-cta a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f1a7b6, #e78fa3);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(231,143,163,.25);
+}
+
+/* ===== MÓVIL: ahí sí permitimos deslizar (sin barra visible) ===== */
+@media (max-width: 980px){
+  .brand-logo{ height: 40px; }
+
+  .main-nav{
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar{ display:none; }
+}
