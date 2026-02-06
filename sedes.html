@@ -1,121 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sedes | Dra. Tatiana Mendoza</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="container header-container">
-    <a href="index.html" class="logo">
-      <img src="assets/logo.png" alt="Dra. Tatiana Mendoza">
-    </a>
+  <!-- HEADER (igual en todas las páginas) -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Dra. Tatiana Mendoza">
+      </a>
 
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sedes.html">Sedes</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="agendar.html">Agendar</a></li>
-        <li><a href="testimonios.html">Testimonios</a></li>
-        <li><a href="evidencias.html">Evidencias</a></li>
-        <li><a href="preguntas.html">Preguntas</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a class="active" href="sedes.html">Sedes</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="agendar.html">Agendar</a></li>
+          <li><a href="testimonios.html">Testimonios</a></li>
+          <li><a href="evidencias.html">Evidencias</a></li>
+          <li><a href="preguntas.html">Preguntas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
 
-    <a
-      href="https://wa.me/573009872255"
-      target="_blank"
-      class="btn-whatsapp"
-    >
-      Agendar por WhatsApp
-    </a>
-  </div>
-</header>
-
-<!-- ================= CONTENIDO ================= -->
-<main class="page">
-  <section class="page-hero">
-    <div class="page-wrap">
-      <h1>Sedes</h1>
-      <p>Dirección exacta y ubicación se comparten por WhatsApp para mayor organización.</p>
-
-      <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20recibir%20la%20ubicaci%C3%B3n%20por%20favor." target="_blank">
-        Pedir ubicación
+      <a class="btn-whatsapp" href="https://wa.me/573009872255" target="_blank" rel="noopener">
+        Agendar por WhatsApp
       </a>
     </div>
-  </section>
+  </header>
 
-  <section class="page-wrap">
-    <div class="cards-2">
+  <main class="page">
+    <div class="container">
 
-      <!-- LORICA -->
-      <article class="card">
-        <div class="card-top">
-          <div class="chip">📍 Lorica, Córdoba</div>
-          <h2>Valoración GRATIS</h2>
-          <p>Atención con agenda por WhatsApp. Te confirmamos disponibilidad según horario.</p>
+      <div class="page-title">
+        <h1>Sedes</h1>
+        <p>Dirección exacta y ubicación se comparten por WhatsApp para mayor organización.</p>
+        <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza%2C%20por%20favor%20me%20comparten%20la%20ubicaci%C3%B3n%20exacta%20de%20la%20sede%20que%20elija." target="_blank" rel="noopener">
+          Pedir ubicación
+        </a>
+      </div>
+
+      <section class="cards-grid">
+
+        <!-- LORICA -->
+        <article class="card">
+          <div class="card-badge">📍 Lorica, Córdoba</div>
+          <h2 class="card-title">Valoración <span class="highlight">GRATIS</span></h2>
+          <p class="card-text">
+            Atención con agenda por WhatsApp. Te confirmamos disponibilidad según horario.
+          </p>
+
+          <ul class="card-list">
+            <li><strong>Horario:</strong> Lunes a viernes 8:00 a.m.–12:00 m / 2:00 p.m.–6:00 p.m.</li>
+            <li><strong>Sábados:</strong> 8:00 a.m.–12:00 m</li>
+            <li><strong>Valoración:</strong> Gratis</li>
+          </ul>
+
+          <div class="card-actions">
+            <a class="btn-primary" href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza%2C%20quiero%20agendar%20valoraci%C3%B3n%20en%20Lorica.%20Mi%20nombre%20es%3A%20_____%20%7C%20Servicio%20de%20inter%C3%A9s%3A%20_____%20%7C%20Fecha%20y%20hora%3A%20_____" target="_blank" rel="noopener">
+              Agendar en Lorica
+            </a>
+            <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza%2C%20por%20favor%20me%20comparten%20la%20ubicaci%C3%B3n%20exacta%20de%20la%20sede%20en%20Lorica." target="_blank" rel="noopener">
+              Pedir ubicación
+            </a>
+          </div>
+        </article>
+
+        <!-- TIERRALTA -->
+        <article class="card">
+          <div class="card-badge">📍 Tierralta, Córdoba</div>
+          <h2 class="card-title">Valoración <span class="highlight">CON COSTO</span></h2>
+          <p class="card-text">
+            El valor de la valoración se informa por WhatsApp (precios actualizados).
+          </p>
+
+          <ul class="card-list">
+            <li><strong>Horario:</strong> Lunes a viernes 8:00 a.m.–12:00 m / 2:00 p.m.–6:00 p.m.</li>
+            <li><strong>Sábados:</strong> 8:00 a.m.–12:00 m</li>
+            <li><strong>Valoración:</strong> Con costo (se confirma por WhatsApp)</li>
+          </ul>
+
+          <div class="card-actions">
+            <a class="btn-primary" href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza%2C%20quiero%20agendar%20valoraci%C3%B3n%20en%20Tierralta.%20Mi%20nombre%20es%3A%20_____%20%7C%20Servicio%20de%20inter%C3%A9s%3A%20_____%20%7C%20Fecha%20y%20hora%3A%20_____" target="_blank" rel="noopener">
+              Agendar en Tierralta
+            </a>
+            <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza%2C%20por%20favor%20me%20comparten%20la%20ubicaci%C3%B3n%20exacta%20de%20la%20sede%20en%20Tierralta%20y%20el%20valor%20actual%20de%20la%20valoraci%C3%B3n." target="_blank" rel="noopener">
+              Pedir ubicación
+            </a>
+          </div>
+        </article>
+
+      </section>
+
+      <section class="note">
+        <div class="note-icon">✅</div>
+        <div class="note-body">
+          <strong>Recomendación:</strong>
+          Para agilizar tu atención, escribe por WhatsApp indicando:
+          <strong>sede, servicio, fecha y hora</strong>.
         </div>
+      </section>
 
-        <ul class="list">
-          <li><strong>Horario:</strong> L–V 8–12 / 2–6 · Sáb 8–12</li>
-          <li><strong>Valoración:</strong> Gratis</li>
-        </ul>
-
-        <div class="card-actions">
-          <a class="btn-primary" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20agendar%20una%20valoraci%C3%B3n%20en%20LORICA." target="_blank">
-            Agendar en Lorica
-          </a>
-          <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20la%20ubicaci%C3%B3n%20de%20LORICA%20por%20favor." target="_blank">
-            Pedir ubicación
-          </a>
-        </div>
-      </article>
-
-      <!-- TIERRALTA -->
-      <article class="card">
-        <div class="card-top">
-          <div class="chip">📍 Tierralta, Córdoba</div>
-          <h2>Valoración CON COSTO</h2>
-          <p>El valor de la valoración se informa por WhatsApp (precios actualizados).</p>
-        </div>
-
-        <ul class="list">
-          <li><strong>Horario:</strong> L–V 8–12 / 2–6 · Sáb 8–12</li>
-          <li><strong>Valoración:</strong> Con costo (se confirma por WhatsApp)</li>
-        </ul>
-
-        <div class="card-actions">
-          <a class="btn-primary" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20agendar%20una%20valoraci%C3%B3n%20en%20TIERRALTA." target="_blank">
-            Agendar en Tierralta
-          </a>
-          <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20la%20ubicaci%C3%B3n%20de%20TIERRALTA%20por%20favor." target="_blank">
-            Pedir ubicación
-          </a>
-        </div>
-      </article>
+      <footer class="footer">
+        © 2026 Dra. Tatiana Mendoza · Medicina Estética y Regenerativa
+      </footer>
 
     </div>
+  </main>
 
-    <div class="notice">
-      ✅ <strong>Recomendación:</strong> Para agilizar tu atención, escribe por WhatsApp indicando:
-      <strong>sede, servicio, fecha y hora</strong>.
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <p>© 2026 Dra. Tatiana Mendoza · Medicina Estética y Regenerativa</p>
-  <p class="footer-note">La información no reemplaza una consulta médica.</p>
-</footer>
-
-<!-- BOTÓN FLOTANTE WHATSAPP -->
-<a href="https://wa.me/573009872255" class="whatsapp-float" target="_blank">WhatsApp</a>
+  <!-- Botón flotante WhatsApp -->
+  <a class="wa-float" href="https://wa.me/573009872255" target="_blank" rel="noopener" aria-label="WhatsApp">
+    WhatsApp
+  </a>
 
 </body>
 </html>
