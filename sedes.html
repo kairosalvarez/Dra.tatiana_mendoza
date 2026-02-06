@@ -1,104 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Sedes | Dra. Tatiana Mendoza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="header">
-  <div class="container navwrap">
-    <a class="brand" href="index.html">
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-container">
+    <a href="index.html" class="logo">
       <img src="assets/logo.png" alt="Dra. Tatiana Mendoza">
     </a>
 
-    <nav class="nav">
+    <nav class="main-nav">
       <a href="index.html">Inicio</a>
-      <a href="sedes.html">Sedes</a>
+      <a class="active" href="sedes.html">Sedes</a>
       <a href="servicios.html">Servicios</a>
-      <a class="active" href="agendar.html">Agendar</a>
+      <a href="agendar.html">Agendar</a>
       <a href="testimonios.html">Testimonios</a>
       <a href="evidencias.html">Evidencias</a>
       <a href="preguntas.html">Preguntas</a>
       <a href="contacto.html">Contacto</a>
     </nav>
 
-    <a class="btn primary" href="agendar.html">Agendar por WhatsApp</a>
+    <a href="agendar.html" class="btn-whatsapp">Agendar por WhatsApp</a>
   </div>
 </header>
-  
-<main class="container">
-  <section>
-    <div class="section-title">
-      <div>
-        <h1>Sedes</h1>
-        <p class="lead">Dirección exacta y ubicación se comparten por WhatsApp para mayor organización.</p>
-      </div>
-      <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, ¿me compartes la ubicación exacta de la sede, por favor?')">
+
+<!-- ================= CONTENIDO ================= -->
+<main class="page">
+  <section class="page-hero">
+    <div class="page-wrap">
+      <h1>Sedes</h1>
+      <p>Dirección exacta y ubicación se comparten por WhatsApp para mayor organización.</p>
+
+      <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20recibir%20la%20ubicaci%C3%B3n%20por%20favor." target="_blank">
         Pedir ubicación
-      </button>
+      </a>
     </div>
+  </section>
 
-    <div class="grid2">
-      <div class="card p16">
-        <div class="pill">📍 Lorica, Córdoba</div>
-        <h2 style="margin:10px 0 6px">Valoración GRATIS</h2>
-        <p class="muted">Atención con agenda por WhatsApp. Te confirmamos disponibilidad según horario.</p>
+  <section class="page-wrap">
+    <div class="cards-2">
 
-        <ul class="muted" style="margin:10px 0 0; padding-left:18px">
-          <li><b>Horario:</b> L–V 8–12 / 2–6 · Sáb 8–12</li>
-          <li><b>Valoración:</b> Gratis</li>
+      <!-- LORICA -->
+      <article class="card">
+        <div class="card-top">
+          <div class="chip">📍 Lorica, Córdoba</div>
+          <h2>Valoración GRATIS</h2>
+          <p>Atención con agenda por WhatsApp. Te confirmamos disponibilidad según horario.</p>
+        </div>
+
+        <ul class="list">
+          <li><strong>Horario:</strong> L–V 8–12 / 2–6 · Sáb 8–12</li>
+          <li><strong>Valoración:</strong> Gratis</li>
         </ul>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar en Lorica (valoración GRATIS).')">Agendar en Lorica</button>
-          <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero la ubicación exacta de la sede en Lorica, por favor.')">Pedir ubicación</button>
+        <div class="card-actions">
+          <a class="btn-primary" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20agendar%20una%20valoraci%C3%B3n%20en%20LORICA." target="_blank">
+            Agendar en Lorica
+          </a>
+          <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20la%20ubicaci%C3%B3n%20de%20LORICA%20por%20favor." target="_blank">
+            Pedir ubicación
+          </a>
         </div>
-      </div>
+      </article>
 
-      <div class="card p16">
-        <div class="pill">📍 Tierralta, Córdoba</div>
-        <h2 style="margin:10px 0 6px">Valoración CON COSTO</h2>
-        <p class="muted">El valor de la valoración se informa por WhatsApp (precios actualizados).</p>
+      <!-- TIERRALTA -->
+      <article class="card">
+        <div class="card-top">
+          <div class="chip">📍 Tierralta, Córdoba</div>
+          <h2>Valoración CON COSTO</h2>
+          <p>El valor de la valoración se informa por WhatsApp (precios actualizados).</p>
+        </div>
 
-        <ul class="muted" style="margin:10px 0 0; padding-left:18px">
-          <li><b>Horario:</b> L–V 8–12 / 2–6 · Sáb 8–12</li>
-          <li><b>Valoración:</b> Con costo (se confirma por WhatsApp)</li>
+        <ul class="list">
+          <li><strong>Horario:</strong> L–V 8–12 / 2–6 · Sáb 8–12</li>
+          <li><strong>Valoración:</strong> Con costo (se confirma por WhatsApp)</li>
         </ul>
 
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
-          <button class="btn primary" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar en Tierralta. ¿Cuál es el costo de la valoración?')">Agendar en Tierralta</button>
-          <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero la ubicación exacta de la sede en Tierralta, por favor.')">Pedir ubicación</button>
+        <div class="card-actions">
+          <a class="btn-primary" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20agendar%20una%20valoraci%C3%B3n%20en%20TIERRALTA." target="_blank">
+            Agendar en Tierralta
+          </a>
+          <a class="btn-outline" href="https://wa.me/573009872255?text=Hola%2C%20deseo%20la%20ubicaci%C3%B3n%20de%20TIERRALTA%20por%20favor." target="_blank">
+            Pedir ubicación
+          </a>
         </div>
-      </div>
+      </article>
+
     </div>
 
-    <div class="card p16" style="margin-top:14px">
-      <div class="pill">✅ Recomendación</div>
-      <p class="muted" style="margin:10px 0 0">
-        Para agilizar tu atención, escribe por WhatsApp indicando: <b>sede</b>, <b>servicio</b>, <b>fecha</b> y <b>hora</b> preferida.
-      </p>
-      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-        <a class="btn primary" href="agendar.html">Ir a agendar</a>
-        <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, quiero agendar. Mi sede es: _____. Servicio: _____. Disponibilidad: _____.')">Enviar mensaje guía</button>
-      </div>
+    <div class="notice">
+      ✅ <strong>Recomendación:</strong> Para agilizar tu atención, escribe por WhatsApp indicando:
+      <strong>sede, servicio, fecha y hora</strong>.
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="container small">
-    © <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
-  </div>
+<footer class="site-footer">
+  <p>© 2026 Dra. Tatiana Mendoza · Medicina Estética y Regenerativa</p>
+  <p class="footer-note">La información no reemplaza una consulta médica.</p>
 </footer>
 
-<button class="wa-float" onclick="openWhatsApp('Hola Dra. Tatiana, quiero información y agendar una cita, por favor.')">
-  <span class="wa-dot"></span> WhatsApp
-</button>
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/573009872255" class="whatsapp-float" target="_blank">WhatsApp</a>
 
-<script src="app.js"></script>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
