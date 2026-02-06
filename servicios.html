@@ -2,276 +2,983 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Servicios | Dra. Tatiana Mendoza</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css?v=14001" />
+  <meta name="description" content="Servicios de Medicina Estética y Regenerativa. Agenda por WhatsApp." />
+  <link rel="stylesheet" href="styles.css?v=1200" />
 </head>
 
 <body>
+  <!-- HEADER / NAV (mismo estilo que INICIO) -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="Ir a inicio">
+        <img class="brand__logo" src="assets/logotipo.png" alt="Dra. Tatiana Mendoza" />
+      </a>
 
-<header class="header">
-  <div class="container header-container">
-    <a href="index.html" class="logo">
-      <img src="assets/logo.png" alt="Dra. Tatiana Mendoza">
-    </a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="index.html">Inicio</a>
+        <a class="nav__link" href="sedes.html">Sedes</a>
+        <a class="nav__link is-active" href="servicios.html">Servicios</a>
+        <a class="nav__link" href="agendar.html">Agendar</a>
+        <a class="nav__link" href="testimonios.html">Testimonios</a>
+        <a class="nav__link" href="evidencias.html">Evidencias</a>
+        <a class="nav__link" href="preguntas.html">Preguntas</a>
+        <a class="nav__link" href="contacto.html">Contacto</a>
+      </nav>
 
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="sedes.html">Sedes</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="agendar.html">Agendar</a></li>
-        <li><a href="testimonios.html">Testimonios</a></li>
-        <li><a href="evidencias.html">Evidencias</a></li>
-        <li><a href="preguntas.html">Preguntas</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-
-    <a
-      href="https://wa.me/573009872255"
-      target="_blank"
-      class="btn-whatsapp"
-    >
-      Agendar por WhatsApp
-    </a>
-  </div>
-</header>
-
-<main class="section services-page">
-  <div class="container">
-
-    <div class="services-hero">
-      <h1 class="title">Servicios</h1>
-      <p class="subtitle">
-        Selecciona un servicio para ver una descripción breve. <br>
-        <strong>Lorica:</strong> valoración GRATIS · <strong>Tierralta:</strong> valoración con costo (se informa por WhatsApp).
-      </p>
-
-      <div class="services-tools">
-        <div class="searchbox">
-          <span class="search-ico">🔎</span>
-          <input id="svcSearch" type="search" placeholder="Buscar servicio (ej: labios, suero, bótox, radiofrecuencia)..." autocomplete="off">
-        </div>
-        <button class="btn" onclick="openWhatsApp('Hola Dra. Tatiana, deseo información general sobre servicios y valoración. Mi sede es: Lorica/Tierralta.')">
-          Consultar por WhatsApp
-        </button>
-      </div>
+      <a class="btn btn--pill btn--primary"
+         href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%2C%20quiero%20agendar%20una%20valoraci%C3%B3n.%20%C2%BFMe%20confirmas%20disponibilidad%20y%20sede%20(Lorica%20o%20Tierralta)%3F"
+         target="_blank" rel="noopener">
+        Agendar por WhatsApp
+      </a>
     </div>
+  </header>
 
-    <!-- LISTA / GRID DE SERVICIOS -->
-    <section>
-      <div class="svc-grid" id="svcGrid"></div>
+  <main class="page">
+    <section class="section">
+      <div class="section__head">
+        <h1 class="h1">Servicios</h1>
+        <p class="muted">
+          Toca un servicio para ver su descripción breve.
+          <strong>Lorica:</strong> valoración <strong>GRATIS</strong> ·
+          <strong>Tierralta:</strong> valoración con costo (se informa por WhatsApp).
+        </p>
 
-      <div class="svc-bottom-note">
-        <p><strong>Nota:</strong> La recomendación final depende de valoración médica. La dirección exacta se comparte por WhatsApp.</p>
+        <div class="svc-tools">
+          <div class="input input--icon">
+            <span class="input__icon" aria-hidden="true">🔎</span>
+            <input id="svcSearch" type="search" placeholder="Buscar servicio (ej: labios, botox, suero…)" />
+          </div>
+
+          <a class="btn btn--ghost"
+             href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20servicios%20y%20agendar%20valoraci%C3%B3n.%20%C2%BFMe%20confirmas%20disponibilidad%20y%20sede%3F"
+             target="_blank" rel="noopener">
+            Consultar por WhatsApp
+          </a>
+        </div>
       </div>
+
+      <!-- LISTA MODERNA -->
+      <div id="svcList" class="svc-list" aria-label="Listado de servicios">
+        <!-- RINOMODELACIÓN / ARMONIZACIÓN -->
+        <article class="svc-item" data-title="Rinomodelación mixta">
+          <button class="svc-row" type="button"
+            data-service="Rinomodelación Mixta"
+            data-desc="Armoniza el perfil nasal de forma no quirúrgica, buscando un resultado natural y proporcional al rostro.">
+            <div class="svc-left">
+              <h3 class="svc-title">Rinomodelación Mixta</h3>
+              <p class="svc-tagline">Resalta tu perfil con cambios sutiles y elegantes.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta"
+                 data-wa="Rinomodelación Mixta"
+                 href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Rinomodelación mixta y alectomía">
+          <button class="svc-row" type="button"
+            data-service="Rinomodelación Mixta + Alectomía"
+            data-desc="Enfoque de armonización para el perfil nasal con una valoración médica previa para definir lo ideal en tu caso.">
+            <div class="svc-left">
+              <h3 class="svc-title">Rinomodelación Mixta + Alectomía</h3>
+              <p class="svc-tagline">Equilibrio facial con enfoque médico y humano.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta"
+                 data-wa="Rinomodelación Mixta + Alectomía"
+                 href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Mentón">
+          <button class="svc-row" type="button"
+            data-service="Mentón"
+            data-desc="Mejora la proporción del rostro dando definición al mentón según tu estructura facial.">
+            <div class="svc-left">
+              <h3 class="svc-title">Mentón</h3>
+              <p class="svc-tagline">Más definición, mejor balance facial.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Mentón" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Ojeras">
+          <button class="svc-row" type="button"
+            data-service="Ojeras"
+            data-desc="Ayuda a mejorar la apariencia de cansancio, aportando frescura y armonía a la mirada.">
+            <div class="svc-left">
+              <h3 class="svc-title">Ojeras</h3>
+              <p class="svc-tagline">Una mirada más descansada y luminosa.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Ojeras" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Pómulos">
+          <button class="svc-row" type="button"
+            data-service="Pómulos"
+            data-desc="Aporta proyección suave y armonía al tercio medio del rostro, resaltando tus rasgos naturales.">
+            <div class="svc-left">
+              <h3 class="svc-title">Pómulos</h3>
+              <p class="svc-tagline">Estructura y armonía sin perder naturalidad.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Pómulos" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Full face">
+          <button class="svc-row" type="button"
+            data-service="Full Face"
+            data-desc="Plan integral de armonización facial: se define de forma personalizada en valoración médica según tus necesidades.">
+            <div class="svc-left">
+              <h3 class="svc-title">Full Face</h3>
+              <p class="svc-tagline">Un plan completo pensado para ti.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Full Face" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Reborde mandibular">
+          <button class="svc-row" type="button"
+            data-service="Reborde Mandibular"
+            data-desc="Define la línea mandibular para un contorno más marcado y armónico, según tu anatomía.">
+            <div class="svc-left">
+              <h3 class="svc-title">Reborde Mandibular</h3>
+              <p class="svc-tagline">Contorno más definido, perfil más elegante.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Reborde Mandibular" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Cuello">
+          <button class="svc-row" type="button"
+            data-service="Cuello"
+            data-desc="Mejora el aspecto del cuello y su definición con enfoque regenerativo y estético según valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Cuello</h3>
+              <p class="svc-tagline">Cuello más firme y armónico.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Cuello" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Lipopapada">
+          <button class="svc-row" type="button"
+            data-service="Lipopapada"
+            data-desc="Procedimiento enfocado en mejorar la zona bajo el mentón para un perfil más definido, según evaluación.">
+            <div class="svc-left">
+              <h3 class="svc-title">Lipopapada</h3>
+              <p class="svc-tagline">Perfil más limpio y definido.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Lipopapada" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- LABIOS -->
+        <article class="svc-item" data-title="Labios volumen y perfilamiento">
+          <button class="svc-row" type="button"
+            data-service="Labios Volumen + Perfilamiento"
+            data-desc="Realza el volumen y define el contorno de los labios, buscando armonía y naturalidad.">
+            <div class="svc-left">
+              <h3 class="svc-title">Labios Volumen + Perfilamiento</h3>
+              <p class="svc-tagline">Labios más definidos con resultado elegante.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Labios Volumen + Perfilamiento" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Labios perfilamiento e hidratación">
+          <button class="svc-row" type="button"
+            data-service="Labios Perfilamiento + Hidratación"
+            data-desc="Define el borde del labio y mejora su hidratación para una apariencia más suave y saludable.">
+            <div class="svc-left">
+              <h3 class="svc-title">Labios Perfilamiento + Hidratación</h3>
+              <p class="svc-tagline">Hidratación y definición en un solo plan.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Labios Perfilamiento + Hidratación" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- BIOESTIMULACIÓN / POLILÁCTICO / HIDROXIAPATITA -->
+        <article class="svc-item" data-title="Ácido poliláctico tercio medio bioestimulación">
+          <button class="svc-row" type="button"
+            data-service="Ácido Poliláctico (Tercio Medio) – Bioestimulación"
+            data-desc="Estimula colágeno para mejorar firmeza y calidad de piel en el tercio medio del rostro (según valoración).">
+            <div class="svc-left">
+              <h3 class="svc-title">Ácido Poliláctico (Tercio Medio) – Bioestimulación</h3>
+              <p class="svc-tagline">Rejuvenecimiento progresivo con enfoque regenerativo.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Ácido Poliláctico (Tercio Medio) – Bioestimulación" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Ácido poliláctico rostro">
+          <button class="svc-row" type="button"
+            data-service="Ácido Poliláctico (Rostro)"
+            data-desc="Apoya la firmeza y textura de la piel con estímulo de colágeno, buscando un resultado natural y progresivo.">
+            <div class="svc-left">
+              <h3 class="svc-title">Ácido Poliláctico (Rostro)</h3>
+              <p class="svc-tagline">Firmeza visible con resultados progresivos.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Ácido Poliláctico (Rostro)" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Ácido poliláctico manos">
+          <button class="svc-row" type="button"
+            data-service="Ácido Poliláctico (Manos)"
+            data-desc="Mejora la apariencia de las manos favoreciendo firmeza y calidad de piel, según evaluación.">
+            <div class="svc-left">
+              <h3 class="svc-title">Ácido Poliláctico (Manos)</h3>
+              <p class="svc-tagline">Manos con aspecto más joven y cuidado.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Ácido Poliláctico (Manos)" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Ácido poliláctico extra corporal">
+          <button class="svc-row" type="button"
+            data-service="Ácido Poliláctico (Extra / Corporal)"
+            data-desc="Bioestimulación en zonas corporales seleccionadas para apoyar firmeza y calidad de piel (según valoración).">
+            <div class="svc-left">
+              <h3 class="svc-title">Ácido Poliláctico (Extra / Corporal)</h3>
+              <p class="svc-tagline">Firmeza y renovación en zonas específicas.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Ácido Poliláctico (Extra / Corporal)" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Ácido poliláctico e hidroxiapatita de calcio tercio medio">
+          <button class="svc-row" type="button"
+            data-service="Ácido Poliláctico + Hidroxiapatita de Calcio (Tercio Medio)"
+            data-desc="Combinación orientada a soporte estructural y bioestimulación, definida de manera personalizada en valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Ácido Poliláctico + Hidroxiapatita de Calcio (Tercio Medio)</h3>
+              <p class="svc-tagline">Armonía + firmeza con plan personalizado.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Ácido Poliláctico + Hidroxiapatita de Calcio (Tercio Medio)" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- CORPORAL / ENDOLIFTING / ADIPOSIDAD -->
+        <article class="svc-item" data-title="Adiposidad localizada y celulitis">
+          <button class="svc-row" type="button"
+            data-service="Adiposidad Localizada y Celulitis"
+            data-desc="Plan corporal para mejorar contorno y apariencia de la piel. Se define según zona y objetivos en valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Adiposidad Localizada y Celulitis</h3>
+              <p class="svc-tagline">Moldea y mejora textura con guía profesional.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Adiposidad Localizada y Celulitis" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Endolifting abdomen zona posterior y espalda">
+          <button class="svc-row" type="button"
+            data-service="Endolifting (Abdomen / Zona posterior / Espalda)"
+            data-desc="Procedimiento corporal enfocado en mejorar firmeza y contorno en zonas seleccionadas (según valoración médica).">
+            <div class="svc-left">
+              <h3 class="svc-title">Endolifting (Abdomen / Zona posterior / Espalda)</h3>
+              <p class="svc-tagline">Firmeza y contorno con enfoque médico.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Endolifting (Abdomen / Zona posterior / Espalda)" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Terapias para tensado de la piel">
+          <button class="svc-row" type="button"
+            data-service="Terapias para Tensado de la Piel"
+            data-desc="Apoyo para mejorar la firmeza y apariencia de la piel con un plan personalizado según tu caso.">
+            <div class="svc-left">
+              <h3 class="svc-title">Terapias para Tensado de la Piel</h3>
+              <p class="svc-tagline">Piel más firme con un plan a tu medida.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Terapias para Tensado de la Piel" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Programas post parto plan peso saludable">
+          <button class="svc-row" type="button"
+            data-service="Programas Post Parto / Plan Peso Saludable"
+            data-desc="Acompañamiento integral para recuperar bienestar y forma física de manera segura, según valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Programas Post Parto / Plan Peso Saludable</h3>
+              <p class="svc-tagline">Bienestar real, hábitos sostenibles.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Programas Post Parto / Plan Peso Saludable" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- SUEROTERAPIA -->
+        <article class="svc-item" data-title="Suero reparador">
+          <button class="svc-row" type="button"
+            data-service="Suero Reparador"
+            data-desc="Apoyo a recuperación y bienestar general, definido según tu necesidad en valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Reparador</h3>
+              <p class="svc-tagline">Recupera energía y bienestar con guía médica.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Reparador" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero estimulante">
+          <button class="svc-row" type="button"
+            data-service="Suero Estimulante"
+            data-desc="Apoyo para vitalidad y rendimiento, ajustado a tus objetivos y evaluación.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Estimulante</h3>
+              <p class="svc-tagline">Un impulso seguro para tu día a día.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Estimulante" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero energizante">
+          <button class="svc-row" type="button"
+            data-service="Suero Energizante"
+            data-desc="Apoyo para energía y bienestar, con protocolo definido según valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Energizante</h3>
+              <p class="svc-tagline">Energía con soporte profesional.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Energizante" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero estimulante para la memoria">
+          <button class="svc-row" type="button"
+            data-service="Suero Estimulante para la Memoria"
+            data-desc="Apoyo enfocado en claridad y rendimiento mental, según evaluación profesional.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Estimulante para la Memoria</h3>
+              <p class="svc-tagline">Enfócate mejor, con un plan seguro.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Estimulante para la Memoria" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero desintoxicante">
+          <button class="svc-row" type="button"
+            data-service="Suero Desintoxicante"
+            data-desc="Apoyo para bienestar general y sensación de ligereza, definido según tu valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Desintoxicante</h3>
+              <p class="svc-tagline">Renueva tu cuerpo con acompañamiento.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Desintoxicante" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero anti-estrés">
+          <button class="svc-row" type="button"
+            data-service="Suero Anti-estrés"
+            data-desc="Apoyo para bienestar y equilibrio, ajustado según evaluación.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Anti-estrés</h3>
+              <p class="svc-tagline">Calma y bienestar para tu rutina.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Anti-estrés" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero revitalizador">
+          <button class="svc-row" type="button"
+            data-service="Suero Revitalizador"
+            data-desc="Apoyo general para vitalidad y recuperación, según valoración médica.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Revitalizador</h3>
+              <p class="svc-tagline">Vuelve a sentirte bien, desde adentro.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Revitalizador" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero post-quirúrgico">
+          <button class="svc-row" type="button"
+            data-service="Suero Post-quirúrgico"
+            data-desc="Apoyo en recuperación post procedimiento, definido según tu caso en valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Post-quirúrgico</h3>
+              <p class="svc-tagline">Recuperación con acompañamiento profesional.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Post-quirúrgico" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero antiobesidad">
+          <button class="svc-row" type="button"
+            data-service="Suero Antiobesidad"
+            data-desc="Apoyo complementario en planes de control de peso, siempre definido según valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Antiobesidad</h3>
+              <p class="svc-tagline">Acompañamiento integral para tus metas.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Antiobesidad" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero inmunológico">
+          <button class="svc-row" type="button"
+            data-service="Suero Inmunológico"
+            data-desc="Apoyo al bienestar general y defensas, ajustado a tu necesidad clínica.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Inmunológico</h3>
+              <p class="svc-tagline">Cuida tu bienestar con enfoque médico.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Inmunológico" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero post guayabo">
+          <button class="svc-row" type="button"
+            data-service="Suero Post-Guayabo"
+            data-desc="Apoyo para hidratación y recuperación de bienestar (según valoración).">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Post-Guayabo</h3>
+              <p class="svc-tagline">Recupérate mejor, con acompañamiento.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Post-Guayabo" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Suero detox">
+          <button class="svc-row" type="button"
+            data-service="Suero Detox"
+            data-desc="Apoyo para sensación de limpieza y bienestar general, definido según tu valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Suero Detox</h3>
+              <p class="svc-tagline">Ligereza y bienestar con enfoque seguro.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Suero Detox" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Megadosis de vitamina C">
+          <button class="svc-row" type="button"
+            data-service="Megadosis de Vitamina C"
+            data-desc="Protocolo de apoyo definido según valoración profesional. (Se ajusta a necesidades individuales).">
+            <div class="svc-left">
+              <h3 class="svc-title">Megadosis de Vitamina C</h3>
+              <p class="svc-tagline">Bienestar y energía con guía profesional.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Megadosis de Vitamina C" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- RADIOFRECUENCIA -->
+        <article class="svc-item" data-title="Radiofrecuencia continua con vitamina C tonificación">
+          <button class="svc-row" type="button"
+            data-service="Radiofrecuencia continua con Vitamina C (Tonificación)"
+            data-desc="Plan para mejorar firmeza y apariencia de piel, combinando tecnologías según tu valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Radiofrecuencia continua con Vitamina C (Tonificación)</h3>
+              <p class="svc-tagline">Tonifica y mejora la piel de forma progresiva.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Radiofrecuencia continua con Vitamina C (Tonificación)" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Radiofrecuencia continua masajes reductores">
+          <button class="svc-row" type="button"
+            data-service="Radiofrecuencia continua + Masajes reductores"
+            data-desc="Plan corporal para contorno y bienestar, definido por zona y objetivo durante la valoración.">
+            <div class="svc-left">
+              <h3 class="svc-title">Radiofrecuencia continua + Masajes reductores</h3>
+              <p class="svc-tagline">Apoya tu contorno con un plan integral.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Radiofrecuencia continua + Masajes reductores" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- MASAJES -->
+        <article class="svc-item" data-title="Masaje purificante">
+          <button class="svc-row" type="button"
+            data-service="Masaje Purificante"
+            data-desc="Masaje enfocado en bienestar y relajación, ideal para recargar energía y soltar tensión.">
+            <div class="svc-left">
+              <h3 class="svc-title">Masaje Purificante</h3>
+              <p class="svc-tagline">Relájate y siente bienestar real.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Masaje Purificante" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Masaje balinés">
+          <button class="svc-row" type="button"
+            data-service="Masaje Balinés"
+            data-desc="Técnica de masaje para relajación profunda y bienestar general.">
+            <div class="svc-left">
+              <h3 class="svc-title">Masaje Balinés</h3>
+              <p class="svc-tagline">Desconexión, descanso y alivio.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Masaje Balinés" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Express masaje espalda">
+          <button class="svc-row" type="button"
+            data-service="Express Masaje Espalda"
+            data-desc="Masaje localizado para aliviar tensión en espalda y cuello, ideal para rutinas cargadas.">
+            <div class="svc-left">
+              <h3 class="svc-title">Express Masaje Espalda</h3>
+              <p class="svc-tagline">Alivio rápido para tu día a día.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Express Masaje Espalda" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Reflexología podal desintoxicación iónica">
+          <button class="svc-row" type="button"
+            data-service="Reflexología Podal + Desintoxicación iónica"
+            data-desc="Sesión orientada a bienestar general combinando técnicas de reflexología y apoyo complementario (según indicación).">
+            <div class="svc-left">
+              <h3 class="svc-title">Reflexología Podal + Desintoxicación iónica</h3>
+              <p class="svc-tagline">Bienestar desde los pies, con calma total.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Reflexología Podal + Desintoxicación iónica" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Masaje facial higiene facial">
+          <button class="svc-row" type="button"
+            data-service="Masaje Facial + Higiene Facial"
+            data-desc="Limpieza y cuidado facial con masaje para mejorar apariencia y frescura de la piel.">
+            <div class="svc-left">
+              <h3 class="svc-title">Masaje Facial + Higiene Facial</h3>
+              <p class="svc-tagline">Piel fresca, limpia y luminosa.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Masaje Facial + Higiene Facial" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Bambuterapia">
+          <button class="svc-row" type="button"
+            data-service="Bambuterapia"
+            data-desc="Masaje con instrumentos de bambú enfocado en bienestar, drenaje y sensación de ligereza (según objetivo).">
+            <div class="svc-left">
+              <h3 class="svc-title">Bambuterapia</h3>
+              <p class="svc-tagline">Ligereza y relajación con técnica especial.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Bambuterapia" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- REJUVENECIMIENTO / BOTOX -->
+        <article class="svc-item" data-title="Rejuvenecimiento facial no quirúrgico">
+          <button class="svc-row" type="button"
+            data-service="Rejuvenecimiento Facial No Quirúrgico"
+            data-desc="Plan de rejuvenecimiento sin cirugía según valoración: se define lo ideal para tu piel y rasgos.">
+            <div class="svc-left">
+              <h3 class="svc-title">Rejuvenecimiento Facial No Quirúrgico</h3>
+              <p class="svc-tagline">Verte bien sin perder naturalidad.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Rejuvenecimiento Facial No Quirúrgico" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Botox tercio superior">
+          <button class="svc-row" type="button"
+            data-service="Bótox: Tercio Superior"
+            data-desc="Apoyo para suavizar líneas de expresión del tercio superior según valoración médica.">
+            <div class="svc-left">
+              <h3 class="svc-title">Bótox: Tercio Superior</h3>
+              <p class="svc-tagline">Expresión más suave, resultado natural.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Bótox: Tercio Superior" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Bruxismo">
+          <button class="svc-row" type="button"
+            data-service="Bruxismo"
+            data-desc="Evaluación y manejo estético/funcional para tensión mandibular según valoración médica.">
+            <div class="svc-left">
+              <h3 class="svc-title">Bruxismo</h3>
+              <p class="svc-tagline">Alivio y bienestar con evaluación profesional.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Bruxismo" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Sonrisa gingival">
+          <button class="svc-row" type="button"
+            data-service="Sonrisa Gingival"
+            data-desc="Plan para armonizar la sonrisa, definido tras valoración según tu caso.">
+            <div class="svc-left">
+              <h3 class="svc-title">Sonrisa Gingival</h3>
+              <p class="svc-tagline">Sonrisa más armónica y segura.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Sonrisa Gingival" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Botox tercio inferior">
+          <button class="svc-row" type="button"
+            data-service="Bótox: Tercio Inferior"
+            data-desc="Evaluación y plan para armonizar el tercio inferior del rostro según valoración profesional.">
+            <div class="svc-left">
+              <h3 class="svc-title">Bótox: Tercio Inferior</h3>
+              <p class="svc-tagline">Armonía facial con enfoque médico.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Bótox: Tercio Inferior" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Hiperhidrosis axilar y palmar">
+          <button class="svc-row" type="button"
+            data-service="Hiperhidrosis Axilar y Palmar"
+            data-desc="Manejo para sudoración excesiva según valoración médica.">
+            <div class="svc-left">
+              <h3 class="svc-title">Hiperhidrosis Axilar y Palmar</h3>
+              <p class="svc-tagline">Más comodidad y confianza en tu día.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Hiperhidrosis Axilar y Palmar" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <!-- CONSULTAS / VALORACIONES -->
+        <article class="svc-item" data-title="Consulta por médico especialista">
+          <button class="svc-row" type="button"
+            data-service="Consulta por Médico Especialista"
+            data-desc="Consulta médica para orientación, diagnóstico y plan de manejo según tu necesidad.">
+            <div class="svc-left">
+              <h3 class="svc-title">Consulta por Médico Especialista</h3>
+              <p class="svc-tagline">Tu caso, evaluado con criterio profesional.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Consulta por Médico Especialista" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Valoración medicina estética y regenerativa">
+          <button class="svc-row" type="button"
+            data-service="Valoración Medicina Estética y Regenerativa"
+            data-desc="Valoración inicial para definir el mejor plan para ti. En Lorica la valoración es GRATIS.">
+            <div class="svc-left">
+              <h3 class="svc-title">Valoración Medicina Estética y Regenerativa</h3>
+              <p class="svc-tagline">Empieza con una guía clara y personalizada.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Valoración Medicina Estética y Regenerativa" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Valoración por nutrición">
+          <button class="svc-row" type="button"
+            data-service="Valoración por Nutrición"
+            data-desc="Valoración nutricional para acompañar tus objetivos de bienestar y composición corporal.">
+            <div class="svc-left">
+              <h3 class="svc-title">Valoración por Nutrición</h3>
+              <p class="svc-tagline">Mejora tu salud con un plan sostenible.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Valoración por Nutrición" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="svc-item" data-title="Tratamientos corporales">
+          <button class="svc-row" type="button"
+            data-service="Tratamientos Corporales"
+            data-desc="Opciones corporales definidas según zona y objetivo. Te orientamos en valoración para elegir el plan ideal.">
+            <div class="svc-left">
+              <h3 class="svc-title">Tratamientos Corporales</h3>
+              <p class="svc-tagline">Un plan corporal pensado para ti.</p>
+            </div>
+            <div class="svc-right">
+              <a class="btn btn--primary btn--small svc-cta" data-wa="Tratamientos Corporales" href="#" target="_blank" rel="noopener">Agendar</a>
+              <span class="svc-hint">Ver descripción</span>
+            </div>
+          </button>
+        </article>
+      </div>
+
+      <p class="fineprint">
+        Importante: Esta información no reemplaza una consulta médica. Todo procedimiento requiere valoración previa.
+      </p>
     </section>
+  </main>
 
-  </div>
-</main>
+  <!-- DRAWER (panel deslizable) -->
+  <div class="drawer" id="svcDrawer" aria-hidden="true">
+    <div class="drawer__backdrop" data-close></div>
 
-<!-- PANEL DESLIZABLE -->
-<div class="svc-drawer" id="svcDrawer" aria-hidden="true">
-  <div class="svc-backdrop" onclick="closeDrawer()"></div>
+    <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Detalle del servicio">
+      <button class="drawer__close" type="button" data-close aria-label="Cerrar">✕</button>
 
-  <div class="svc-panel" role="dialog" aria-modal="true">
-    <button class="svc-close" onclick="closeDrawer()" aria-label="Cerrar">✕</button>
+      <div class="drawer__content">
+        <p class="pill"><span aria-hidden="true">✨</span> Descripción del servicio</p>
+        <h2 class="drawer__title" id="drawerTitle">Servicio</h2>
+        <p class="drawer__desc" id="drawerDesc">Descripción breve…</p>
 
-    <div class="svc-panel-head">
-      <div class="svc-chip">Medicina estética y regenerativa</div>
-      <h2 id="drawerTitle" class="svc-panel-title"></h2>
-      <p id="drawerDesc" class="svc-panel-desc"></p>
-    </div>
+        <div class="drawer__cards">
+          <div class="drawer__card">
+            <h3>Agenda por WhatsApp</h3>
+            <p class="muted">La dirección exacta se comparte por WhatsApp.</p>
 
-    <div class="svc-panel-actions">
-      <button class="btn primary" id="drawerWaBtn">Consultar por WhatsApp</button>
-      <a class="btn" href="agendar.html">Agendar</a>
-    </div>
+            <div class="drawer__actions">
+              <a id="waLorica" class="btn btn--primary" href="#" target="_blank" rel="noopener">
+                Agendar en Lorica (Valoración GRATIS)
+              </a>
+              <a id="waTierralta" class="btn btn--ghost" href="#" target="_blank" rel="noopener">
+                Agendar en Tierralta (Con costo)
+              </a>
+            </div>
 
-    <div class="svc-panel-foot">
-      <div class="svc-mini">
-        <div class="svc-mini-title">Horarios</div>
-        <div class="svc-mini-text">
-          Lunes a viernes: 8:00 a.m.–12:00 m / 2:00 p.m.–6:00 p.m.<br>
-          Sábados: 8:00 a.m.–12:00 m
+            <p class="fineprint">
+              Horarios: L–V 8:00–12:00 / 2:00–6:00 · Sáb 8:00–12:00
+            </p>
+          </div>
+
+          <div class="drawer__card drawer__card--note">
+            <h3>Recomendación</h3>
+            <p>Para agilizar tu atención, escribe: <strong>sede, servicio, fecha y hora</strong>.</p>
+          </div>
         </div>
       </div>
-
-      <div class="svc-mini">
-        <div class="svc-mini-title">Sedes</div>
-        <div class="svc-mini-text">
-          Lorica, Córdoba · Tierralta, Córdoba<br>
-          (La ubicación exacta se comparte por WhatsApp)
-        </div>
-      </div>
-
-      <p class="svc-disclaimer">
-        La información de esta web no reemplaza una consulta médica.
-      </p>
-    </div>
+    </aside>
   </div>
-</div>
 
-<footer class="footer">
-  © <span id="year"></span> Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
-</footer>
+  <!-- WhatsApp flotante -->
+  <a class="wa-float"
+     href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%2C%20quiero%20agendar%20una%20valoraci%C3%B3n.%20%C2%BFMe%20confirmas%20disponibilidad%20y%20sede%20(Lorica%20o%20Tierralta)%3F"
+     target="_blank" rel="noopener" aria-label="WhatsApp">
+    WhatsApp
+  </a>
 
-<script>
-  // Año footer
-  document.getElementById("year").textContent = new Date().getFullYear();
+  <footer class="footer">
+    <div class="footer__inner">
+      © 2026 Dra. Tatiana Mendoza · Medicina Estética y Regenerativa
+    </div>
+  </footer>
 
-  // WhatsApp
-  function openWhatsApp(message){
-    const phone = "573009872255";
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  }
+  <script>
+    const WA = "https://wa.me/573009872255?text=";
 
-  // ====== Servicios (extraídos del portafolio, SIN precios) ======
-  const SERVICES = [
-    { id:"s1",  name:"Rinomodelación Mixta", desc:"Procedimiento no quirúrgico para armonizar el perfil nasal en casos seleccionados, según valoración médica." },
-    { id:"s2",  name:"Rinomodelación Mixta y Alectomía", desc:"Procedimiento no quirúrgico para armonizar el perfil nasal en casos seleccionados, según valoración médica." },
-    { id:"s3",  name:"Labios Volumen + Perfilamiento", desc:"Procedimiento para definir y armonizar labios con enfoque natural. Técnica y plan según valoración." },
-    { id:"s4",  name:"Labios Perfilamiento + Hidratación", desc:"Procedimiento para definir y armonizar labios con enfoque natural. Técnica y plan según valoración." },
-    { id:"s5",  name:"Rinomodelación", desc:"Procedimiento no quirúrgico para armonizar el perfil nasal en casos seleccionados, según valoración médica." },
+    // Drawer
+    const drawer = document.getElementById("svcDrawer");
+    const drawerTitle = document.getElementById("drawerTitle");
+    const drawerDesc  = document.getElementById("drawerDesc");
+    const waLorica = document.getElementById("waLorica");
+    const waTierralta = document.getElementById("waTierralta");
 
-    { id:"s6",  name:"Mentón", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
-    { id:"s7",  name:"Ojeras", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
-    { id:"s8",  name:"Pómulos", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
-    { id:"s9",  name:"Full Face", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
-    { id:"s10", name:"Reborde Mandibular", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
-    { id:"s11", name:"Cuello", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
-    { id:"s12", name:"Ácido Poliláctico + Hidroxiapatita de Calcio (Tercio medio)", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
-    { id:"s13", name:"Ácido Poliláctico Cosmilan", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
-    { id:"s14", name:"Tercio Medio (bioestimulación)", desc:"Armonización y bioestimulación según diagnóstico facial. Material y plan se definen tras valoración." },
+    function openDrawer(service, desc){
+      drawerTitle.textContent = service;
+      drawerDesc.textContent = desc;
 
-    { id:"s15", name:"Adiposidad Localizada y Celulitis", desc:"Manejo de grasa localizada y celulitis con enfoque integral. Protocolo según valoración." },
-    { id:"s16", name:"Lipopapada", desc:"Opciones para tratar papada según diagnóstico. Plan y número de sesiones se confirman en valoración." },
-    { id:"s17", name:"Programas post parto / Plan peso saludable", desc:"Acompañamiento y protocolos de cuidado postparto y bienestar, ajustado a tu caso." },
-    { id:"s18", name:"Terapias para tensado de la piel", desc:"Terapias enfocadas en mejorar firmeza y apariencia de la piel. Protocolo según valoración." },
-    { id:"s19", name:"Endolifting (abdomen, zona posterior y espalda)", desc:"Procedimiento corporal para mejorar apariencia de zonas específicas. Requiere valoración previa." },
+      const msgLorica = encodeURIComponent(
+        `Hola Dra. Tatiana, quiero agendar valoración para: ${service}. ` +
+        `Sede: Lorica. (Sé que la valoración en Lorica es GRATIS). ` +
+        `¿Me confirmas disponibilidad?`
+      );
+      const msgTierralta = encodeURIComponent(
+        `Hola Dra. Tatiana, quiero agendar valoración para: ${service}. ` +
+        `Sede: Tierralta. (Entiendo que la valoración en Tierralta tiene costo). ` +
+        `¿Me confirmas disponibilidad?`
+      );
 
-    // Sueroterapia (sin precios)
-    { id:"s20", name:"Suero Reparador", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s21", name:"Suero Estimulante", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s22", name:"Suero Energizante", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s23", name:"Suero Estimulante para la Memoria", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s24", name:"Suero Desintoxicante", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s25", name:"Suero Anti-estrés", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s26", name:"Suero Revitalizador", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s27", name:"Suero Post-quirúrgico", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s28", name:"Suero Antiobesidad", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s29", name:"Suero Inmunológico", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s30", name:"Suero Post-Guayabo", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s31", name:"Suero Poliláctico (rostro)", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s32", name:"Suero Poliláctico (extrac.)", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
-    { id:"s33", name:"Suero Detox", desc:"Sueroterapia de apoyo según necesidad y valoración. Indicaciones y composición se confirman en consulta." },
+      waLorica.href = WA + msgLorica;
+      waTierralta.href = WA + msgTierralta;
 
-    { id:"s34", name:"Ácido Poliláctico (manos)", desc:"Armonización y bioestimulación según diagnóstico. Material y plan se definen tras valoración." },
+      drawer.classList.add("is-open");
+      drawer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("no-scroll");
+    }
 
-    // Tecnologías / bienestar
-    { id:"s35", name:"Radiofrecuencia continua con Vitamina C (tonificación)", desc:"Terapia de radiofrecuencia según protocolo. Se indica duración y sesiones tras valoración." },
-    { id:"s36", name:"Radiofrecuencia continua + masajes reductores", desc:"Terapia de radiofrecuencia según protocolo. Se indica duración y sesiones tras valoración." },
-    { id:"s37", name:"Megadosis de Vitamina C", desc:"Apoyo con vitamina C según indicación y valoración. Se revisan antecedentes antes de aplicar." },
-    { id:"s38", name:"Tratamientos Corporales", desc:"Protocolos corporales según objetivo (bienestar, tonificación o cuidado). Se definen en valoración." },
+    function closeDrawer(){
+      drawer.classList.remove("is-open");
+      drawer.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("no-scroll");
+    }
 
-    // Valoraciones/consultas
-    { id:"s39", name:"Consulta por Médico Especialista", desc:"Espacio de evaluación para definir el plan ideal, resolver dudas y orientar el procedimiento adecuado." },
-    { id:"s40", name:"Valoración Medicina Estética y Regenerativa", desc:"Espacio de evaluación para definir el plan ideal, resolver dudas y orientar el procedimiento adecuado." },
-    { id:"s41", name:"Valoración por Nutrición", desc:"Espacio de evaluación nutricional para orientar hábitos, plan y seguimiento según tu caso." },
-
-    // Masajes y bienestar
-    { id:"s42", name:"Masaje Purificante", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
-    { id:"s43", name:"Masaje Balinés / Express Masaje Espalda", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
-    { id:"s44", name:"Reflexología Podal + Desintoxicación Iónica", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
-    { id:"s45", name:"Masaje Facial + Higiene Facial", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
-    { id:"s46", name:"Bambuterapia", desc:"Sesión de bienestar y cuidado corporal. La técnica se ajusta a tu necesidad y tolerancia." },
-
-    // Bótox / indicaciones
-    { id:"s47", name:"Rejuvenecimiento Facial No Quirúrgico", desc:"Opciones de rejuvenecimiento según diagnóstico. Se define protocolo y cuidados tras valoración." },
-    { id:"s48", name:"Bótox: Tercio Superior", desc:"Aplicación de toxina botulínica con enfoque médico y natural. Se define dosis y zonas tras valoración." },
-    { id:"s49", name:"Bótox para Bruxismo", desc:"Aplicación de toxina botulínica en casos seleccionados. Evaluación previa obligatoria." },
-    { id:"s50", name:"Sonrisa Gingival", desc:"Evaluación y manejo estético de sonrisa gingival en casos seleccionados, según valoración." },
-    { id:"s51", name:"Bótox: Tercio Inferior", desc:"Aplicación de toxina botulínica con enfoque médico y natural. Se define dosis y zonas tras valoración." },
-    { id:"s52", name:"Hiperhidrosis Axilar y Palmar", desc:"Manejo de sudoración excesiva en zonas específicas, según valoración médica." }
-  ];
-
-  // Render grid
-  const grid = document.getElementById("svcGrid");
-
-  function renderServices(list){
-    grid.innerHTML = "";
-    list.forEach(item => {
-      const btn = document.createElement("button");
-      btn.className = "svc-item";
-      btn.type = "button";
-      btn.setAttribute("data-id", item.id);
-      btn.innerHTML = `
-        <div class="svc-item-top">
-          <div class="svc-badge">Servicio</div>
-          <div class="svc-open">Ver</div>
-        </div>
-        <div class="svc-item-name">${escapeHtml(item.name)}</div>
-        <div class="svc-item-hint">Clic para ver descripción</div>
-      `;
-      btn.addEventListener("click", () => openDrawer(item));
-      grid.appendChild(btn);
+    drawer.addEventListener("click", (e) => {
+      if (e.target.matches("[data-close]")) closeDrawer();
     });
-  }
 
-  // Drawer
-  const drawer = document.getElementById("svcDrawer");
-  const drawerTitle = document.getElementById("drawerTitle");
-  const drawerDesc  = document.getElementById("drawerDesc");
-  const drawerWaBtn = document.getElementById("drawerWaBtn");
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && drawer.classList.contains("is-open")) closeDrawer();
+    });
 
-  function openDrawer(item){
-    drawerTitle.textContent = item.name;
-    drawerDesc.textContent  = item.desc;
+    // Click filas
+    document.querySelectorAll(".svc-row").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        // Si dieron click directo al botón Agendar, no abrir drawer
+        if (e.target.closest(".svc-cta")) return;
 
-    drawerWaBtn.onclick = () => openWhatsApp(
-      `Hola Dra. Tatiana, deseo información sobre: ${item.name}. Mi sede es: Lorica/Tierralta.`
-    );
+        const service = btn.dataset.service;
+        const desc = btn.dataset.desc;
+        openDrawer(service, desc);
+      });
+    });
 
-    drawer.classList.add("open");
-    drawer.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
+    // Botones "Agendar" a la derecha (WhatsApp directo)
+    document.querySelectorAll(".svc-cta").forEach(a => {
+      const service = a.getAttribute("data-wa");
+      const msg = encodeURIComponent(
+        `Hola Dra. Tatiana, me interesa el servicio: ${service}. ` +
+        `Quiero agendar valoración. ¿Me confirmas disponibilidad y sede (Lorica o Tierralta)?`
+      );
+      a.href = WA + msg;
+    });
 
-  function closeDrawer(){
-    drawer.classList.remove("open");
-    drawer.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
+    // Buscador
+    const svcSearch = document.getElementById("svcSearch");
+    const items = Array.from(document.querySelectorAll(".svc-item"));
 
-  // ESC to close
-  document.addEventListener("keydown", (e) => {
-    if(e.key === "Escape") closeDrawer();
-  });
-
-  // Search
-  const search = document.getElementById("svcSearch");
-  search.addEventListener("input", () => {
-    const q = search.value.trim().toLowerCase();
-    if(!q){ renderServices(SERVICES); return; }
-    const filtered = SERVICES.filter(s => s.name.toLowerCase().includes(q));
-    renderServices(filtered);
-  });
-
-  // Initial render
-  renderServices(SERVICES);
-
-  // Helpers
-  function escapeHtml(str){
-    return String(str)
-      .replaceAll("&","&amp;")
-      .replaceAll("<","&lt;")
-      .replaceAll(">","&gt;")
-      .replaceAll('"',"&quot;")
-      .replaceAll("'","&#039;");
-  }
-</script>
-
+    svcSearch.addEventListener("input", () => {
+      const q = svcSearch.value.trim().toLowerCase();
+      items.forEach(it => {
+        const title = (it.getAttribute("data-title") || "").toLowerCase();
+        it.style.display = title.includes(q) ? "" : "none";
+      });
+    });
+  </script>
 </body>
 </html>
