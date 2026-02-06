@@ -87,13 +87,31 @@
     <p>Imágenes sin rostro, publicadas con autorización del paciente.</p>
   </div>
 
+  <!-- COLLAGE 3x2 -->
   <div class="collage">
-    <img src="assets/pacientes/p1.jpg" alt="Resultado 1">
-    <img src="assets/pacientes/p2.jpg" alt="Resultado 2">
-    <img src="assets/pacientes/p3.jpg" alt="Resultado 3">
-    <img src="assets/pacientes/p4.jpg" alt="Resultado 4">
-    <img src="assets/pacientes/p5.jpg" alt="Resultado 5">
-    <img src="assets/pacientes/p6.jpg" alt="Resultado 6">
+    <button class="collage-item" type="button" data-img="assets/pacientes/p1.jpeg" aria-label="Ver resultado 1">
+      <img src="assets/pacientes/p1.jpeg" alt="Resultado 1">
+    </button>
+
+    <button class="collage-item" type="button" data-img="assets/pacientes/p2.jpeg" aria-label="Ver resultado 2">
+      <img src="assets/pacientes/p2.jpeg" alt="Resultado 2">
+    </button>
+
+    <button class="collage-item" type="button" data-img="assets/pacientes/p3.jpeg" aria-label="Ver resultado 3">
+      <img src="assets/pacientes/p3.jpeg" alt="Resultado 3">
+    </button>
+
+    <button class="collage-item" type="button" data-img="assets/pacientes/p4.jpeg" aria-label="Ver resultado 4">
+      <img src="assets/pacientes/p4.jpeg" alt="Resultado 4">
+    </button>
+
+    <button class="collage-item" type="button" data-img="assets/pacientes/p5.jpeg" aria-label="Ver resultado 5">
+      <img src="assets/pacientes/p5.jpeg" alt="Resultado 5">
+    </button>
+
+    <button class="collage-item" type="button" data-img="assets/pacientes/p6.jpeg" aria-label="Ver resultado 6">
+      <img src="assets/pacientes/p6.jpeg" alt="Resultado 6">
+    </button>
   </div>
 
   <div class="resultados-actions">
@@ -101,15 +119,45 @@
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <p>© 2026 Dra. Tatiana Mendoza · Medicina Estética y Regenerativa</p>
-  <p class="footer-note">La información no reemplaza una consulta médica.</p>
-</footer>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop"></div>
+  <div class="lightbox-content" role="dialog" aria-modal="true">
+    <button class="lightbox-close" type="button" aria-label="Cerrar">✕</button>
+    <img id="lightbox-img" src="" alt="Imagen ampliada">
+  </div>
+</div>
 
-<!-- BOTÓN FLOTANTE WHATSAPP -->
-<a href="https://wa.me/573009872255" class="whatsapp-float" target="_blank">WhatsApp</a>
+<script>
+  (function () {
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightbox-img");
+    const closeBtn = lb.querySelector(".lightbox-close");
+    const backdrop = lb.querySelector(".lightbox-backdrop");
 
-</body>
-</html>
+    function openLightbox(src) {
+      lbImg.src = src;
+      lb.classList.add("open");
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
 
+    function closeLightbox() {
+      lb.classList.remove("open");
+      lb.setAttribute("aria-hidden", "true");
+      lbImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".collage-item").forEach(btn => {
+      btn.addEventListener("click", () => openLightbox(btn.dataset.img));
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+    backdrop.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  })();
+</script>
