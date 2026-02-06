@@ -874,3 +874,87 @@ label {
     width: 100%;
   }
 }
+/* =========================
+   HEADER NUEVO (SERVICIOS)
+   ========================= */
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.header-inner{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  display: grid;
+  grid-template-columns: 170px 1fr auto;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand{ display:flex; align-items:center; }
+.brand-logo{
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.main-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: nowrap;          /* clave para que NO baje "Contacto" */
+  white-space: nowrap;        /* evita salto de línea */
+  overflow-x: auto;           /* si la pantalla es pequeña, permite deslizar */
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 2px;
+}
+
+.main-nav a{
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: rgba(0,0,0,0.72);
+  padding: 10px 12px;
+  border-radius: 999px;
+  transition: background .2s ease, color .2s ease;
+}
+
+.main-nav a:hover{
+  background: rgba(229,138,154,0.12);
+}
+
+.main-nav a.active{
+  background: rgba(229,138,154,0.18);
+  color: rgba(0,0,0,0.85);
+}
+
+.cta-whatsapp{
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #e58a9a, #f3a7b3);
+  box-shadow: 0 14px 30px rgba(229,138,154,0.30);
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .header-inner{
+    grid-template-columns: 120px 1fr auto;
+    padding: 12px 14px;
+  }
+  .brand-logo{ height: 30px; }
+  .main-nav{ justify-content: flex-start; }
+}
