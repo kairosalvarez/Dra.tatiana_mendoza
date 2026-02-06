@@ -1,1482 +1,547 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Servicios | Dra. Tatiana Mendoza</title>
 
-  <!-- Tu CSS global -->
   <link rel="stylesheet" href="styles.css?v=1200" />
 
-  <!-- Estilos extra SOLO para que Servicios quede perfecto (sin dañar el resto) -->
   <style>
-    :root{
-      --brand: #e78f9f;
-      --brand2:#f4b7c2;
-      --ink:#1f1f1f;
-      --muted:#6b6b6b;
-      --card:#ffffff;
-      --bg:#fbf3f5;
-      --line: rgba(0,0,0,.08);
-      --shadow: 0 10px 25px rgba(0,0,0,.06);
-      --radius: 18px;
+    /* ====== SOLO SERVICIOS (no toca lo demás) ====== */
+    .services-wrap{ max-width:1100px; margin:0 auto; padding:28px 16px 60px; }
+    .services-card{
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.06);
+      overflow:hidden;
     }
-
-    body{
-      background: var(--bg);
-    }
-
-    /* Contenedor de página */
-    .page-wrap{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px 18px 60px;
-    }
-
-    /* Header/Nav (si ya existe en tu styles.css, esto solo “refuerza” alineación) */
-    .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.05);
-    }
-    .topbar-inner{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .brand{
-      display:flex;
+    .services-head{ padding:26px 26px 18px; }
+    .services-head h1{ margin:0 0 8px; font-size:44px; line-height:1.05; }
+    .services-head p{ margin:0; opacity:.85; font-size:15.5px; }
+    .services-tools{
+      display:flex; gap:14px; flex-wrap:wrap;
+      padding: 0 26px 18px;
       align-items:center;
-      gap:10px;
-      min-width: 220px;
     }
-    .brand img{
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      display:block;
+    .services-search{
+      flex: 1 1 380px;
+      display:flex; align-items:center; gap:10px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:999px;
+      padding: 12px 16px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.04);
     }
-    .brand .brand-text{
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.1;
-      font-size: 14px;
+    .services-search .icon{ font-size:16px; opacity:.7; }
+    .services-search input{
+      border:none; outline:none; width:100%;
+      font-size:15px; background:transparent;
     }
-    .nav{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      flex: 1;
-    }
-    .nav a{
-      text-decoration: none;
-      color: var(--ink);
-      padding: 10px 12px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 14px;
-      opacity: .9;
-    }
-    .nav a:hover{ background: rgba(231,143,159,.12); }
-    .nav a.active{
-      background: rgba(231,143,159,.18);
-    }
-
-    .cta-whats{
-      margin-left: auto;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      color: #fff !important;
-      padding: 11px 16px;
-      border-radius: 999px;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 10px 22px rgba(231,143,159,.28);
-      white-space: nowrap;
-      font-size: 14px;
-    }
-
-    /* Caja principal */
-    .panel{
-      background: rgba(255,255,255,.75);
-      border: 1px solid rgba(0,0,0,.04);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 22px 18px;
-      position: relative;
-      overflow: hidden;
-    }
-    .panel::before{
-      content:"";
-      position:absolute;
-      inset:-120px -120px auto auto;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(231,143,159,.30), rgba(231,143,159,0));
-      filter: blur(2px);
-      border-radius: 50%;
-      pointer-events:none;
-    }
-    .panel::after{
-      content:"";
-      position:absolute;
-      inset:auto auto -140px -140px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(231,143,159,.24), rgba(231,143,159,0));
-      border-radius: 50%;
-      pointer-events:none;
-    }
-
-    .title{
-      font-size: 40px;
-      margin: 0 0 6px;
-      color: var(--ink);
-      letter-spacing: -0.5px;
-    }
-    .subtitle{
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-weight: 600;
-    }
-    .note{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* Buscador */
-    .tools{
-      display:flex;
-      gap: 12px;
-      align-items:center;
-      flex-wrap: wrap;
-      margin: 18px 0 14px;
-      position: relative;
-      z-index: 1;
-    }
-    .search{
-      flex: 1;
-      min-width: 260px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      background: #fff;
-      border: 1px solid rgba(0,0,0,.06);
-      border-radius: 999px;
-      padding: 10px 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.04);
-    }
-    .search input{
-      border: none;
-      outline: none;
-      width: 100%;
-      font-size: 14px;
-      background: transparent;
-    }
-    .tools .mini-cta{
-      border: 1px solid rgba(231,143,159,.45);
-      background: #fff;
-      color: #8a3c49;
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 10px 14px;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .tools .mini-cta:hover{ background: rgba(231,143,159,.10); }
-
-    /* Lista de servicios */
-    .services{
-      display:flex;
-      flex-direction: column;
-      gap: 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .service{
-      background: var(--card);
-      border: 1px solid rgba(0,0,0,.06);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 20px rgba(0,0,0,.04);
-      overflow: hidden;
-    }
-
-    .service-row{
-      display:flex;
-      align-items: center;
-      gap: 14px;
-      padding: 16px 16px;
-    }
-
-    .service-left{
-      flex: 1;
-      cursor: pointer;
-      padding: 4px 6px;
-      border-radius: 12px;
-    }
-    .service-left:hover{
-      background: rgba(231,143,159,.08);
-    }
-
-    .service-name{
-      margin: 0;
-      font-size: 18px;
-      font-weight: 900;
-      color: var(--ink);
-      letter-spacing: -0.2px;
-    }
-    .service-hook{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 1.35;
-    }
-
-    .service-right{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+    .services-top-cta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-left:auto;
     }
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-weight: 900;
-      text-decoration: none;
-      font-size: 14px;
-      border: 1px solid rgba(0,0,0,.08);
-      background: #fff;
-      color: var(--ink);
-      cursor: pointer;
-      user-select: none;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      border:none; cursor:pointer; text-decoration:none;
+      padding: 12px 16px;
+      border-radius:999px;
+      font-weight:700;
+      transition: transform .08s ease, box-shadow .18s ease, background .18s ease;
+      user-select:none;
+      white-space:nowrap;
     }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn-soft{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.10);
+      color:#5b2b34;
+      box-shadow: 0 10px 22px rgba(0,0,0,.05);
+    }
+    .btn-soft:hover{ box-shadow: 0 14px 26px rgba(0,0,0,.07); }
 
     .btn-primary{
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      border: none;
-      color: #fff;
-      box-shadow: 0 10px 22px rgba(231,143,159,.22);
+      background: linear-gradient(135deg, #e8a0ae, #e5899b);
+      color:#fff;
+      box-shadow: 0 14px 28px rgba(229,137,155,.30);
     }
-    .btn-primary:hover{ filter: brightness(.98); }
+    .btn-primary:hover{ box-shadow: 0 18px 34px rgba(229,137,155,.36); }
 
-    .btn-ghost{
+    .services-list{ padding: 4px 18px 22px; }
+    .service-row{
+      display:flex; align-items:center; gap:16px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.07);
+      border-radius:16px;
+      padding: 16px 16px;
+      margin: 10px 0;
+      box-shadow: 0 10px 20px rgba(0,0,0,.04);
+    }
+    .service-main{
+      flex: 1 1 auto;
+      min-width: 240px;
+      cursor:pointer;
+    }
+    .service-title{
+      margin:0 0 6px;
+      font-size:20px;
+      line-height:1.2;
+    }
+    .service-hook{
+      margin:0;
+      opacity:.82;
+      font-size:14.5px;
+    }
+    .service-actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn-mini{
+      padding: 10px 14px;
+      font-size:14px;
+    }
+    .btn-outline{
       background: #fff;
-      border: 1px solid rgba(231,143,159,.45);
-      color: #8a3c49;
+      border: 1px solid rgba(229,137,155,.55);
+      color:#7a2f3d;
+      box-shadow:none;
     }
-    .btn-ghost:hover{ background: rgba(231,143,159,.10); }
+    .btn-outline:hover{ box-shadow: 0 12px 22px rgba(0,0,0,.06); }
 
-    /* Panel desplegable */
-    .service-details{
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .35s ease;
+    .services-foot{
+      padding: 14px 26px 22px;
       border-top: 1px solid rgba(0,0,0,.06);
-      background: rgba(231,143,159,.06);
-    }
-    .service-details-inner{
-      padding: 14px 16px 16px;
-      color: #3a3a3a;
-      line-height: 1.5;
-      font-weight: 600;
-      font-size: 14px;
+      font-size: 12.8px;
+      opacity:.75;
+      background: rgba(255,255,255,.55);
     }
 
-    .service.open .service-details{
-      max-height: 260px;
+    /* ====== PANEL LATERAL IZQUIERDO ====== */
+    .drawer-backdrop{
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.35);
+      opacity:0; pointer-events:none;
+      transition: opacity .2s ease;
+      z-index: 9998;
     }
+    .drawer{
+      position:fixed;
+      top:0; left:0;
+      height:100vh;
+      width:min(460px, 92vw);
+      background:#fff;
+      box-shadow: 24px 0 60px rgba(0,0,0,.25);
+      transform: translateX(-102%);
+      transition: transform .22s ease;
+      z-index: 9999;
+      display:flex;
+      flex-direction:column;
+    }
+    .drawer.open{ transform: translateX(0); }
+    .drawer-backdrop.open{ opacity:1; pointer-events:auto; }
 
-    .foot{
-      margin-top: 14px;
-      font-size: 12.5px;
-      color: var(--muted);
-      position: relative;
-      z-index: 1;
+    .drawer-top{
+      padding: 18px 18px 12px;
+      border-bottom:1px solid rgba(0,0,0,.08);
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
     }
+    .drawer-top h2{ margin:0; font-size:20px; line-height:1.2; }
+    .drawer-close{
+      border:none; background:#fff;
+      width:40px; height:40px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:18px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.06);
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    .drawer-body{ padding: 14px 18px 18px; overflow:auto; }
+    .drawer-pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius:999px;
+      background: rgba(229,137,155,.14);
+      color:#6e2a38;
+      font-weight:700;
+      font-size:12.5px;
+      margin-bottom:10px;
+    }
+    .drawer-body p{ margin:10px 0; font-size:14.8px; line-height:1.55; opacity:.92; }
+    .drawer-bottom{
+      padding: 14px 18px 18px;
+      border-top:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.85);
+    }
+    .drawer-bottom .btn{ width:100%; justify-content:center; }
 
     /* Responsive */
-    @media (max-width: 720px){
-      .topbar-inner{ gap: 10px; }
-      .brand{ min-width: auto; }
-      .service-row{ flex-direction: column; align-items: stretch; }
-      .service-right{ justify-content: flex-start; }
-      .title{ font-size: 34px; }
+    @media (max-width: 640px){
+      .services-head h1{ font-size:36px; }
+      .service-row{ align-items:flex-start; }
+      .service-actions{ width:100%; justify-content:flex-start; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Barra superior -->
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="Ir al inicio">
-      <img src="assets/logo.png" alt="Logo Tatiana Mendoza" class="brand-logo">
-    </a>
+  <!-- HEADER (usa tu mismo header actual; no lo cambio) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+        <!-- Sin texto: solo logo -->
+        <img src="assets/logo.png" alt="" class="brand-logo">
+      </a>
 
-    <nav class="main-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-      <a href="sedes.html">Sedes</a>
-      <a href="servicios.html" class="active">Servicios</a>
-      <a href="agendar.html">Agendar</a>
-      <a href="testimonios.html">Testimonios</a>
-      <a href="evidencias.html">Evidencias</a>
-      <a href="preguntas.html">Preguntas</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="servicios.html" class="active">Servicios</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="evidencias.html">Evidencias</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
 
-    <a class="cta-whatsapp" href="https://wa.me/573009872255" target="_blank" rel="noopener">
-      Agendar por WhatsApp
-    </a>
-  </div>
-</header>
+      <a class="cta-whatsapp" href="https://wa.me/573009872255" target="_blank" rel="noopener">
+        Agendar por WhatsApp
+      </a>
+    </div>
+  </header>
 
-  <main class="page-wrap">
-    <section class="panel">
-      <h1 class="title">Servicios</h1>
-      <p class="subtitle">
-        Toca un servicio para ver su descripción breve.
-        <strong>Lorica:</strong> valoración <strong>GRATIS</strong> · <strong>Tierralta:</strong> valoración con costo (se informa por WhatsApp).
-      </p>
+  <!-- CONTENIDO -->
+  <main class="services-wrap">
+    <section class="services-card">
+      <div class="services-head">
+        <h1>Servicios</h1>
+        <p>
+          Toca un servicio para ver su descripción. <strong>Lorica:</strong> valoración <strong>GRATIS</strong> ·
+          <strong>Tierralta:</strong> valoración con costo (se informa por WhatsApp).
+        </p>
+      </div>
 
-      <div class="tools">
-        <div class="search" role="search">
-          🔎
-          <input id="searchInput" type="text" placeholder="Buscar servicio (ej: labios, bótox, suero, masaje…)" />
+      <div class="services-tools">
+        <div class="services-search" role="search">
+          <span class="icon">🔎</span>
+          <input id="searchInput" type="text" placeholder="Buscar servicio (ej: labios, bótox, suero, masaje...)" autocomplete="off">
         </div>
-        <a class="mini-cta" target="_blank" rel="noopener"
-           href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20informaci%C3%B3n%20sobre%20los%20servicios.%20%C2%BFMe%20asesoras%20por%20favor%3F">
-          Consultar por WhatsApp
-        </a>
+
+        <div class="services-top-cta">
+          <a class="btn btn-soft" href="https://wa.me/573009872255" target="_blank" rel="noopener">
+            Consultar por WhatsApp
+          </a>
+        </div>
       </div>
 
-      <!-- LISTA COMPLETA (PDF) -->
-      <div id="servicesList" class="services">
+      <div class="services-list" id="servicesList"></div>
 
-        <!-- 1 -->
-        <article class="service" data-name="Rinomodelación">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Rinomodelación</h3>
-              <p class="service-hook">Armoniza tu perfil y resalta tus facciones de forma sutil y elegante.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Rinomodelaci%C3%B3n.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Procedimiento estético orientado a mejorar la forma y proporción de la nariz con enfoque armónico. Ideal si buscas un cambio natural, sin perder tu esencia. Requiere valoración previa para definir el plan más adecuado.
-            </div>
-          </div>
-        </article>
-
-        <!-- 2 -->
-        <article class="service" data-name="Rinomodelación Mixta">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Rinomodelación Mixta</h3>
-              <p class="service-hook">Un perfil más equilibrado con un resultado progresivo y natural.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Rinomodelaci%C3%B3n%20Mixta.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Enfocado en armonizar el perfil nasal con una propuesta personalizada. La técnica y el plan se ajustan según tu anatomía y objetivo estético para un resultado equilibrado.
-            </div>
-          </div>
-        </article>
-
-        <!-- 3 -->
-        <article class="service" data-name="Rinomodelación Mixta y Alectomía">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Rinomodelación Mixta + Alectomía</h3>
-              <p class="service-hook">Equilibrio facial con enfoque médico y humano.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Rinomodelaci%C3%B3n%20Mixta%20%2B%20Alectom%C3%ADa.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Propuesta combinada para mejorar la armonía del perfil, cuidando proporciones y simetría. Se define únicamente tras valoración para asegurar que el resultado sea natural y acorde a tu rostro.
-            </div>
-          </div>
-        </article>
-
-        <!-- 4 -->
-        <article class="service" data-name="Labios Volumen + Perfilamiento">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Labios Volumen + Perfilamiento</h3>
-              <p class="service-hook">Labios más definidos y armónicos, resaltando tu belleza natural.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Labios%20Volumen%20%2B%20Perfilamiento.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Diseñado para mejorar forma, contorno y proyección de los labios. Se busca un acabado elegante y proporcional a tu rostro (no “exagerado”), definido siempre en valoración.
-            </div>
-          </div>
-        </article>
-
-        <!-- 5 -->
-        <article class="service" data-name="Labios Perfilamiento + Hidratación">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Labios Perfilamiento + Hidratación</h3>
-              <p class="service-hook">Un toque sutil para labios más frescos, suaves y definidos.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Labios%20Perfilamiento%20%2B%20Hidrataci%C3%B3n.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Ideal si deseas mejorar el contorno y darle un aspecto más hidratado y saludable a tus labios. En valoración se define el plan según tu necesidad (perfil, textura e hidratación).
-            </div>
-          </div>
-        </article>
-
-        <!-- 6 -->
-        <article class="service" data-name="Reborde Mandibular">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Reborde Mandibular</h3>
-              <p class="service-hook">Contorno más definido para un perfil más elegante.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Reborde%20Mandibular.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Enfocado en mejorar la definición de la línea mandibular y aportar estructura facial. Se diseña para mantener naturalidad y armonía con el rostro.
-            </div>
-          </div>
-        </article>
-
-        <!-- 7 -->
-        <article class="service" data-name="Mentón">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Mentón</h3>
-              <p class="service-hook">Más definición y mejor balance facial.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Ment%C3%B3n.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Procedimiento para mejorar proyección y proporción del mentón, buscando armonía con nariz, labios y mandíbula. Ideal para perfilar sin perder naturalidad.
-            </div>
-          </div>
-        </article>
-
-        <!-- 8 -->
-        <article class="service" data-name="Ojeras">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Ojeras</h3>
-              <p class="service-hook">Una mirada más descansada y luminosa.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Ojeras.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Tratamiento orientado a mejorar el aspecto cansado del contorno de ojos. La valoración define si tu caso requiere hidratación, relleno, estímulo de colágeno u otra estrategia.
-            </div>
-          </div>
-        </article>
-
-        <!-- 9 -->
-        <article class="service" data-name="Pómulos">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Pómulos</h3>
-              <p class="service-hook">Estructura y armonía sin perder naturalidad.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20P%C3%B3mulos.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Mejora el soporte y proyección de los pómulos para un rostro más armónico. Se prioriza un resultado elegante y proporcional.
-            </div>
-          </div>
-        </article>
-
-        <!-- 10 -->
-        <article class="service" data-name="Full Face">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Full Face</h3>
-              <p class="service-hook">Un plan completo pensado para ti y tu objetivo estético.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Full%20Face.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Plan integral de armonización facial. En valoración se define qué áreas trabajar y en qué orden, buscando un resultado global, natural y progresivo.
-            </div>
-          </div>
-        </article>
-
-        <!-- 11 -->
-        <article class="service" data-name="Hidroxiapatita de Calcio (Tercio medio)">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Hidroxiapatita de Calcio (Tercio medio)</h3>
-              <p class="service-hook">Mejora soporte y firmeza con un acabado sofisticado.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Hidroxiapatita%20de%20Calcio%20(Tercio%20medio).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Orientado a mejorar soporte del tercio medio (mejillas) y aportar firmeza. La indicación y el plan dependen de tu valoración clínica y objetivo.
-            </div>
-          </div>
-        </article>
-
-        <!-- 12 -->
-        <article class="service" data-name="Cuello">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Cuello</h3>
-              <p class="service-hook">Un cuello más firme y armónico para verte más fresca.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Cuello.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Tratamientos para mejorar firmeza, textura y apariencia del cuello. En valoración se define el enfoque (bioestimulación, hidratación, tensado, etc.).
-            </div>
-          </div>
-        </article>
-
-        <!-- 13 -->
-        <article class="service" data-name="Ácido Poliláctico Ca (Tercio medio)">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Ácido Poliláctico Ca (Tercio medio)</h3>
-              <p class="service-hook">Estimula firmeza y mejora la apariencia de manera progresiva.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20%C3%81cido%20Polil%C3%A1ctico%20Ca%20(Tercio%20medio).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Procedimiento orientado a estimular colágeno y mejorar soporte de forma progresiva. La valoración define si eres candidata y la estrategia ideal.
-            </div>
-          </div>
-        </article>
-
-        <!-- 14 -->
-        <article class="service" data-name="Ácido Poliláctico Cosmilan">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Ácido Poliláctico Cosmilan</h3>
-              <p class="service-hook">Mejora textura y firmeza para un rostro con aspecto más joven.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20%C3%81cido%20Polil%C3%A1ctico%20Cosmilan.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Alternativa enfocada en bioestimulación y mejora progresiva de la piel. En valoración se define si aplica para tu caso y cómo lograr un resultado natural.
-            </div>
-          </div>
-        </article>
-
-        <!-- 15 -->
-        <article class="service" data-name="Endolifting (abdomen / zona posterior / espalda)">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Endolifting (Abdomen / Zona posterior / Espalda)</h3>
-              <p class="service-hook">Firmeza y contorno con enfoque médico.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Endolifting%20(Abdomen%20%2F%20Zona%20posterior%20%2F%20Espalda).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Procedimiento orientado a mejorar aspecto de firmeza y contorno en zonas específicas. En valoración se define alcance, expectativas y plan personalizado.
-            </div>
-          </div>
-        </article>
-
-        <!-- 16 -->
-        <article class="service" data-name="Adiposidad localizada y celulitis">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Adiposidad Localizada y Celulitis</h3>
-              <p class="service-hook">Un plan para moldear y mejorar textura de la piel con constancia.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Adiposidad%20Localizada%20y%20Celulitis.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Enfocado en mejorar acumulación localizada y apariencia de celulitis. La valoración define combinación de técnicas, número de sesiones y hábitos recomendados.
-            </div>
-          </div>
-        </article>
-
-        <!-- 17 -->
-        <article class="service" data-name="Lipopapada">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Lipopapada</h3>
-              <p class="service-hook">Perfil más limpio y definido para un rostro más estilizado.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Lipopapada.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Tratamiento para mejorar el contorno bajo el mentón y el perfil del cuello. En valoración se define si el enfoque es reducción, tensado o combinación.
-            </div>
-          </div>
-        </article>
-
-        <!-- 18 -->
-        <article class="service" data-name="Programas post parto / Plan peso saludable">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Programas Post Parto / Plan Peso Saludable</h3>
-              <p class="service-hook">Recupera bienestar, firmeza y hábitos con acompañamiento.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Programa%20Post%20Parto%20%2F%20Plan%20Peso%20Saludable.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Programas diseñados para acompañarte en tu recuperación y bienestar (hábitos, cuerpo y salud). En valoración se define el plan según tu historia y objetivo.
-            </div>
-          </div>
-        </article>
-
-        <!-- 19 -->
-        <article class="service" data-name="Terapias para tensado de la piel">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Terapias para Tensado de la Piel</h3>
-              <p class="service-hook">Mejora firmeza y textura para una piel con mejor apariencia.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Terapias%20para%20Tensado%20de%20la%20Piel.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details">
-            <div class="service-details-inner">
-              Conjunto de alternativas para mejorar firmeza, elasticidad y apariencia de la piel. En valoración se elige la técnica más adecuada y el plan por etapas.
-            </div>
-          </div>
-        </article>
-
-        <!-- ====== SUEROS (procedimientos menores) ====== -->
-        <article class="service" data-name="Suero desintoxicante">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Desintoxicante</h3>
-              <p class="service-hook">Recarga tu bienestar y siéntete más ligera(o) desde adentro.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Desintoxicante.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Suero orientado a apoyar sensación de vitalidad y bienestar general. La indicación y frecuencia se definen en valoración según tu objetivo.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero reparador">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Reparador</h3>
-              <p class="service-hook">Apoyo ideal cuando sientes que necesitas “reset” y recuperación.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Reparador.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Pensado para apoyar procesos de recuperación y energía. Se personaliza según tu necesidad y condición.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero estimulante">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Estimulante</h3>
-              <p class="service-hook">Un impulso de energía para tus días más exigentes.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Estimulante.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Suero orientado a apoyar vitalidad y rendimiento diario. En valoración se revisa tu objetivo y se define el plan.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero energizante">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Energizante</h3>
-              <p class="service-hook">Para sentirte con más ánimo y enfoque en tu rutina.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Energizante.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Enfocado en apoyar energía y bienestar. Requiere valoración para definir si aplica y cada cuánto.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero estimulante para la memoria">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Estimulante para la Memoria</h3>
-              <p class="service-hook">Apoya concentración y claridad para tus actividades.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Estimulante%20para%20la%20Memoria.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Alternativa para apoyar enfoque y bienestar mental, siempre definida bajo valoración clínica.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero inmunológico">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Inmunológico</h3>
-              <p class="service-hook">Fortalece tu bienestar en temporadas de cansancio.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Inmunol%C3%B3gico.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Suero orientado a acompañar bienestar general. La indicación depende de tu valoración y antecedentes.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero anti estrés">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Anti Estrés</h3>
-              <p class="service-hook">Ideal cuando el cuerpo te pide pausa, calma y balance.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Anti%20Estr%C3%A9s.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Alternativa para apoyar sensación de bienestar en periodos de estrés. Se define plan según tu valoración.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero revitalizador">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Revitalizador</h3>
-              <p class="service-hook">Para verte y sentirte con más energía y vitalidad.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Revitalizador.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Suero enfocado en apoyar energía y bienestar. Requiere valoración previa para personalizar.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero postquirúrgico">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Postquirúrgico</h3>
-              <p class="service-hook">Acompaña tu recuperación con un enfoque de bienestar.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Postquir%C3%BArgico.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Indicado como apoyo de bienestar en procesos de recuperación, siempre bajo valoración y recomendación médica.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero antiobesidad">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Antiobesidad</h3>
-              <p class="service-hook">Acompañamiento de hábitos y bienestar para tu meta.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Antiobesidad.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Complemento dentro de un plan integral de bienestar. En valoración se define si aplica y cómo integrarlo con hábitos.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero detox">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Detox</h3>
-              <p class="service-hook">Para sentirte más ligera(o) y con mejor energía.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Detox.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Suero orientado a bienestar general. Se personaliza según valoración para definir frecuencia y objetivo.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero post guayabo">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Post Guayabo</h3>
-              <p class="service-hook">Recupera energía y vuelve a tu rutina con más ánimo.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Post%20Guayabo.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Orientado a apoyar hidratación y bienestar general. Se define según valoración y necesidad.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Ácido poliláctico manos">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Ácido Poliláctico (Manos)</h3>
-              <p class="service-hook">Manos con mejor textura y apariencia progresiva.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20%C3%81cido%20Polil%C3%A1ctico%20(Manos).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Alternativa de bioestimulación orientada a mejorar apariencia de la piel en manos. Se define bajo valoración.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero poliláctico rostro">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Poliláctico (Rostro)</h3>
-              <p class="service-hook">Apoya firmeza y mejora la textura de forma progresiva.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Polil%C3%A1ctico%20(Rostro).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Enfocado en apoyo de bioestimulación y bienestar de la piel. Requiere valoración para plan.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Suero poliláctico extra">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Suero Poliláctico (Extra)</h3>
-              <p class="service-hook">Refuerza tu plan de cuidado con un enfoque personalizado.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Suero%20Polil%C3%A1ctico%20(Extra).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Alternativa complementaria dentro de un plan estético. Se define según valoración y objetivo.
-          </div></div>
-        </article>
-
-        <!-- Radiofrecuencia -->
-        <article class="service" data-name="Radiofrecuencia continua con masajes reductores">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Radiofrecuencia continua + Masajes reductores</h3>
-              <p class="service-hook">Mejora firmeza y apoyo al contorno corporal.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Radiofrecuencia%20continua%20%2B%20masajes%20reductores.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Tratamiento orientado a firmeza y apariencia de la piel, acompañado de masajes reductores según valoración. El plan (zonas y sesiones) se define en consulta.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Radiofrecuencia continua con vitamina C para tonificar">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Radiofrecuencia continua + Vitamina C (Tonificación)</h3>
-              <p class="service-hook">Tonifica y mejora textura con un enfoque progresivo.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Radiofrecuencia%20continua%20%2B%20Vitamina%20C%20(tonificaci%C3%B3n).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Alternativa de tonificación y mejora de textura. La indicación y número de sesiones se definen con valoración.
-          </div></div>
-        </article>
-
-        <!-- Salud / Valoraciones -->
-        <article class="service" data-name="Consulta por médico especialista">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Consulta por Médico Especialista</h3>
-              <p class="service-hook">Acompañamiento profesional para tomar la mejor decisión.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20una%20consulta%20con%20m%C3%A9dico%20especialista.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Consulta médica para evaluar tu caso, resolver dudas y definir el plan recomendado según tu condición y objetivo.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Valoración medicina estética y regenerativa">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Valoración Medicina Estética y Regenerativa</h3>
-              <p class="service-hook">El primer paso para un plan seguro, natural y personalizado.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20una%20valoraci%C3%B3n%20de%20medicina%20est%C3%A9tica%20y%20regenerativa.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Evaluación inicial para definir objetivos, expectativas y plan recomendado. Aquí se determina la mejor ruta para tu caso (sin improvisar).
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Valoración por nutrición">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Valoración por Nutrición</h3>
-              <p class="service-hook">Mejora tu bienestar desde hábitos reales y sostenibles.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20una%20valoraci%C3%B3n%20por%20nutrici%C3%B3n.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Evaluación nutricional para definir metas, hábitos y plan alimentario orientado a tu bienestar y objetivos.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Megadosis de vitamina C">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Megadosis de Vitamina C</h3>
-              <p class="service-hook">Apoya energía, recuperación y bienestar general.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20para%20Megadosis%20de%20Vitamina%20C.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Propuesta para apoyar bienestar. Se define indicación y frecuencia tras valoración según tu condición.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Tratamientos corporales">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Tratamientos Corporales</h3>
-              <p class="service-hook">Moldea, cuida y acompaña tu cuerpo con un plan progresivo.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20informaci%C3%B3n%20y%20agendar%20valoraci%C3%B3n%20para%20Tratamientos%20Corporales.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Planes corporales orientados a bienestar, contorno y mejor textura de piel. En valoración se define el tratamiento ideal y número de sesiones.
-          </div></div>
-        </article>
-
-        <!-- Masajes -->
-        <article class="service" data-name="Masaje purificante">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Masaje Purificante</h3>
-              <p class="service-hook">Relaja, renueva y recarga tu bienestar.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20Masaje%20Purificante.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Masaje enfocado en relajación y bienestar. Ideal para liberar tensión y mejorar sensación general.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Masaje balinés">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Masaje Balinés</h3>
-              <p class="service-hook">Una experiencia profunda de relajación y equilibrio.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20Masaje%20Balin%C3%A9s.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Masaje de enfoque relajante para liberar tensión y favorecer bienestar. Perfecto para desconectar y recargar.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Bambuterapia">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Bambuterapia</h3>
-              <p class="service-hook">Técnica corporal que ayuda a liberar tensión y mejorar bienestar.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20Bambuterapia.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Masaje con bambú orientado a bienestar corporal y relajación. En valoración se define si va como relajación o dentro de un plan corporal.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Express masaje espalda">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Express Masaje Espalda</h3>
-              <p class="service-hook">Ideal si tienes poco tiempo y mucha tensión acumulada.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20Express%20Masaje%20Espalda.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Masaje corto enfocado en espalda para aliviar tensión y mejorar sensación de bienestar.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Reflexología podal + desintoxicación iónica">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Reflexología Podal + Desintoxicación Iónica</h3>
-              <p class="service-hook">Relaja, equilibra y te ayuda a sentirte más ligera(o).</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20Reflexolog%C3%ADa%20Podal%20%2B%20Desintoxicaci%C3%B3n%20I%C3%B3nica.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Sesión enfocada en relajación y bienestar general combinando reflexología con un complemento de cuidado.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Masaje facial + higiene facial">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Masaje Facial + Higiene Facial</h3>
-              <p class="service-hook">Piel más limpia, fresca y con mejor apariencia.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20Masaje%20Facial%20%2B%20Higiene%20Facial.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Limpieza e higiene facial acompañada de masaje para mejorar sensación de frescura y cuidado de la piel.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Rejuvenecimiento facial no quirúrgico">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Rejuvenecimiento Facial No Quirúrgico</h3>
-              <p class="service-hook">Un rostro más fresco con un plan progresivo y natural.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Rejuvenecimiento%20Facial%20No%20Quir%C3%BArgico.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Plan personalizado para mejorar textura, firmeza y armonía facial sin cirugía. En valoración se define el enfoque ideal según tu piel y objetivo.
-          </div></div>
-        </article>
-
-        <!-- Botox / otros -->
-        <article class="service" data-name="Bótox tercio inferior">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Bótox: Tercio Inferior</h3>
-              <p class="service-hook">Relaja tensiones y mejora armonía en la parte inferior del rostro.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20B%C3%B3tox%20(Tercio%20Inferior).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Aplicación en zonas específicas del tercio inferior según valoración. Se definen puntos y dosis de forma personalizada.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Bótox tercio superior">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Bótox: Tercio Superior</h3>
-              <p class="service-hook">Líneas de expresión más suaves, manteniendo naturalidad.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20B%C3%B3tox%20(Tercio%20Superior).%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Ideal para suavizar líneas de expresión del tercio superior del rostro. Se define plan según valoración y objetivos estéticos.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Bruxismo">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Bruxismo</h3>
-              <p class="service-hook">Reduce tensión mandibular y mejora tu bienestar diario.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Bruxismo.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Manejo de tensión mandibular asociado a bruxismo. La valoración define el enfoque ideal y recomendaciones complementarias.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Sonrisa gingival">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Sonrisa Gingival</h3>
-              <p class="service-hook">Una sonrisa más armónica, cuidando tu expresión natural.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Sonrisa%20Gingival.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Enfocado en armonizar la sonrisa cuando se expone encía de forma marcada. Se define el plan tras valoración.
-          </div></div>
-        </article>
-
-        <article class="service" data-name="Hiperhidrosis axilar y palmar">
-          <div class="service-row">
-            <div class="service-left" data-toggle>
-              <h3 class="service-name">Hiperhidrosis Axilar y Palmar</h3>
-              <p class="service-hook">Más comodidad y seguridad en tu día a día.</p>
-            </div>
-            <div class="service-right">
-              <a class="btn btn-primary" target="_blank" rel="noopener"
-                 href="https://wa.me/573009872255?text=Hola%20Dra.%20Tatiana%20Mendoza.%20Quiero%20agendar%20valoraci%C3%B3n%20para%20Hiperhidrosis%20Axilar%20y%20Palmar.%20Sede%3A%20Lorica%20o%20Tierralta.%20Fecha%20y%20hora%20sugerida%3A%20____">
-                Agendar
-              </a>
-              <button class="btn btn-ghost" type="button" data-toggle>Ver descripción</button>
-            </div>
-          </div>
-          <div class="service-details"><div class="service-details-inner">
-            Manejo de sudoración excesiva en axilas o manos. En valoración se define el enfoque ideal y cuidados recomendados.
-          </div></div>
-        </article>
-
-      </div>
-
-      <p class="foot">
+      <div class="services-foot">
         Importante: Esta información no reemplaza una consulta médica. Todo procedimiento requiere valoración previa.
-      </p>
+      </div>
     </section>
   </main>
 
+  <!-- DRAWER -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <aside class="drawer" id="drawer" aria-label="Detalle del servicio" aria-hidden="true">
+    <div class="drawer-top">
+      <div>
+        <h2 id="drawerTitle">Servicio</h2>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Cerrar">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-pill">ℹ️ Información del procedimiento</div>
+      <p id="drawerDesc"></p>
+      <p id="drawerNote" style="opacity:.75; font-size:13.5px; margin-top:14px;">
+        * La valoración define el plan ideal para tu caso y confirma si eres candidata/o.
+      </p>
+    </div>
+
+    <div class="drawer-bottom">
+      <a class="btn btn-primary" id="drawerWhatsApp" href="#" target="_blank" rel="noopener">
+        Agendar por WhatsApp
+      </a>
+    </div>
+  </aside>
+
   <script>
-    // Abrir/cerrar descripción (panel deslizable)
-    function toggleCard(card){
-      const isOpen = card.classList.contains('open');
-      document.querySelectorAll('.service.open').forEach(c => c.classList.remove('open'));
-      if(!isOpen) card.classList.add('open');
+    // ====== CONFIG ======
+    const WHATSAPP_NUMBER = "573009872255";
+
+    // Todos los servicios (extraídos del PDF). Sin precios.
+    // Nota: Las descripciones aquí son informativas y más extendidas para orientar al paciente.
+    const SERVICES = [
+      // Especializados
+      {
+        name: "Rinomodelación Mixta",
+        hook: "Resalta tu perfil con cambios sutiles y elegantes.",
+        desc: "Procedimiento estético orientado a armonizar la forma y proporción de la nariz. Se busca un cambio natural que respete tu rostro, mejorando puntos como el dorso, la punta o pequeñas asimetrías según valoración. La sesión incluye evaluación del perfil, explicación clara del objetivo y recomendaciones posteriores. Requiere valoración previa para definir el plan ideal."
+      },
+      {
+        name: "Rinomodelación Mixta y Alectomía",
+        hook: "Equilibrio facial con enfoque médico y humano.",
+        desc: "Enfoque integral para armonizar la nariz combinando ajustes de rinomodelación con evaluación de la base nasal y la zona de aletas. El objetivo es mejorar el balance facial manteniendo naturalidad. En valoración se define el resultado esperado, se revisa tu anatomía y se dan indicaciones de cuidado para favorecer una evolución segura y progresiva."
+      },
+      {
+        name: "Rinomodelación",
+        hook: "Armoniza tu perfil y resalta tus facciones.",
+        desc: "Procedimiento diseñado para mejorar proporciones y puntos de armonía nasal. Ideal si deseas un ajuste estético sin cambios exagerados. En la valoración se define un objetivo realista para tu rostro, se revisan antecedentes y se indica el mejor manejo según tu caso."
+      },
+      {
+        name: "Labios Volumen + Perfilamiento",
+        hook: "Labios más definidos con resultado elegante.",
+        desc: "Tratamiento enfocado en mejorar el contorno y aportar volumen de forma equilibrada. Se trabaja definición, simetría e hidratación según lo que tu rostro requiera. En valoración se define el estilo (natural, sutil o más marcado), se explica el proceso y cuidados para mantener el resultado armónico."
+      },
+      {
+        name: "Labios Perfilamiento + Hidratación",
+        hook: "Realza tu sonrisa con un acabado natural.",
+        desc: "Orientado a definir el borde del labio y mejorar la hidratación para un aspecto más fresco y saludable. Ideal si buscas un cambio discreto y elegante. En valoración se revisa simetría, proporciones y se indica el plan más adecuado."
+      },
+      {
+        name: "Mentón",
+        hook: "Más definición, mejor balance facial.",
+        desc: "Procedimiento para mejorar proyección y contorno del mentón, logrando mayor equilibrio entre nariz, labios y mandíbula. Se define el punto ideal según tu perfil. Incluye explicación del objetivo, evaluación facial y recomendaciones de cuidado posteriores."
+      },
+      {
+        name: "Ojeras",
+        hook: "Una mirada más descansada y luminosa.",
+        desc: "Tratamiento para mejorar el aspecto de cansancio alrededor de los ojos. Dependiendo de la causa (hundimiento, sombra, pigmento) se define el enfoque ideal. En valoración se determina la estrategia y se explican cuidados para resultados progresivos y seguros."
+      },
+      {
+        name: "Pómulos",
+        hook: "Estructura y armonía sin perder naturalidad.",
+        desc: "Enfocado en realzar pómulos para un efecto de soporte y armonía facial. Ideal si buscas definición suave, elevación visual y balance del rostro. En valoración se define proyección adecuada y un resultado natural."
+      },
+      {
+        name: "Full Face",
+        hook: "Un plan completo pensado para ti.",
+        desc: "Enfoque integral de armonización facial. Se evalúa el rostro en conjunto y se propone un plan por etapas según tus objetivos (definición, equilibrio, frescura). La valoración es clave para priorizar lo que más te beneficia y mantener naturalidad."
+      },
+      {
+        name: "Reborde Mandibular",
+        hook: "Contorno más definido, perfil más elegante.",
+        desc: "Tratamiento para marcar y armonizar la línea mandibular, mejorando el contorno del rostro. Se define la proyección adecuada para evitar excesos y mantener equilibrio. En valoración se revisan proporciones y se explican cuidados posteriores."
+      },
+      {
+        name: "Cuello",
+        hook: "Cuello más firme y armónico.",
+        desc: "Procedimiento orientado a mejorar firmeza, textura y definición en la zona del cuello. La valoración determina el enfoque ideal según el tipo de piel y necesidades. Se explican cuidados y plan de seguimiento si aplica."
+      },
+      {
+        name: "Ácido Poliláctico Cara (Tercio medio)",
+        hook: "Estimulación progresiva para un aspecto más firme.",
+        desc: "Tratamiento bioestimulador enfocado en el tercio medio del rostro. Ayuda a mejorar firmeza y calidad de la piel de forma progresiva. En valoración se define si eres candidata/o y se plantean expectativas realistas y un plan por etapas."
+      },
+      {
+        name: "Ácido Poliláctico Cosmilan",
+        hook: "Apoyo médico para mejorar calidad y apariencia de la piel.",
+        desc: "Enfoque de medicina estética para trabajar signos visibles en piel de forma controlada. En valoración se revisa tu caso, objetivos y se propone un plan personalizado con indicaciones claras antes y después."
+      },
+      {
+        name: "Tercio Medio (Hidroxiapatita de Calcio)",
+        hook: "Soporte y armonía con acabado natural.",
+        desc: "Tratamiento para aportar soporte y mejorar la armonía del tercio medio, cuidando un resultado discreto. En valoración se define el punto ideal de proyección y se explican cuidados posteriores para evolución segura."
+      },
+      {
+        name: "Ácido Poliláctico",
+        hook: "Bioestimulación para firmeza y textura mejorada.",
+        desc: "Procedimiento orientado a estimular mejora progresiva de firmeza y calidad de piel. En valoración se determina la zona, el objetivo y el plan recomendado según tu caso."
+      },
+      {
+        name: "Adiposidad Localizada y Celulitis",
+        hook: "Apoyo para mejorar contorno y apariencia de la piel.",
+        desc: "Plan orientado a tratar zonas con acumulación localizada y celulitis, buscando mejorar contorno y textura. En valoración se revisa tu objetivo, hábitos, zonas de interés y se define un plan con recomendaciones complementarias."
+      },
+      {
+        name: "Lipopapada",
+        hook: "Perfil más limpio y definido.",
+        desc: "Tratamiento para mejorar la zona bajo el mentón y lograr un perfil más definido. En valoración se revisa si la causa es grasa localizada, flacidez o combinación, y se define el plan ideal y cuidados posteriores."
+      },
+      {
+        name: "Programas post parto / Plan peso saludable",
+        hook: "Acompañamiento integral para tu bienestar.",
+        desc: "Programa enfocado en recuperar hábitos y bienestar después del parto o para objetivos de peso saludable. Incluye valoración, definición de metas realistas y recomendaciones adaptadas a tu ritmo y necesidades."
+      },
+      {
+        name: "Terapias para “Tensado de la piel”",
+        hook: "Firmeza visible con enfoque seguro y progresivo.",
+        desc: "Terapias orientadas a mejorar firmeza y textura en zonas específicas. En valoración se define el tipo de piel, grado de flacidez y plan recomendado. Se explican cuidados y expectativas realistas."
+      },
+      {
+        name: "Endolifting (abdomen / zona posterior / espalda)",
+        hook: "Firmeza y contorno con enfoque médico.",
+        desc: "Procedimiento para trabajar firmeza y contorno corporal en zonas como abdomen, espalda y región posterior. En valoración se revisa el área a tratar, objetivos y se definen indicaciones y cuidados posteriores."
+      },
+
+      // Menores / sueros / terapias
+      { name: "Suero Reparador", hook: "Recuperación y soporte para tu bienestar.", desc: "Suero orientado a apoyar recuperación y bienestar general según valoración. Se define el objetivo (fatiga, recuperación, soporte general) y se indican recomendaciones. La valoración define si aplica para ti." },
+      { name: "Suero Estimulante", hook: "Energía y enfoque para tu día a día.", desc: "Suero pensado para apoyar energía y rendimiento cotidiano según tu caso. En valoración se revisan síntomas, antecedentes y objetivo para indicar el enfoque adecuado." },
+      { name: "Suero Energizante", hook: "Un impulso para sentirte mejor y con más vitalidad.", desc: "Suero orientado a vitalidad y bienestar general. Se define según valoración y objetivo. Incluye indicaciones de cuidado y recomendaciones complementarias." },
+      { name: "Suero Estimulante para la Memoria", hook: "Apoyo para enfoque y claridad mental.", desc: "Suero orientado a apoyar claridad y enfoque según valoración. Se revisa tu caso y se indican recomendaciones para acompañar el proceso." },
+      { name: "Suero Desintoxicante", hook: "Apoyo para sentirte más liviana/o y renovada/o.", desc: "Suero orientado a soporte general de bienestar. En valoración se define si aplica y se explica el plan recomendado y cuidados posteriores." },
+
+      { name: "Suero Anti estrés", hook: "Calma y bienestar en momentos de carga.", desc: "Suero orientado a soporte de bienestar cuando hay estrés o fatiga. La valoración define el enfoque, recomendaciones y si es adecuado para tu caso." },
+      { name: "Suero Revitalizador", hook: "Renueva tu energía y tu sensación de bienestar.", desc: "Suero para apoyo general y vitalidad. En valoración se determina objetivo, frecuencia sugerida y recomendaciones para potenciar resultados." },
+      { name: "Suero Post-quirúrgico", hook: "Apoyo en tu recuperación (según indicación).", desc: "Suero orientado a acompañar procesos de recuperación, siempre según valoración y necesidad específica. Se revisa historial y se dan recomendaciones personalizadas." },
+      { name: "Suero Antiobesidad", hook: "Acompañamiento para tus objetivos de peso saludable.", desc: "Suero dentro de un enfoque integral orientado a objetivos de bienestar y peso saludable. Requiere valoración para definir si aplica, plan y recomendaciones." },
+      { name: "Suero Inmunológico", hook: "Soporte general para tu bienestar.", desc: "Suero orientado a soporte general. En valoración se define objetivo, antecedentes y recomendaciones personalizadas." },
+
+      { name: "Suero post Guayabo", hook: "Recupérate y vuelve a tu ritmo.", desc: "Suero orientado a apoyar recuperación y bienestar. En valoración se define si aplica y se dan recomendaciones para sentirte mejor más rápido." },
+      { name: "Ácido Poliláctico Manos", hook: "Mejora progresiva de firmeza y calidad en manos.", desc: "Tratamiento bioestimulador orientado a mejorar la apariencia y firmeza de las manos de forma progresiva. La valoración define el plan y cuidados posteriores." },
+      { name: "Suero Poliláctico Rostro", hook: "Apoyo para una piel con mejor textura y firmeza.", desc: "Suero orientado a soporte de piel y bienestar facial según valoración. Se define el enfoque, objetivo y recomendaciones." },
+      { name: "Suero Poliláctico Extra", hook: "Refuerzo para objetivos específicos (según valoración).", desc: "Variante de suero orientada a objetivos específicos de bienestar/soporte. La valoración define el plan y recomendaciones." },
+      { name: "Suero Detox", hook: "Sensación de renovación y bienestar general.", desc: "Suero orientado a soporte general de bienestar. En valoración se define si aplica para ti y se indican recomendaciones posteriores." },
+
+      { name: "Radiofrecuencia continua con Vitamina C para tonificar", hook: "Tonificación y mejora de apariencia con soporte de Vitamina C.", desc: "Procedimiento orientado a mejorar apariencia y sensación de firmeza con apoyo de Vitamina C. En valoración se define zona, objetivos y plan recomendado." },
+      { name: "Radiofrecuencia continua + masajes reductores", hook: "Apoyo para contorno y cuidado corporal.", desc: "Combinación orientada a apoyar contorno corporal y bienestar. La valoración define zonas, objetivo y recomendaciones para acompañar el proceso." },
+
+      { name: "Consulta por Médico Especialista", hook: "Orientación médica clara para tu mejor decisión.", desc: "Consulta para evaluar tu caso, resolver dudas y definir el plan más adecuado. Se revisan antecedentes, objetivo y se explican opciones con enfoque médico y humano." },
+      { name: "Valoración Medicina Estética y Regenerativa", hook: "El primer paso para un plan personalizado y seguro.", desc: "Valoración completa para conocer tu objetivo, revisar antecedentes y definir un plan realista. Se explican cuidados, expectativas y pasos a seguir." },
+
+      { name: "Megadosis de Vitamina C", hook: "Apoyo para vitalidad y bienestar (según valoración).", desc: "Procedimiento orientado a soporte general de bienestar. La valoración determina si aplica, la recomendación y cuidados posteriores." },
+      { name: "Tratamientos Corporales", hook: "Opciones para contorno, bienestar y cuidado integral.", desc: "Tratamientos orientados a objetivos corporales específicos. En valoración se define la mejor opción según tu caso y se explica el plan sugerido." },
+      { name: "Masaje Purificante", hook: "Limpieza, renovación y bienestar.", desc: "Masaje orientado a sensación de renovación y cuidado. Se adapta según valoración y objetivo. Ideal para complementar rutinas de bienestar." },
+      { name: "Valoración por Nutrición", hook: "Guía práctica para hábitos y metas realistas.", desc: "Valoración nutricional para definir objetivos, hábitos y un plan acorde a tu estilo de vida. Se entregan recomendaciones claras y sostenibles." },
+
+      { name: "Masaje Balinés", hook: "Relajación profunda y alivio de tensión.", desc: "Masaje enfocado en relajación, descarga muscular y bienestar. Ideal para estrés y tensión acumulada. Se adapta según necesidad." },
+      { name: "Express Masaje Espalda", hook: "Alivio rápido para tu espalda.", desc: "Masaje corto para aliviar tensión en la espalda y cuello. Perfecto si tienes poco tiempo y quieres sentir alivio inmediato." },
+      { name: "Reflexología Podal + Desintoxicación Iónica", hook: "Relajación y sensación de descanso general.", desc: "Combinación orientada al bienestar mediante trabajo podal y apoyo de relajación. La sesión se adapta según tu necesidad y se dan recomendaciones." },
+      { name: "Masaje Facial + Higiene Facial", hook: "Limpieza y frescura para tu piel.", desc: "Sesión para mejorar limpieza, textura y sensación de frescura en la piel del rostro. Incluye recomendaciones de cuidado básico en casa." },
+      { name: "Bambuterapia", hook: "Masaje para bienestar y alivio muscular.", desc: "Terapia con bambú orientada a relajación, descarga muscular y bienestar corporal. Se adapta según tolerancia y objetivo." },
+
+      { name: "Rejuvenecimiento Facial No Quirúrgico", hook: "Frescura y armonía sin perder naturalidad.", desc: "Enfoque integral para mejorar signos visibles de edad con herramientas de medicina estética, buscando un resultado natural. En valoración se define el plan más adecuado." },
+      { name: "Bótox: Tercio Superior", hook: "Expresión descansada con resultados naturales.", desc: "Tratamiento orientado a suavizar líneas de expresión del tercio superior (según valoración) manteniendo naturalidad. Se explican cuidados y expectativas realistas." },
+      { name: "Bruxismo", hook: "Apoyo para reducir tensión mandibular.", desc: "Tratamiento orientado a ayudar con tensión asociada a bruxismo (según valoración médica). Se revisa tu caso y se explican cuidados y seguimiento." },
+      { name: "Sonrisa Gingival", hook: "Armoniza tu sonrisa con enfoque médico.", desc: "Tratamiento orientado a equilibrar la exposición gingival al sonreír (según valoración). Se revisa tu caso, objetivo y plan de seguimiento." },
+      { name: "Bótox: Tercio Inferior", hook: "Detalles que armonizan el rostro con naturalidad.", desc: "Tratamiento orientado a armonizar zonas del tercio inferior (según valoración). Se define un resultado natural, se explican cuidados y seguimiento." },
+      { name: "Hiperhidrosis Axilar y Palmar", hook: "Apoyo para controlar sudoración excesiva.", desc: "Tratamiento orientado a ayudar a controlar sudoración excesiva en axilas y/o manos (según valoración). Se revisa tu caso y se dan recomendaciones de cuidado." },
+    ];
+
+    // ====== Render ======
+    const listEl = document.getElementById("servicesList");
+    const searchEl = document.getElementById("searchInput");
+
+    function normalize(str){
+      return (str || "")
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
-    document.querySelectorAll('[data-toggle]').forEach(el=>{
-      el.addEventListener('click', (e)=>{
-        const card = e.currentTarget.closest('.service');
-        if(card) toggleCard(card);
+    function makeWhatsAppLink(serviceName){
+      const msg = `Hola, quiero agendar una valoración. Servicio: ${serviceName}. ¿Me confirmas disponibilidad en Lorica o Tierralta?`;
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    }
+
+    function renderServices(filterText=""){
+      const f = normalize(filterText.trim());
+      const filtered = !f ? SERVICES : SERVICES.filter(s =>
+        normalize(s.name).includes(f) || normalize(s.hook).includes(f)
+      );
+
+      listEl.innerHTML = "";
+
+      filtered.forEach(service => {
+        const row = document.createElement("div");
+        row.className = "service-row";
+
+        const main = document.createElement("div");
+        main.className = "service-main";
+        main.innerHTML = `
+          <h3 class="service-title">${service.name}</h3>
+          <p class="service-hook">${service.hook}</p>
+        `;
+        main.addEventListener("click", () => openDrawer(service));
+
+        const actions = document.createElement("div");
+        actions.className = "service-actions";
+
+        const a1 = document.createElement("a");
+        a1.className = "btn btn-primary btn-mini";
+        a1.href = makeWhatsAppLink(service.name);
+        a1.target = "_blank";
+        a1.rel = "noopener";
+        a1.textContent = "Agendar";
+
+        const a2 = document.createElement("button");
+        a2.className = "btn btn-outline btn-mini";
+        a2.type = "button";
+        a2.textContent = "Ver descripción";
+        a2.addEventListener("click", () => openDrawer(service));
+
+        actions.appendChild(a1);
+        actions.appendChild(a2);
+
+        row.appendChild(main);
+        row.appendChild(actions);
+        listEl.appendChild(row);
       });
-    });
 
-    // Buscador
-    const input = document.getElementById('searchInput');
-    const cards = Array.from(document.querySelectorAll('.service'));
+      if(filtered.length === 0){
+        listEl.innerHTML = `
+          <div style="padding:16px 10px; opacity:.8;">
+            No encontramos resultados con “<strong>${escapeHtml(filterText)}</strong>”.
+          </div>
+        `;
+      }
+    }
 
-    input.addEventListener('input', ()=>{
-      const q = input.value.trim().toLowerCase();
-      cards.forEach(card=>{
-        const name = (card.getAttribute('data-name') || '').toLowerCase();
-        const text = card.innerText.toLowerCase();
-        const show = !q || name.includes(q) || text.includes(q);
-        card.style.display = show ? '' : 'none';
-      });
+    function escapeHtml(str){
+      return (str || "").replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[m]));
+    }
 
-      // Si se está buscando, cerramos panel abierto para que no “estorbe”
-      document.querySelectorAll('.service.open').forEach(c => c.classList.remove('open'));
-    });
+    // ====== Drawer ======
+    const drawer = document.getElementById("drawer");
+    const drawerBackdrop = document.getElementById("drawerBackdrop");
+    const drawerClose = document.getElementById("drawerClose");
+    const drawerTitle = document.getElementById("drawerTitle");
+    const drawerDesc = document.getElementById("drawerDesc");
+    const drawerWhatsApp = document.getElementById("drawerWhatsApp");
+
+    function openDrawer(service){
+      drawerTitle.textContent = service.name;
+      drawerDesc.textContent = service.desc;
+      drawerWhatsApp.href = makeWhatsAppLink(service.name);
+
+      drawer.classList.add("open");
+      drawerBackdrop.classList.add("open");
+      drawer.setAttribute("aria-hidden", "false");
+      drawerBackdrop.setAttribute("aria-hidden", "false");
+
+      // Cerrar con ESC
+      document.addEventListener("keydown", onEscClose);
+    }
+
+    function closeDrawer(){
+      drawer.classList.remove("open");
+      drawerBackdrop.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+      drawerBackdrop.setAttribute("aria-hidden", "true");
+      document.removeEventListener("keydown", onEscClose);
+    }
+
+    function onEscClose(e){
+      if(e.key === "Escape") closeDrawer();
+    }
+
+    drawerClose.addEventListener("click", closeDrawer);
+    drawerBackdrop.addEventListener("click", closeDrawer);
+
+    // ====== Search ======
+    searchEl.addEventListener("input", (e) => renderServices(e.target.value));
+
+    // Init
+    renderServices();
   </script>
 
 </body>
