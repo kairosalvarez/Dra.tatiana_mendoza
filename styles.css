@@ -623,3 +623,91 @@ body {
   text-decoration:none;font-weight:800;
   box-shadow:0 16px 40px rgba(0,0,0,.18);
 }
+/* ===== NAVBAR ALINEADA ===== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.nav-wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Logo */
+.brand{
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+.brand img{
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+/* Menú centrado */
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex: 1 1 auto;
+  min-width: 0;            /* importante para que no empuje */
+  white-space: nowrap;     /* evita que "Contacto" baje */
+}
+.nav a{
+  text-decoration: none;
+  color: #1f1f1f;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  transition: background .2s ease, transform .2s ease;
+}
+.nav a:hover{
+  background: rgba(231, 155, 171, .18);
+}
+.nav a.active{
+  background: rgba(231, 155, 171, .22);
+}
+
+/* Botón WhatsApp a la derecha */
+.cta-wa{
+  flex: 0 0 auto;
+  text-decoration: none;
+  background: #e79bab;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(231,155,171,.35);
+  white-space: nowrap;
+}
+.cta-wa:hover{
+  transform: translateY(-1px);
+}
+
+/* Responsive: cuando no cabe, permitimos scroll horizontal del menú
+   (así NO se desordena ni se baja "Contacto") */
+@media (max-width: 980px){
+  .nav-wrap{ gap: 12px; }
+  .nav{
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar{ display: none; }
+  .cta-wa{ padding: 10px 14px; font-size: 14px; }
+}
