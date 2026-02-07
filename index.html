@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dra. Tatiana Mendoza | Medicina Estética y Regenerativa</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css?v=1400" />
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Ir al inicio">
-        <!-- Solo logo (sin texto) -->
         <img src="assets/logo.png" alt="Logo" class="brand-logo">
       </a>
 
@@ -35,95 +37,49 @@
     </div>
   </header>
 
-<!-- HERO / Portada con fondo -->
-<section class="section">
-  <div class="container">
-    <div class="hero-cover">
-      <div class="hero-inner">
-        <div class="pill">✨ Naturalidad • Seguridad • Resultados progresivos</div>
-        <h1 class="hero-title">
-          Dra. Tatiana Mendoza<br>
-          <span class="hero-accent">Medicina Estetica y Regenerativa</span>
-        </h1>
 
-        <p class="hero-text">
-          Atención en <b>Lorica</b> y <b>Tierraalta</b>, Córdoba. Agenda tu cita por WhatsApp y confirma disponibilidad.
-        </p>
+  <!-- =========================
+       HERO / PORTADA (FONDO)
+  ========================== -->
+  <section class="section">
+    <div class="container">
+      <div class="hero-cover">
+        <div class="hero-inner">
+          <div class="pill">✨ Naturalidad • Seguridad • Resultados progresivos</div>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="servicios.html">Ver servicios</a>
-          <a class="btn btn-outline" href="agendar.html">Agendar ahora</a>
-        </div>
+          <!-- Si NO quieres que aparezca “Dra. Tatiana Mendoza” en el hero,
+               borra la línea de abajo -->
+          <h1 class="hero-title">
+            Dra. Tatiana Mendoza<br>
+            <span class="hero-accent">Medicina Estética y Regenerativa</span>
+          </h1>
 
-        <div class="hero-note">
-          <b>Valoración:</b> Lorica <b>GRATIS</b> • Tierraalta con costo (se informa por WhatsApp).
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          <p class="hero-text">
+            Atención en <b>Lorica</b> y <b>Tierraalta</b>, Córdoba.
+            Agenda tu cita por WhatsApp y confirma disponibilidad.
+          </p>
 
-<!-- RESULTADOS / Collage -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Resultados reales</h2>
-    <p class="section-subtitle">Imágenes sin rostro, publicadas con autorización del paciente.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="servicios.html">Ver servicios</a>
+            <a class="btn btn-outline" href="agendar.html">Agendar ahora</a>
+            <button class="btn btn-outline" type="button" id="btnScrollInfo">Ver información</button>
+          </div>
 
-    <div class="results-grid">
-      <!-- ✅ Ajusta los nombres EXACTOS de tus archivos .jpeg -->
-      <a href="assets/evidencias/e1.jpeg" target="_blank" rel="noopener">
-        <img src="assets/evidencias/e1.jpeg" alt="Resultado 1">
-      </a>
-      <a href="assets/evidencias/e2.jpeg" target="_blank" rel="noopener">
-        <img src="assets/evidencias/e2.jpeg" alt="Resultado 2">
-      </a>
-      <a href="assets/evidencias/e3.jpeg" target="_blank" rel="noopener">
-        <img src="assets/evidencias/e3.jpeg" alt="Resultado 3">
-      </a>
-      <a href="assets/evidencias/e4.jpeg" target="_blank" rel="noopener">
-        <img src="assets/evidencias/e4.jpeg" alt="Resultado 4">
-      </a>
-      <a href="assets/evidencias/e5.jpeg" target="_blank" rel="noopener">
-        <img src="assets/evidencias/e5.jpeg" alt="Resultado 5">
-      </a>
-      <a href="assets/evidencias/e6.jpeg" target="_blank" rel="noopener">
-        <img src="assets/evidencias/e6.jpeg" alt="Resultado 6">
-      </a>
-    </div>
-
-    <div style="margin-top:18px;">
-      <a class="btn btn-primary" href="evidencias.html">Ver evidencias</a>
-    </div>
-  </div>
-</section>
-
-        <p class="hero-subtitle">
-          Atención en <strong>Lorica</strong> y <strong>Tierralta</strong>, Córdoba.
-          Agenda tu cita por WhatsApp y confirma disponibilidad.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="servicios.html">Ver servicios</a>
-          <a class="btn btn-ghost" href="agendar.html">Agendar ahora</a>
-          <button class="btn btn-outline" type="button" id="btnScrollInfo">Ver información</button>
-        </div>
-
-        <div class="hero-note">
-          <strong>Valoración:</strong> Lorica <b>GRATIS</b> • Tierralta con costo (se informa por WhatsApp).
+          <div class="hero-note">
+            <b>Valoración:</b> Lorica <b>GRATIS</b> • Tierraalta con costo (se informa por WhatsApp).
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span>Desliza para ver más</span>
-      <div class="dot"></div>
     </div>
   </section>
 
-  <!-- CONTENIDO ORIGINAL (APARECE AL BAJAR) -->
+
+  <!-- =========================
+       CONTENIDO (AL DESLIZAR)
+  ========================== -->
   <main class="container" id="inicio-info">
 
-    <!-- Resumen / tarjetas (puedes ajustar el texto si quieres) -->
+    <!-- Tarjetas informativas -->
     <section class="home-grid">
       <div class="card">
         <h2>Horarios de atención</h2>
@@ -148,7 +104,11 @@
       </div>
     </section>
 
-    <!-- RESULTADOS REALES (COLLAGE 3x2) -->
+
+    <!-- =========================
+         RESULTADOS REALES (SOLO COLLAGE)
+         (usa SOLO assets/pacientes)
+    ========================== -->
     <section class="results">
       <div class="section-head">
         <h2>Resultados reales</h2>
@@ -156,29 +116,28 @@
       </div>
 
       <div class="gallery-grid" aria-label="Galería de resultados">
-        <!-- Ajusta nombres si los tuyos son diferentes -->
         <button class="gallery-item" type="button" data-full="assets/pacientes/p1.jpeg" aria-label="Ver imagen 1">
-          <img src="assets/pacientes/p1.jpeg" alt="Resultado 1">
+          <img src="assets/pacientes/p1.jpeg" alt="">
         </button>
 
         <button class="gallery-item" type="button" data-full="assets/pacientes/p2.jpeg" aria-label="Ver imagen 2">
-          <img src="assets/pacientes/p2.jpeg" alt="Resultado 2">
+          <img src="assets/pacientes/p2.jpeg" alt="">
         </button>
 
         <button class="gallery-item" type="button" data-full="assets/pacientes/p3.jpeg" aria-label="Ver imagen 3">
-          <img src="assets/pacientes/p3.jpeg" alt="Resultado 3">
+          <img src="assets/pacientes/p3.jpeg" alt="">
         </button>
 
         <button class="gallery-item" type="button" data-full="assets/pacientes/p4.jpeg" aria-label="Ver imagen 4">
-          <img src="assets/pacientes/p4.jpeg" alt="Resultado 4">
+          <img src="assets/pacientes/p4.jpeg" alt="">
         </button>
 
         <button class="gallery-item" type="button" data-full="assets/pacientes/p5.jpeg" aria-label="Ver imagen 5">
-          <img src="assets/pacientes/p5.jpeg" alt="Resultado 5">
+          <img src="assets/pacientes/p5.jpeg" alt="">
         </button>
 
         <button class="gallery-item" type="button" data-full="assets/pacientes/p6.jpeg" aria-label="Ver imagen 6">
-          <img src="assets/pacientes/p6.jpeg" alt="Resultado 6">
+          <img src="assets/pacientes/p6.jpeg" alt="">
         </button>
       </div>
 
@@ -187,30 +146,43 @@
       </div>
     </section>
 
+
+    <!-- Footer -->
     <footer class="site-footer">
       © 2026 Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
     </footer>
   </main>
 
 
-  <!-- MODAL IMAGEN -->
+  <!-- =========================
+       MODAL (IMAGEN AMPLIADA)
+  ========================== -->
   <div class="modal" id="imgModal" aria-hidden="true">
     <div class="modal-backdrop" id="modalClose"></div>
+
     <div class="modal-content" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
       <button class="modal-x" id="modalX" aria-label="Cerrar">×</button>
       <img id="modalImg" src="" alt="Imagen ampliada">
     </div>
   </div>
 
-  <!-- BOTÓN FLOTANTE WHATSAPP -->
+
+  <!-- =========================
+       BOTÓN FLOTANTE WHATSAPP
+  ========================== -->
   <a class="whatsapp-fab" href="https://wa.me/573009872255" target="_blank" rel="noopener" aria-label="WhatsApp">
     WhatsApp
   </a>
 
+
+  <!-- =========================
+       JS (SCROLL + MODAL)
+  ========================== -->
   <script>
     // Scroll suave al contenido de abajo
     const btnScroll = document.getElementById("btnScrollInfo");
     const info = document.getElementById("inicio-info");
+
     if (btnScroll && info) {
       btnScroll.addEventListener("click", () => {
         info.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -241,8 +213,8 @@
       btn.addEventListener("click", () => openModal(btn.dataset.full));
     });
 
-    closeBg.addEventListener("click", closeModal);
-    closeX.addEventListener("click", closeModal);
+    if (closeBg) closeBg.addEventListener("click", closeModal);
+    if (closeX) closeX.addEventListener("click", closeModal);
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
@@ -251,7 +223,3 @@
 
 </body>
 </html>
-
-
-
-
