@@ -1471,3 +1471,55 @@ select{
   background: #25D366 !important;
   color: #fff !important;
 }
+/* =========================
+   FIX COLLAGE 3x2 (INICIO)
+   ========================= */
+
+/* contenedor del collage */
+.gallery-grid{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas = 3x2 */
+  gap: 16px;
+  margin-top: 18px;
+}
+
+/* cada item (botón) */
+.gallery-item{
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.gallery-item:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.12);
+}
+
+/* la imagen */
+.gallery-item img{
+  display: block;
+  width: 100%;
+  height: 240px;          /* altura fija para que se vea “collage” */
+  object-fit: cover;      /* recorta sin deformar */
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .gallery-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas */
+  }
+  .gallery-item img{ height: 220px; }
+}
+
+@media (max-width: 560px){
+  .gallery-grid{
+    grid-template-columns: 1fr; /* 1 columna */
+  }
+  .gallery-item img{ height: 240px; }
+}
