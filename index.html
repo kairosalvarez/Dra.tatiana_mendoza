@@ -1,200 +1,205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dra. Tatiana Mendoza | Medicina Estética y Regenerativa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="styles.css?v=1400" />
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="nav-wrap">
-    <!-- Logo -->
-    <a class="brand" href="index.html" aria-label="Ir a inicio">
-      <img src="assets/logo.png" alt="Logo" />
-    </a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+        <!-- Solo logo (sin texto) -->
+        <img src="assets/logo.png" alt="Logo" class="brand-logo">
+      </a>
 
-    <!-- Menú -->
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-      <a href="sedes.html">Sedes</a>
-      <a class="active" href="servicios.html">Servicios</a>
-      <a href="agendar.html">Agendar</a>
-      <a href="testimonios.html">Testimonios</a>
-      <a href="evidencias.html">Evidencias</a>
-      <a href="preguntas.html">Preguntas</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="evidencias.html">Evidencias</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
 
-    <!-- Botón -->
-    <a class="cta-wa" href="https://wa.me/573009872255" target="_blank" rel="noopener">
-      Agendar por WhatsApp
-    </a>
-  </div>
-</header>
-  
-<!-- HERO / PORTADA -->
-<section class="hero-cover" aria-label="Portada">
-  <div class="hero-bg" role="img" aria-label="Medicina estética y regenerativa"></div>
+      <a class="cta-whatsapp" href="https://wa.me/573009872255" target="_blank" rel="noopener">
+        Agendar por WhatsApp
+      </a>
+    </div>
+  </header>
 
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <div class="hero-badge">✨ Naturalidad · Seguridad · Resultados progresivos</div>
+  <!-- HERO / PORTADA -->
+  <section class="hero" aria-label="Portada">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
 
-      <h1 class="hero-title">
-        Dra. Tatiana Mendoza<br />
-        <span>Medicina Estetica y Regenerativa</span>
-      </h1>
+    <div class="container hero-content">
+      <div class="hero-left">
+        <div class="hero-pill">✨ Naturalidad • Seguridad • Resultados progresivos</div>
 
-      <p class="hero-subtitle">
-        Atención en <strong>Lorica</strong> y <strong>Tierralta</strong>, Córdoba.
-        Agenda por WhatsApp y confirma disponibilidad.
-      </p>
+        <h1 class="hero-title">
+          Estética y regeneración<br>
+          <span>con enfoque médico y humano</span>
+        </h1>
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="servicios.html">Ver servicios</a>
-        <a class="btn btn-outline" href="agendar.html">Agendar ahora</a>
+        <p class="hero-subtitle">
+          Atención en <strong>Lorica</strong> y <strong>Tierralta</strong>, Córdoba.
+          Agenda tu cita por WhatsApp y confirma disponibilidad.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="servicios.html">Ver servicios</a>
+          <a class="btn btn-ghost" href="agendar.html">Agendar ahora</a>
+          <button class="btn btn-outline" type="button" id="btnScrollInfo">Ver información</button>
+        </div>
+
+        <div class="hero-note">
+          <strong>Valoración:</strong> Lorica <b>GRATIS</b> • Tierralta con costo (se informa por WhatsApp).
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Desliza para ver más</span>
+      <div class="dot"></div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO ORIGINAL (APARECE AL BAJAR) -->
+  <main class="container" id="inicio-info">
+
+    <!-- Resumen / tarjetas (puedes ajustar el texto si quieres) -->
+    <section class="home-grid">
+      <div class="card">
+        <h2>Horarios de atención</h2>
+        <p><strong>Lunes a viernes:</strong> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.</p>
+        <p><strong>Sábados:</strong> 8:00 a.m. – 12:00 m</p>
+        <hr class="soft">
+        <p><strong>WhatsApp:</strong> +57 300 987 2255</p>
+        <p><strong>Instagram:</strong> @dra.tatiana.mendoza</p>
+        <p class="muted">La información no reemplaza una consulta médica.</p>
       </div>
 
-      <div class="hero-note">
-        Valoración: <strong>Lorica GRATIS</strong> · Tierralta con costo (se informa por WhatsApp).
+      <div class="card">
+        <h2>Agenda por WhatsApp</h2>
+        <p>Te guiamos para agendar según sede, servicio, fecha y hora sugerida.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="agendar.html">Agendar ahora</a>
+          <a class="btn btn-outline" href="preguntas.html">Preguntas frecuentes</a>
+        </div>
+        <p class="muted mt-10">
+          Importante: todo procedimiento requiere valoración previa.
+        </p>
       </div>
+    </section>
+
+    <!-- RESULTADOS REALES (COLLAGE 3x2) -->
+    <section class="results">
+      <div class="section-head">
+        <h2>Resultados reales</h2>
+        <p class="muted">Imágenes sin rostro, publicadas con autorización del paciente.</p>
+      </div>
+
+      <div class="gallery-grid" aria-label="Galería de resultados">
+        <!-- Ajusta nombres si los tuyos son diferentes -->
+        <button class="gallery-item" type="button" data-full="assets/pacientes/p1.jpeg" aria-label="Ver imagen 1">
+          <img src="assets/pacientes/p1.jpeg" alt="Resultado 1">
+        </button>
+
+        <button class="gallery-item" type="button" data-full="assets/pacientes/p2.jpeg" aria-label="Ver imagen 2">
+          <img src="assets/pacientes/p2.jpeg" alt="Resultado 2">
+        </button>
+
+        <button class="gallery-item" type="button" data-full="assets/pacientes/p3.jpeg" aria-label="Ver imagen 3">
+          <img src="assets/pacientes/p3.jpeg" alt="Resultado 3">
+        </button>
+
+        <button class="gallery-item" type="button" data-full="assets/pacientes/p4.jpeg" aria-label="Ver imagen 4">
+          <img src="assets/pacientes/p4.jpeg" alt="Resultado 4">
+        </button>
+
+        <button class="gallery-item" type="button" data-full="assets/pacientes/p5.jpeg" aria-label="Ver imagen 5">
+          <img src="assets/pacientes/p5.jpeg" alt="Resultado 5">
+        </button>
+
+        <button class="gallery-item" type="button" data-full="assets/pacientes/p6.jpeg" aria-label="Ver imagen 6">
+          <img src="assets/pacientes/p6.jpeg" alt="Resultado 6">
+        </button>
+      </div>
+
+      <div class="section-actions">
+        <a class="btn btn-primary" href="evidencias.html">Ver evidencias</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      © 2026 Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
+    </footer>
+  </main>
+
+
+  <!-- MODAL IMAGEN -->
+  <div class="modal" id="imgModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalClose"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+      <button class="modal-x" id="modalX" aria-label="Cerrar">×</button>
+      <img id="modalImg" src="" alt="Imagen ampliada">
     </div>
   </div>
 
-  <a class="hero-scroll" href="#inicio-contenido" aria-label="Bajar">
-    <span></span>
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a class="whatsapp-fab" href="https://wa.me/573009872255" target="_blank" rel="noopener" aria-label="WhatsApp">
+    WhatsApp
   </a>
-</section>
 
-<!-- TODO lo que ya tenías en el inicio va aquí debajo -->
-<main id="inicio-contenido">
-  <!-- 👇 Pega aquí el contenido que ya tenías (tu info, cards, resultados, collage, etc.) sin cambiarlo -->
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="hero-content">
-    <span class="hero-badge">✨ Naturalidad · Seguridad · Resultados progresivos</span>
-
-    <h1>
-      Estética y regeneración<br>
-      <span>con enfoque médico y humano</span>
-    </h1>
-
-    <p>
-      Atención en <strong>Lorica</strong> y <strong>Tierralta, Córdoba</strong>.<br>
-      Agenda tu cita por WhatsApp y confirma disponibilidad.
-    </p>
-
-    <div class="hero-actions">
-      <a href="agendar.html" class="btn-primary">Agendar ahora</a>
-      <a href="servicios.html" class="btn-outline">Ver servicios</a>
-      <a href="preguntas.html" class="btn-outline">Preguntas frecuentes</a>
-    </div>
-
-    <div class="hero-note">
-      Valoración: <strong>Lorica GRATIS</strong> · <strong>Tierralta con costo</strong>
-    </div>
-  </div>
-
-  <!-- TARJETA INFO -->
-  <div class="hero-info">
-    <h3>Horarios de atención</h3>
-    <p><strong>Lunes a viernes:</strong> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.</p>
-    <p><strong>Sábados:</strong> 8:00 a.m. – 12:00 m</p>
-
-    <hr>
-
-    <p><strong>WhatsApp:</strong><br>+57 300 987 2255</p>
-    <p><strong>Instagram:</strong><br>@dra.tatiana.mendoza</p>
-
-    <small>La información no reemplaza una consulta médica.</small>
-  </div>
-</section>
-
-<!-- ================= RESULTADOS / COLLAGE ================= -->
-<section class="resultados">
-  <div class="resultados-header">
-    <h2>Resultados reales</h2>
-    <p>Imágenes sin rostro, publicadas con autorización del paciente.</p>
-  </div>
-
-  <!-- COLLAGE 3x2 -->
-  <div class="collage">
-    <button class="collage-item" type="button" data-img="assets/pacientes/p1.jpeg" aria-label="Ver resultado 1">
-      <img src="assets/pacientes/p1.jpeg" alt="Resultado 1">
-    </button>
-
-    <button class="collage-item" type="button" data-img="assets/pacientes/p2.jpeg" aria-label="Ver resultado 2">
-      <img src="assets/pacientes/p2.jpeg" alt="Resultado 2">
-    </button>
-
-    <button class="collage-item" type="button" data-img="assets/pacientes/p3.jpeg" aria-label="Ver resultado 3">
-      <img src="assets/pacientes/p3.jpeg" alt="Resultado 3">
-    </button>
-
-    <button class="collage-item" type="button" data-img="assets/pacientes/p4.jpeg" aria-label="Ver resultado 4">
-      <img src="assets/pacientes/p4.jpeg" alt="Resultado 4">
-    </button>
-
-    <button class="collage-item" type="button" data-img="assets/pacientes/p5.jpeg" aria-label="Ver resultado 5">
-      <img src="assets/pacientes/p5.jpeg" alt="Resultado 5">
-    </button>
-
-    <button class="collage-item" type="button" data-img="assets/pacientes/p6.jpeg" aria-label="Ver resultado 6">
-      <img src="assets/pacientes/p6.jpeg" alt="Resultado 6">
-    </button>
-  </div>
-
-  <div class="resultados-actions">
-    <a href="evidencias.html" class="btn-primary">Ver evidencias</a>
-  </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-backdrop"></div>
-  <div class="lightbox-content" role="dialog" aria-modal="true">
-    <button class="lightbox-close" type="button" aria-label="Cerrar">✕</button>
-    <img id="lightbox-img" src="" alt="Imagen ampliada">
-  </div>
-</div>
-
-<script>
-  (function () {
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lightbox-img");
-    const closeBtn = lb.querySelector(".lightbox-close");
-    const backdrop = lb.querySelector(".lightbox-backdrop");
-
-    function openLightbox(src) {
-      lbImg.src = src;
-      lb.classList.add("open");
-      lb.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
+  <script>
+    // Scroll suave al contenido de abajo
+    const btnScroll = document.getElementById("btnScrollInfo");
+    const info = document.getElementById("inicio-info");
+    if (btnScroll && info) {
+      btnScroll.addEventListener("click", () => {
+        info.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     }
 
-    function closeLightbox() {
-      lb.classList.remove("open");
-      lb.setAttribute("aria-hidden", "true");
-      lbImg.src = "";
-      document.body.style.overflow = "";
+    // Modal galería
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBg = document.getElementById("modalClose");
+    const closeX = document.getElementById("modalX");
+
+    function openModal(src) {
+      modalImg.src = src;
+      modal.setAttribute("aria-hidden", "false");
+      modal.classList.add("open");
+      document.body.classList.add("no-scroll");
     }
 
-    document.querySelectorAll(".collage-item").forEach(btn => {
-      btn.addEventListener("click", () => openLightbox(btn.dataset.img));
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      modalImg.src = "";
+      document.body.classList.remove("no-scroll");
+    }
+
+    document.querySelectorAll(".gallery-item").forEach(btn => {
+      btn.addEventListener("click", () => openModal(btn.dataset.full));
     });
 
-    closeBtn.addEventListener("click", closeLightbox);
-    backdrop.addEventListener("click", closeLightbox);
+    closeBg.addEventListener("click", closeModal);
+    closeX.addEventListener("click", closeModal);
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLightbox();
+      if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
     });
-  })();
-</script>
-</main>
+  </script>
 
-
-
+</body>
+</html>
