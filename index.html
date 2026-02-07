@@ -8,31 +8,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css?v=1400" />
 </head>
-  
-<script>
-  /* ---------- B) Reveal al scroll ---------- */
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting) e.target.classList.add('show');
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
-
-  /* ---------- C) Parallax suave (solo escritorio) ---------- */
-  const hero = document.querySelector('.hero-cover');
-  if(hero && window.matchMedia('(pointer:fine)').matches){
-    hero.addEventListener('mousemove', (e)=>{
-      const r = hero.getBoundingClientRect();
-      const x = (e.clientX - r.left)/r.width - .5;
-      const y = (e.clientY - r.top)/r.height - .5;
-      hero.style.backgroundPosition = `${50 + x*2}% ${50 + y*2}%`;
-    });
-    hero.addEventListener('mouseleave', ()=>{
-      hero.style.backgroundPosition = 'center';
-    });
-  }
-</script>
 
 <body class="home-animate">
 
@@ -72,8 +47,6 @@
         <div class="hero-inner">
           <div class="pill">✨ Naturalidad • Seguridad • Resultados progresivos</div>
 
-          <!-- Si NO quieres que aparezca “Dra. Tatiana Mendoza” en el hero,
-               borra la línea de abajo -->
           <h1 class="hero-title">
             Dra. Tatiana Mendoza<br>
             <span class="hero-accent">Medicina Estética y Regenerativa</span>
@@ -100,12 +73,12 @@
 
 
   <!-- =========================
-       CONTENIDO (AL DESLIZAR)
+       CONTENIDO (AL BAJAR)
   ========================== -->
   <main class="container" id="inicio-info">
 
     <!-- Tarjetas informativas -->
-    <section class="home-grid">
+    <section class="home-grid reveal">
       <div class="card">
         <h2>Horarios de atención</h2>
         <p><strong>Lunes a viernes:</strong> 8:00 a.m. – 12:00 m / 2:00 p.m. – 6:00 p.m.</p>
@@ -131,7 +104,7 @@
 
 
     <!-- =========================
-         RESULTADOS REALES (SOLO COLLAGE)
+         RESULTADOS REALES (COLLAGE 3x2)
          (usa SOLO assets/pacientes)
     ========================== -->
     <section class="results reveal">
@@ -173,7 +146,7 @@
 
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer reveal">
       © 2026 Dra. Tatiana Mendoza. La información no reemplaza una consulta médica.
     </footer>
   </main>
@@ -201,20 +174,20 @@
 
 
   <!-- =========================
-       JS (SCROLL + MODAL)
+       JS (SCROLL + MODAL + REVEAL + PARALLAX)
+       (DEBE IR AL FINAL)
   ========================== -->
   <script>
-    // Scroll suave al contenido de abajo
+    /* Scroll suave al contenido de abajo */
     const btnScroll = document.getElementById("btnScrollInfo");
     const info = document.getElementById("inicio-info");
-
     if (btnScroll && info) {
       btnScroll.addEventListener("click", () => {
         info.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
 
-    // Modal galería
+    /* Modal galería */
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("modalImg");
     const closeBg = document.getElementById("modalClose");
@@ -244,8 +217,33 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
     });
+
+    /* Reveal al scroll */
+    const revealEls = document.querySelectorAll(".reveal");
+    if (revealEls.length) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add("show");
+        });
+      }, { threshold: 0.15 });
+
+      revealEls.forEach(el => io.observe(el));
+    }
+
+    /* Parallax suave (solo escritorio) */
+    const hero = document.querySelector(".hero-cover");
+    if (hero && window.matchMedia("(pointer:fine)").matches) {
+      hero.addEventListener("mousemove", (e) => {
+        const r = hero.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        hero.style.backgroundPosition = `${50 + x * 2}% ${50 + y * 2}%`;
+      });
+      hero.addEventListener("mouseleave", () => {
+        hero.style.backgroundPosition = "center";
+      });
+    }
   </script>
 
 </body>
 </html>
-
