@@ -1,3 +1,20 @@
+/* =========================
+   PALETA DORADO + BLANCO
+   ========================= */
+:root{
+  --gold-main: #C9A24D;
+  --gold-soft: #E8D8A8;
+  --gold-dark: #B8923B;
+
+  --white: #FFFFFF;
+  --bg-soft: #FAFAFA;
+
+  --text-main: #2F2F2F;
+  --text-soft: #6B6B6B;
+
+  --border-soft: rgba(201,162,77,.25);
+}
+
 /* ================= RESET ================= */
 * {
   margin: 0;
