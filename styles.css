@@ -1578,3 +1578,83 @@ select{
 .hero-cover{
   transition: background-position 120ms linear;
 }
+/* =========================
+   MODAL (IMAGEN AMPLIADA)
+   encima + fondo opaco
+   ========================= */
+
+/* cuando el modal está abierto */
+.modal.open{
+  display: flex !important;
+}
+
+/* capa completa */
+.modal{
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: none;              /* se activa con .open */
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+}
+
+/* fondo oscuro */
+.modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.72);  /* opacidad del fondo */
+  backdrop-filter: blur(2px);
+}
+
+/* caja de la imagen */
+.modal-content{
+  position: relative;
+  z-index: 2;
+
+  width: min(980px, 94vw);
+  max-height: 86vh;
+
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow: 0 30px 90px rgba(0,0,0,.45);
+}
+
+/* imagen grande */
+.modal-content img{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 86vh;
+  object-fit: contain;
+  background: #000;          /* evita bordes raros al contener */
+}
+
+/* botón cerrar */
+.modal-x{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.92);
+  cursor: pointer;
+
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* bloquear scroll cuando el modal está abierto */
+body.no-scroll{
+  overflow: hidden;
+}
