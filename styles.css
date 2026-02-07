@@ -1738,10 +1738,11 @@ body{
 /* Título principal: MÁS DELGADO y fino */
 .hero-title{
   font-family: "Cinzel", serif !important;
-  font-weight: 600 !important;     /* baja de 700 */
-  letter-spacing: .4px !important; /* menos pesado */
+  font-weight: 400 !important;      /* más elegante */
+  letter-spacing: 0.06em !important;/* respiración premium */
   color: var(--ink) !important;
   text-transform: none !important;
+  line-height: 1.08;
 }
 
 /* “Medicina Estética y Regenerativa”: DORADO y fino */
@@ -1806,9 +1807,10 @@ body{
   inset:0;
   background: linear-gradient(
     90deg,
-    rgba(255,255,255,.85) 0%,
-    rgba(255,255,255,.55) 45%,
-    rgba(255,255,255,.10) 70%,
+    rgba(255,255,255,.92) 0%,
+    rgba(255,255,255,.78) 40%,
+    rgba(255,255,255,.45) 58%,
+    rgba(255,255,255,.18) 72%,
     rgba(255,255,255,0) 100%
   );
 }
