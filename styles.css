@@ -1299,3 +1299,175 @@ label {
   object-fit: cover;
   background: transparent;
 }
+/* =========================================================
+   OVERRIDE FINAL — PALETA DORADO + BLANCO (PEGAR AL FINAL)
+   Esto unifica colores sin romper tu CSS existente.
+   ========================================================= */
+
+:root{
+  --gold-main: #C9A24D;
+  --gold-dark: #B8923B;
+  --gold-soft: #E8D8A8;
+
+  --white: #FFFFFF;
+  --bg-soft: #FBFBFB;
+
+  --text-main: #2A2A2A;
+  --text-soft: #666666;
+
+  --border-soft: rgba(201,162,77,.25);
+  --shadow-soft: 0 12px 30px rgba(0,0,0,.08);
+}
+
+/* Fondo general */
+body{
+  background: var(--bg-soft) !important;
+  color: var(--text-main) !important;
+}
+
+/* Links generales */
+a{ color: inherit; }
+
+/* =========================
+   NAV / HEADER (DORADO)
+   ========================= */
+.site-header{
+  background: rgba(255,255,255,.96) !important;
+  border-bottom: 1px solid rgba(0,0,0,.06) !important;
+}
+
+.main-nav a,
+.header-nav a,
+.nav a,
+.nav-links a{
+  color: rgba(0,0,0,.75) !important;
+}
+
+.main-nav a:hover,
+.header-nav a:hover,
+.nav a:hover,
+.nav-links a:hover{
+  background: rgba(201,162,77,.14) !important;
+  color: rgba(0,0,0,.88) !important;
+}
+
+.main-nav a.active,
+.header-nav a.active,
+.nav a.active,
+.nav-links a.active{
+  background: rgba(201,162,77,.20) !important;
+  color: rgba(0,0,0,.92) !important;
+}
+
+/* Botón principal del header (Agendar por WhatsApp) */
+.btn-whatsapp,
+.cta-whatsapp,
+.cta-wa,
+.header-cta a{
+  background: linear-gradient(135deg, var(--gold-main), var(--gold-dark)) !important;
+  color: #fff !important;
+  box-shadow: 0 14px 30px rgba(201,162,77,.35) !important;
+}
+
+.btn-whatsapp:hover,
+.cta-whatsapp:hover,
+.cta-wa:hover,
+.header-cta a:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(201,162,77,.45) !important;
+}
+
+/* =========================
+   BOTONES GENERALES
+   ========================= */
+.btn-primary,
+button,
+input[type="submit"]{
+  background: linear-gradient(135deg, var(--gold-main), var(--gold-dark)) !important;
+  color: #fff !important;
+  box-shadow: 0 14px 30px rgba(201,162,77,.30) !important;
+}
+
+.btn-outline{
+  border: 2px solid rgba(201,162,77,.55) !important;
+  color: rgba(0,0,0,.78) !important;
+  background: #fff !important;
+}
+
+.btn-outline:hover{
+  box-shadow: 0 12px 26px rgba(201,162,77,.18) !important;
+}
+
+/* =========================
+   BADGES / DETALLES
+   ========================= */
+.hero-badge,
+.card-badge{
+  background: rgba(201,162,77,.14) !important;
+  border: 1px solid rgba(201,162,77,.35) !important;
+  color: rgba(0,0,0,.70) !important;
+}
+
+.hero h1 span,
+.highlight{
+  color: var(--gold-dark) !important;
+}
+
+/* =========================
+   TARJETAS / BLOQUES
+   ========================= */
+.card,
+.hero-info,
+.hero-note,
+.page,
+.page-title,
+.hero-content{
+  border-color: rgba(0,0,0,.06) !important;
+}
+
+/* =========================
+   INPUTS / SELECTS / FORMS
+   ========================= */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea{
+  border: 1px solid rgba(0,0,0,.14) !important;
+  background: rgba(255,255,255,.95) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color: rgba(201,162,77,.75) !important;
+  box-shadow: 0 0 0 3px rgba(201,162,77,.18) !important;
+}
+
+/* Flecha del select dorada */
+select{
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gold-main) 50%),
+    linear-gradient(135deg, var(--gold-main) 50%, transparent 50%) !important;
+}
+
+/* =========================
+   COLLAGE / RESULTADOS
+   ========================= */
+.collage-item,
+.results-grid a{
+  border: 1px solid rgba(0,0,0,.07) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.08) !important;
+}
+
+/* =========================
+   WHATSAPP FLOAT (se mantiene verde)
+   ========================= */
+.whatsapp-float,
+.wa-float{
+  background: #25D366 !important;
+  color: #fff !important;
+}
