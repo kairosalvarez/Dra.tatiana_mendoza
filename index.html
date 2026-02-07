@@ -8,8 +8,33 @@
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css?v=1400" />
 </head>
+  
+<script>
+  /* ---------- B) Reveal al scroll ---------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('show');
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
 
-<body>
+  /* ---------- C) Parallax suave (solo escritorio) ---------- */
+  const hero = document.querySelector('.hero-cover');
+  if(hero && window.matchMedia('(pointer:fine)').matches){
+    hero.addEventListener('mousemove', (e)=>{
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left)/r.width - .5;
+      const y = (e.clientY - r.top)/r.height - .5;
+      hero.style.backgroundPosition = `${50 + x*2}% ${50 + y*2}%`;
+    });
+    hero.addEventListener('mouseleave', ()=>{
+      hero.style.backgroundPosition = 'center';
+    });
+  }
+</script>
+
+<body class="home-animate">
 
   <!-- =========================
        HEADER
@@ -109,7 +134,7 @@
          RESULTADOS REALES (SOLO COLLAGE)
          (usa SOLO assets/pacientes)
     ========================== -->
-    <section class="results">
+    <section class="results reveal">
       <div class="section-head">
         <h2>Resultados reales</h2>
         <p class="muted">Imágenes sin rostro, publicadas con autorización del paciente.</p>
@@ -223,3 +248,4 @@
 
 </body>
 </html>
+
