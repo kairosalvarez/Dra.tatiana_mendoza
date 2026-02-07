@@ -1780,3 +1780,130 @@ body{
   border: 1px solid rgba(201,162,77,.18) !important;
   color: rgba(30,30,30,.72) !important;
 }
+/* =========================
+   HERO SIN CAJA (ELEGANTE)
+   ========================= */
+
+:root{
+  --gold-main:#C9A24D;
+  --gold-dark:#A57F2F;
+  --ink:#1c1c1c;
+}
+
+/* HERO COVER: imagen protagonista */
+.hero-cover{
+  position: relative;
+  min-height: 85vh;
+  background: url("assets/portada.jpeg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* Degradado sutil SOLO para legibilidad */
+.hero-cover::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.85) 0%,
+    rgba(255,255,255,.55) 45%,
+    rgba(255,255,255,.10) 70%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+/* QUITAMOS LA CAJA */
+.hero-inner{
+  position: relative;
+  z-index: 2;
+  background: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: clamp(28px, 6vw, 64px);
+  max-width: 720px;
+}
+
+/* Badge superior */
+.pill{
+  background: none;
+  border: 1px solid rgba(201,162,77,.45);
+  color: rgba(28,28,28,.75);
+  font-weight: 500;
+  letter-spacing: .3px;
+}
+
+/* Título principal */
+.hero-title{
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+  letter-spacing: .8px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+/* Texto dorado */
+.hero-accent{
+  display: block;
+  margin-top: 8px;
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+  color: var(--gold-main);
+  letter-spacing: 1px;
+}
+
+/* Párrafo */
+.hero-text{
+  margin-top: 18px;
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(28,28,28,.70);
+  max-width: 520px;
+}
+
+/* Botones */
+.hero-actions{
+  margin-top: 26px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary{
+  background: linear-gradient(135deg,var(--gold-main),var(--gold-dark));
+  color:#fff;
+  font-weight:600;
+  box-shadow:0 10px 26px rgba(201,162,77,.28);
+}
+
+.btn-outline{
+  background: rgba(255,255,255,.75);
+  border:1px solid rgba(201,162,77,.55);
+  color: rgba(28,28,28,.85);
+  font-weight:600;
+}
+
+/* Nota inferior */
+.hero-note{
+  margin-top: 18px;
+  background: rgba(255,255,255,.65);
+  border:1px solid rgba(201,162,77,.35);
+  color: rgba(28,28,28,.70);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-cover{
+    min-height: 75vh;
+  }
+
+  .hero-cover::before{
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,.88) 0%,
+      rgba(255,255,255,.65) 55%,
+      rgba(255,255,255,.25) 100%
+    );
+  }
+}
