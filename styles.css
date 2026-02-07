@@ -1709,3 +1709,74 @@ body{
 .hero-note{
   border: 1px solid rgba(201,162,77,.22);
 }
+/* =========================
+   HERO MÁS ELEGANTE (SUTIL)
+   ========================= */
+
+:root{
+  --gold-main:#C9A24D;
+  --gold-dark:#A57F2F;
+  --ink:#1e1e1e;
+}
+
+/* Caja interna: MÁS TRANSPARENTE para ver la foto */
+.hero-inner{
+  background: rgba(255,255,255,.35) !important; /* antes estaba muy sólido */
+  backdrop-filter: blur(5px) !important;        /* menos blur = más foto visible */
+  border: 1px solid rgba(201,162,77,.18) !important;
+  box-shadow: 0 14px 45px rgba(0,0,0,.10) !important;
+}
+
+/* Badge superior más fino */
+.pill{
+  background: rgba(255,255,255,.25) !important;
+  border: 1px solid rgba(201,162,77,.20) !important;
+  color: rgba(30,30,30,.75) !important;
+  font-weight: 500 !important;
+}
+
+/* Título principal: MÁS DELGADO y fino */
+.hero-title{
+  font-family: "Cinzel", serif !important;
+  font-weight: 600 !important;     /* baja de 700 */
+  letter-spacing: .4px !important; /* menos pesado */
+  color: var(--ink) !important;
+  text-transform: none !important;
+}
+
+/* “Medicina Estética y Regenerativa”: DORADO y fino */
+.hero-accent{
+  font-family: "Cinzel", serif !important;
+  font-weight: 600 !important;
+  color: var(--gold-main) !important; /* ✅ dorado */
+  letter-spacing: .6px !important;
+}
+
+/* Texto del párrafo más suave */
+.hero-text{
+  color: rgba(30,30,30,.70) !important;
+  font-weight: 400 !important;
+}
+
+/* Botón principal en dorado (más fino, menos “gordo”) */
+.btn-primary{
+  background: linear-gradient(135deg, var(--gold-main), var(--gold-dark)) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  box-shadow: 0 10px 25px rgba(201,162,77,.22) !important;
+}
+
+/* Botón borde dorado sutil */
+.btn-outline{
+  background: rgba(255,255,255,.35) !important;
+  border: 1px solid rgba(201,162,77,.45) !important;
+  color: rgba(30,30,30,.80) !important;
+  font-weight: 600 !important;
+}
+
+/* Nota inferior más transparente */
+.hero-note{
+  background: rgba(255,255,255,.40) !important;
+  border: 1px solid rgba(201,162,77,.18) !important;
+  color: rgba(30,30,30,.72) !important;
+}
