@@ -1722,7 +1722,7 @@ body{
 /* Caja interna: MÁS TRANSPARENTE para ver la foto */
 .hero-inner{
   background: rgba(255,255,255,.35) !important; /* antes estaba muy sólido */
-  backdrop-filter: blur(5px) !important;        /* menos blur = más foto visible */
+  backdrop-filter: blur(0px) !important;        /* menos blur = más foto visible */
   border: 1px solid rgba(201,162,77,.18) !important;
   box-shadow: 0 14px 45px rgba(0,0,0,.10) !important;
 }
