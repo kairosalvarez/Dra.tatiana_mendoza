@@ -1658,3 +1658,54 @@ select{
 body.no-scroll{
   overflow: hidden;
 }
+/* =========================
+   HERO ELEGANTE (DORADO)
+   ========================= */
+:root{
+  --gold-main:#C9A24D;
+  --gold-dark:#A57F2F;
+  --ink:#1f1f1f;
+}
+
+body{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+.hero-inner{
+  background: rgba(255,255,255,.70);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201,162,77,.22);
+  box-shadow: 0 20px 60px rgba(0,0,0,.10);
+}
+
+.pill{
+  background: rgba(201,162,77,.12);
+  border: 1px solid rgba(201,162,77,.28);
+  color: #3a2a10;
+}
+
+.hero-title{
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  letter-spacing: .6px;
+  color: var(--ink);
+}
+
+.hero-accent{
+  font-family: "Cinzel", serif;
+  color: var(--gold-main);
+}
+
+.btn-primary{
+  background: linear-gradient(135deg, var(--gold-main), var(--gold-dark));
+  color: #fff;
+}
+
+.btn-outline{
+  border: 1px solid rgba(201,162,77,.45);
+  color: #3a2a10;
+}
+
+.hero-note{
+  border: 1px solid rgba(201,162,77,.22);
+}
